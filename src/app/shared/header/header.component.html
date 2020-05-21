@@ -8,62 +8,59 @@
              src="assets/img/learning-logo.png">
       </div>
     </a>
-    <div class="columns right-buttons is-hidden-tablet-only">
-      <div *ngIf="this.isLoggedIn()">
-        <div class="column is-4-desktop is-6-mobile dropdown dropdown-cart is-right is-large" (click)="toggleClass()"
-             [ngClass]="opened ? 'is-active' : ''">
-          <div class="dropdown-trigger">
-            <button aria-controls="dropdown-menu" aria-haspopup="true" class="button cart-button">
-              <span><i class="fab fa-opencart open-cart-icon"></i></span>
-              <span *ngIf="cartQty != null" class="is-medium cart-nr">{{cartQty}}</span>
-            </button>
-          </div>
-          <div class="dropdown-menu" id="dropdown-menu-2" role="menu">
-            <div class="dropdown-content">
-              <div>
-                <a [routerLink]="'/wish-list'" class="dropdown-item">Notification from Jehona</a>
-              </div>
-              <hr class="dropdown-divider">
-              <div class="dropdown-item proceed-checkout">
-                <a class="button is-dark is-fullwidth" routerLink="/cart">View all</a>
-              </div>
-            </div>
-          </div>
+    <div *ngIf="this.isLoggedIn()"  class="columns right-buttons is-hidden-tablet-only">
+      <div class="column is-4-desktop is-6-mobile dropdown dropdown-cart is-right is-large" (click)="toggleClass()"
+           [ngClass]="opened ? 'is-active' : ''">
+        <div class="dropdown-trigger">
+          <button aria-controls="dropdown-menu" aria-haspopup="true" class="button cart-button">
+            <span><i class="fab fa-opencart open-cart-icon"></i></span>
+            <span *ngIf="cartQty != null" class="is-medium cart-nr">{{cartQty}}</span>
+          </button>
         </div>
-        <div (click)="toggleClass2()" [ngClass]="status2 ? 'is-active' : ''"
-             class="column is-8-desktop is-6-mobile dropdown is-hidden-mobile dropdown-profile is-right is-large">
-          <div class="dropdown-trigger">
-            <button aria-controls="dropdown-menu" aria-haspopup="true" class="button user-button">
-            <span><a *ngIf="this.isLoggedIn()" class="customer-name"
-            >Username</a></span>
-              <span class="icon is-medium">
-              <i aria-hidden="true" class="fas fa-angle-down"></i>
-            </span>
-            </button>
-          </div>
-          <div class="dropdown-menu" id="dropdown-menu" role="menu">
-            <div class="dropdown-content">
-              <div *ngIf="!this.isLoggedIn()">
-                <a class="dropdown-item sign-up-button" routerLink="/auth/register">Sign Up</a>
-                <a class="dropdown-item sign-up-button" routerLink="/auth/login">Login</a>
-              </div>
-              <div *ngIf="this.isLoggedIn()">
-                <a class="dropdown-item sign-up-button" routerLink="/auth/register">Profile</a>
-                <a class="dropdown-item sign-up-button" routerLink="/auth/login">School Settings</a>
-                <a class="dropdown-item sign-up-button" routerLink="/auth/login">Log out</a>
-              </div>
+        <div class="dropdown-menu" id="dropdown-menu-2" role="menu">
+          <div class="dropdown-content">
+            <div>
+              <a [routerLink]="'/wish-list'" class="dropdown-item">Notification from Jehona</a>
+            </div>
+            <hr class="dropdown-divider">
+            <div class="dropdown-item proceed-checkout">
+              <a class="button is-dark is-fullwidth" routerLink="/cart">View all</a>
             </div>
           </div>
-
         </div>
       </div>
-      <div *ngIf="!this.isLoggedIn()" class = "uses-flex is-hidden-mobile">
-        <div class="">
-          <a class="button is-dark is-fullwidth" routerLink="/cart">Sign in</a>
+      <div (click)="toggleClass2()" [ngClass]="status2 ? 'is-active' : ''"
+           class="column is-8-desktop is-6-mobile dropdown is-hidden-mobile dropdown-profile is-right is-large">
+        <div class="dropdown-trigger">
+          <button aria-controls="dropdown-menu" aria-haspopup="true" class="button user-button">
+            <span><a *ngIf="this.isLoggedIn()" class="customer-name"
+            >Username</a></span>
+            <span class="icon is-medium">
+              <i aria-hidden="true" class="fas fa-angle-down"></i>
+            </span>
+          </button>
         </div>
-        <div class="">
-          <a class="button is-dark is-fullwidth" routerLink="/cart">Sign up</a>
+        <div class="dropdown-menu" id="dropdown-menu" role="menu">
+          <div class="dropdown-content">
+            <div *ngIf="!this.isLoggedIn()">
+              <a class="dropdown-item sign-up-button" routerLink="/auth/register">Sign Up</a>
+              <a class="dropdown-item sign-up-button" routerLink="/auth/login">Login</a>
+            </div>
+            <div *ngIf="this.isLoggedIn()">
+              <a class="dropdown-item sign-up-button" routerLink="/auth/register">Profile</a>
+              <a class="dropdown-item sign-up-button" routerLink="/auth/login">School Settings</a>
+              <a class="dropdown-item sign-up-button" routerLink="/auth/login">Log out</a>
+            </div>
+          </div>
         </div>
+      </div>
+    </div>
+    <div *ngIf="!this.isLoggedIn()" class = "columns right-buttons uses-flex is-hidden-mobile">
+      <div class="column">
+        <a class="button is-dark is-fullwidth" routerLink="/cart">Sign in</a>
+      </div>
+      <div class="column">
+        <a class="button is-dark is-fullwidth" routerLink="/cart">Sign up</a>
       </div>
     </div>
     <!-- End of header right buttons   -->
