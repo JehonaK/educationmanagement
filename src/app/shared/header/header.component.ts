@@ -11,7 +11,6 @@ export class HeaderComponent implements OnInit {
   opened = false;
   status2 = false;
   status3 = false;
-  customerName: string;
 
   constructor() {
   }
@@ -34,7 +33,7 @@ export class HeaderComponent implements OnInit {
   }
 
   isLoggedIn(): boolean {
-    return true;
+    return false;
   }
 
 }

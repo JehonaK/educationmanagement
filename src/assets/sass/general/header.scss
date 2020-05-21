@@ -1,11 +1,3 @@
-a.dropdown-item.is-active {
-  background-color: #272424;
-  @include mobile {
-    background: rgb(0, 0, 0);
-    background: linear-gradient(225deg, #2d0b1e 0%, #2d0b1e 39%, #4e1319 35%, #4e1319 49%, #6f1b13 44%, #6f1b13 58%, #8f240e 54%, #8f240e 68%, #b02c08 67%, #b02c08 78%, #d13403 68%, #d13403 100%);
-  }
-}
-
 .log-out-button {
   background: transparent;
   padding: 10px 25px;
@@ -27,23 +19,10 @@ a.dropdown-item.is-active {
 }
 
 .header {
-  //position: sticky;
-  //top: 0px;
   z-index: 3;
   margin-bottom: 20px;
   flex-direction: column;
   background: rgb(0, 0, 0);
-  background: linear-gradient(225deg, #2d0b1e 0%, #2d0b1e 39%, #4e1319 35%, #4e1319 49%, #6f1b13 44%, #6f1b13 58%, #8f240e 54%, #8f240e 68%, #b02c08 67%, #b02c08 78%, #d13403 68%, #d13403 100%);
-
-  //background: #000000; /* fallback for old browsers */
-  //background: -webkit-linear-gradient(to bottom, #434343, #000000); /* Chrome 10-25, Safari 5.1-6 */
-  //background: linear-gradient(to bottom, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  //border-bottom: 1px solid grey;
-
-
-  @include mobile {
-    background: linear-gradient(225deg, #2d0b1e 11%, #2d0b1e 24%, #4e1319 13%, #4e1319 47%, #6f1b13 21%, #6f1b13 65%, #8f240e 56%, #8f240e 77%, #b02c08 72%, #b02c08 86%, #d13403 77%, #d13403 100%);
-  }
 
   .header-top {
 
@@ -148,10 +127,10 @@ a.dropdown-item.is-active {
           margin-top: 9px;
           margin-bottom: 0;
         }
-        height: 100%;
+        height: 50%;
         width: 180px;
         margin-left: 6px;
-        margin-top: 60px;
+        margin-top: 20px;
       }
     }
 
@@ -337,8 +316,8 @@ a.dropdown-item.is-active {
 
       img {
         margin-top: 5px;
-        height: 90px;
-        width: 90px;
+        height: 50px;
+        width: 50px;
       }
     }
   }
@@ -346,8 +325,8 @@ a.dropdown-item.is-active {
 
 .navbar-item img {
   text-align: center;
-  max-height: 300px;
-  max-width: 300px;
+  max-height: 100px;
+  max-width: 100px;
 }
 
 .navbar-link:not(.is-arrowless)::after {

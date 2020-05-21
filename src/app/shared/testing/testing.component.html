@@ -1,1 +1,107 @@
-<p>testing works!</p>
+<!--<div [ngClass]="status3 ? 'active' : ''" class="header uses-flex">-->
+<!--  <div class="header-top uses-flex">-->
+<!--    <a>-->
+<!--      <div class="image-container">-->
+<!--        <img [routerLink]="['/']" alt="logo" class="header-logo is-hidden-mobile"-->
+<!--             src="assets/img/learning-logo.png">-->
+<!--        <img [routerLink]="['/']" alt="logo" class="header-logo is-hidden-desktop"-->
+<!--             src="assets/img/learning-logo.png">-->
+<!--      </div>-->
+<!--    </a>-->
+<!--    <div class="columns is-hidden-tablet-only right-buttons uses-flex between-space">-->
+<!--      <div class="columns">-->
+<!--        <div class="column dropdown dropdown-cart is-left is-large">-->
+<!--          <div class="dropdown-trigger">-->
+<!--            <button aria-controls="dropdown-menu" aria-haspopup="true" class="button user-button">-->
+<!--            <span><a *ngIf="this.isLoggedIn()" class="customer-name"-->
+<!--            >Students</a></span>-->
+<!--              <span class="icon is-medium">-->
+<!--              <i aria-hidden="true" class="fas fa-angle-down"></i>-->
+<!--            </span>-->
+<!--            </button>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="columns">-->
+<!--        <div class="column is-6-desktop is-4-mobile dropdown dropdown-cart is-right is-large" (click)="toggleClass()"-->
+<!--             [ngClass]="opened ? 'is-active' : ''">-->
+<!--          <div class="dropdown-trigger">-->
+<!--            <button aria-controls="dropdown-menu" aria-haspopup="true" class="button cart-button">-->
+<!--              <span><i class="fab fa-opencart open-cart-icon"></i></span>-->
+<!--              <span *ngIf="cartQty != null" class="is-medium cart-nr">{{cartQty}}</span>-->
+<!--            </button>-->
+<!--          </div>-->
+<!--          <div class="dropdown-menu" id="dropdown-menu-2" role="menu">-->
+<!--            <div class="dropdown-content">-->
+<!--              <hr class="dropdown-divider">-->
+<!--              <div class="dropdown-item proceed-checkout">-->
+<!--                <a class="button is-dark is-fullwidth" routerLink="/cart">Proceed to checkout</a>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div (click)="toggleClass2()" [ngClass]="status2 ? 'is-active' : ''"-->
+<!--             class="column is-8-desktop is-4-mobile dropdown is-hidden-mobile dropdown-profile is-right is-large">-->
+<!--          <div class="dropdown-trigger">-->
+<!--            <button aria-controls="dropdown-menu" aria-haspopup="true" class="button user-button">-->
+<!--            <span><a *ngIf="this.isLoggedIn()" class="customer-name"-->
+<!--            >Username</a></span>-->
+<!--              <span class="icon is-medium">-->
+<!--              <i aria-hidden="true" class="fas fa-angle-down"></i>-->
+<!--            </span>-->
+<!--            </button>-->
+<!--          </div>-->
+<!--          <div class="dropdown-menu" id="dropdown-menu" role="menu">-->
+<!--            <div class="dropdown-content">-->
+<!--              <div *ngIf="!this.isLoggedIn()">-->
+<!--                <a class="dropdown-item sign-up-button" routerLink="/auth/register">Sign Up</a>-->
+<!--                <a class="dropdown-item sign-up-button" routerLink="/auth/login">Login</a>-->
+<!--              </div>-->
+<!--              <div *ngIf="this.isLoggedIn()">-->
+<!--                <a *ngIf="this.customerName != null" [routerLink]="'/account/edit-profile'"-->
+<!--                   class="dropdown-item is-dark is-active"-->
+<!--                >Account</a>-->
+<!--              </div>-->
+<!--              <div>-->
+<!--                <a [routerLink]="'/wish-list'" class="dropdown-item">Wishlist</a>-->
+<!--              </div>-->
+<!--              <div *ngIf="this.isLoggedIn()">-->
+<!--                <a class="dropdown-item sign-up-button">Log Out</a>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; End of header right buttons   &ndash;&gt;-->
+<!--    <div class="hamburger-menu-container is-hidden-tablet">-->
+<!--      <button (click)="onHamburgerclick()">-->
+<!--        <i class="fa hamburger-menu"></i>-->
+<!--      </button>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="header-bottom uses-flex is-hidden-desktop is-hidden-tablet">-->
+<!--    <nav aria-label="main navigation" class="navbar navbar-container" role="navigation">-->
+<!--      <div class="is-hidden-desktop customer-options">-->
+<!--        <div *ngIf="this.isLoggedIn()">-->
+<!--          <a [routerLink]="'/account/edit-profile'"-->
+<!--             class="dropdown-item is-dark is-active customer-name"><i class="far fa-user"></i>Username</a>-->
+<!--        </div>-->
+<!--        <div *ngIf="this.isLoggedIn()">-->
+<!--          <a class="dropdown-item sign-up-button"><i-->
+<!--            class="fas fa-sign-out-alt"></i>Log Out</a>-->
+<!--        </div>-->
+<!--        <div *ngIf="!this.isLoggedIn()">-->
+<!--          <a class="dropdown-item sign-up-button is-hidden-desktop" routerLink="/auth/register"><i-->
+<!--            class="fas fa-user-plus"></i>Sign Up</a>-->
+<!--          <a class="dropdown-item sign-up-button is-hidden-desktop" routerLink="/auth/login"><i-->
+<!--            class="fas fa-sign-in-alt"></i>Login</a>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </nav>-->
+<!--  </div>-->
+<!--</div>-->
+
+

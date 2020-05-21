@@ -1,77 +1,69 @@
-<!--<div class="header">-->
-<!--  <div class="div">-->
-<!--    <a class="navbar-item" href="https://bulma.io">-->
-<!--      <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">-->
-<!--    </a>-->
-<!--  </div>-->
-<!--  <div class="div">-->
-<!--    <a class="navbar-item" href="https://bulma.io">-->
-<!--      <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">-->
-<!--    </a>-->
-<!--  </div>-->
-<!--</div>-->
-
 <div [ngClass]="status3 ? 'active' : ''" class="header uses-flex">
   <div class="header-top uses-flex between-space">
     <a>
       <div class="image-container">
         <img [routerLink]="['/']" alt="logo" class="header-logo is-hidden-mobile"
-             src="https://bulma.io/images/bulma-logo.png">
+             src="assets/img/learning-logo.png">
         <img [routerLink]="['/']" alt="logo" class="header-logo is-hidden-desktop"
-             src="https://bulma.io/images/bulma-logo.png">
+             src="assets/img/learning-logo.png">
       </div>
     </a>
-
     <div class="columns right-buttons is-hidden-tablet-only">
-      <div class="column is-4-desktop is-6-mobile dropdown dropdown-cart is-right is-large" (click)="toggleClass()"
-           [ngClass]="opened ? 'is-active' : ''">
-        <div class="dropdown-trigger">
-          <button aria-controls="dropdown-menu" aria-haspopup="true" class="button cart-button">
-            <span><i class="fab fa-opencart open-cart-icon"></i></span>
-            <span *ngIf="cartQty != null" class="is-medium cart-nr">{{cartQty}}</span>
-          </button>
-        </div>
-        <div class="dropdown-menu" id="dropdown-menu-2" role="menu">
-          <div class="dropdown-content">
-            <hr class="dropdown-divider">
-            <div class="dropdown-item proceed-checkout">
-              <a class="button is-dark is-fullwidth" routerLink="/cart">Proceed to checkout</a>
+      <div *ngIf="this.isLoggedIn()">
+        <div class="column is-4-desktop is-6-mobile dropdown dropdown-cart is-right is-large" (click)="toggleClass()"
+             [ngClass]="opened ? 'is-active' : ''">
+          <div class="dropdown-trigger">
+            <button aria-controls="dropdown-menu" aria-haspopup="true" class="button cart-button">
+              <span><i class="fab fa-opencart open-cart-icon"></i></span>
+              <span *ngIf="cartQty != null" class="is-medium cart-nr">{{cartQty}}</span>
+            </button>
+          </div>
+          <div class="dropdown-menu" id="dropdown-menu-2" role="menu">
+            <div class="dropdown-content">
+              <div>
+                <a [routerLink]="'/wish-list'" class="dropdown-item">Notification from Jehona</a>
+              </div>
+              <hr class="dropdown-divider">
+              <div class="dropdown-item proceed-checkout">
+                <a class="button is-dark is-fullwidth" routerLink="/cart">View all</a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div (click)="toggleClass2()" [ngClass]="status2 ? 'is-active' : ''"
-           class="column is-8-desktop is-6-mobile dropdown is-hidden-mobile dropdown-profile is-right is-large">
-        <div class="dropdown-trigger">
-          <button aria-controls="dropdown-menu" aria-haspopup="true" class="button user-button">
-            <span><i *ngIf="!this.isLoggedIn()" class="fas fa-user-alt "></i></span>
-            <span><a *ngIf="this.isLoggedIn() && customerName != null" class="customer-name"
-            >{{customerName}}</a></span>
-            <span class="icon is-medium">
+        <div (click)="toggleClass2()" [ngClass]="status2 ? 'is-active' : ''"
+             class="column is-8-desktop is-6-mobile dropdown is-hidden-mobile dropdown-profile is-right is-large">
+          <div class="dropdown-trigger">
+            <button aria-controls="dropdown-menu" aria-haspopup="true" class="button user-button">
+            <span><a *ngIf="this.isLoggedIn()" class="customer-name"
+            >Username</a></span>
+              <span class="icon is-medium">
               <i aria-hidden="true" class="fas fa-angle-down"></i>
             </span>
-          </button>
-        </div>
-        <div class="dropdown-menu" id="dropdown-menu" role="menu">
-          <div class="dropdown-content">
-            <div *ngIf="!this.isLoggedIn()">
-              <a class="dropdown-item sign-up-button" routerLink="/auth/register">Sign Up</a>
-              <a class="dropdown-item sign-up-button" routerLink="/auth/login">Login</a>
-            </div>
-            <div *ngIf="this.isLoggedIn()">
-              <a *ngIf="this.customerName != null" [routerLink]="'/account/edit-profile'"
-                 class="dropdown-item is-dark is-active"
-              >Account</a>
-            </div>
-            <div>
-              <a [routerLink]="'/wish-list'" class="dropdown-item">Wishlist</a>
-            </div>
-            <div *ngIf="this.isLoggedIn()">
-              <a class="dropdown-item sign-up-button">Log Out</a>
+            </button>
+          </div>
+          <div class="dropdown-menu" id="dropdown-menu" role="menu">
+            <div class="dropdown-content">
+              <div *ngIf="!this.isLoggedIn()">
+                <a class="dropdown-item sign-up-button" routerLink="/auth/register">Sign Up</a>
+                <a class="dropdown-item sign-up-button" routerLink="/auth/login">Login</a>
+              </div>
+              <div *ngIf="this.isLoggedIn()">
+                <a class="dropdown-item sign-up-button" routerLink="/auth/register">Profile</a>
+                <a class="dropdown-item sign-up-button" routerLink="/auth/login">School Settings</a>
+                <a class="dropdown-item sign-up-button" routerLink="/auth/login">Log out</a>
+              </div>
             </div>
           </div>
-        </div>
 
+        </div>
+      </div>
+      <div *ngIf="!this.isLoggedIn()" class = "uses-flex is-hidden-mobile">
+        <div class="">
+          <a class="button is-dark is-fullwidth" routerLink="/cart">Sign in</a>
+        </div>
+        <div class="">
+          <a class="button is-dark is-fullwidth" routerLink="/cart">Sign up</a>
+        </div>
       </div>
     </div>
     <!-- End of header right buttons   -->
@@ -81,28 +73,21 @@
       </button>
     </div>
   </div>
-  <div class="header-bottom uses-flex">
+  <div class="header-bottom uses-flex is-hidden-desktop is-hidden-tablet">
     <nav aria-label="main navigation" class="navbar navbar-container" role="navigation">
-      <a class="navbar-item is-hidden-mobile"  routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" routerLink="/">Home</a>
       <div class="is-hidden-desktop customer-options">
         <div *ngIf="this.isLoggedIn()">
-          <a *ngIf="this.customerName != null" [routerLink]="'/account/edit-profile'"
-             class="dropdown-item is-dark is-active customer-name"><i class="far fa-user"></i>{{this.customerName}}</a>
+          <a [routerLink]="'/account/edit-profile'"
+             class="dropdown-item is-dark is-active customer-name"><i class="far fa-user"></i>Profile</a>
         </div>
-        <div>
-          <a class="navbar-item is-hidden-desktop" routerLink="/"><i class="fas fa-home"></i>Home</a>
-          <a class="navbar-item is-hidden-desktop" routerLink="/games"><i class="fas fa-gamepad"></i>Games</a>
-          <a [routerLink]="'/wish-list'" class="dropdown-item wishlist"><i class="far fa-heart"></i>Wishlist</a>
-          <a class="navbar-item is-hidden-desktop" routerLink="/contact-us"> <i class="fas fa-envelope-square"></i>Contact
-            Us</a>
+        <div *ngIf="this.isLoggedIn()">
+          <a [routerLink]="'/account/edit-profile'"
+             class="dropdown-item is-dark is-active customer-name"><i class="far fa-user"></i>School Settings</a>
         </div>
         <div *ngIf="this.isLoggedIn()">
           <a class="dropdown-item sign-up-button"><i
             class="fas fa-sign-out-alt"></i>Log Out</a>
         </div>
-        <a class="navbar-item is-hidden-mobile" routerLink="/games">Games</a>
-        <a class="navbar-item is-hidden-mobile" routerLink="/wish-list">Wishlist</a>
-        <a class="navbar-item is-hidden-mobile" routerLink="/contact-us">Contact Us</a>
         <div *ngIf="!this.isLoggedIn()">
           <a class="dropdown-item sign-up-button is-hidden-desktop" routerLink="/auth/register"><i
             class="fas fa-user-plus"></i>Sign Up</a>
@@ -110,10 +95,6 @@
             class="fas fa-sign-in-alt"></i>Login</a>
         </div>
       </div>
-      <a class="navbar-item is-hidden-mobile" routerLinkActive="active" routerLink="/games">Games</a>
-      <a class="navbar-item is-hidden-mobile" routerLinkActive="active" routerLink="/wish-list">Wishlist</a>
-      <a class="navbar-item is-hidden-mobile" routerLinkActive="active" routerLink="/contact-us">Contact Us</a>
-      <a class="navbar-item is-hidden-mobile" style="visibility: hidden">asd</a>
     </nav>
   </div>
 </div>
