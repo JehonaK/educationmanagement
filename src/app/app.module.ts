@@ -7,13 +7,15 @@ import { BaseComponent } from './shared/layout/base/base.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {HeaderComponent} from './shared/header/header.component';
 import { TestingComponent } from './shared/testing/testing.component';
+import { SidebarComponent } from './shared/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     BaseComponent,
-    TestingComponent
+    TestingComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
