@@ -8,6 +8,7 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import {HeaderComponent} from './shared/header/header.component';
 import { TestingComponent } from './shared/testing/testing.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +16,13 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component';
     HeaderComponent,
     BaseComponent,
     TestingComponent,
-    SidebarComponent
+    SidebarComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
+    FlexLayoutModule,
     AppRoutingModule,
-    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
