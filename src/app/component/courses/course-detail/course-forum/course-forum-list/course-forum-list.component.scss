@@ -1,0 +1,33 @@
+//keep
+.item{
+  margin-top: 30px;
+  padding: 0;
+}
+.list-group-item{
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
+  display: flex;
+
+  button{
+    border: 1px solid #efefef;;
+  }
+}
+
+.panel-heading{
+  background-color: white;
+  border-radius: 0;
+
+  h6{
+    font-size: small;
+  }
+}
+
+.panel-footer{
+  padding: 10px 15px;
+  background-color: #fcfcfc;
+
+  button{
+    border:1px solid #efefef;
+  }
+}
