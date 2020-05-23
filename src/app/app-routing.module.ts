@@ -9,6 +9,8 @@ import {CourseDetailComponent} from './component/courses/course-detail/course-de
 import {CourseForumComponent} from './component/courses/course-detail/course-forum/course-forum.component';
 import {CourseForumListComponent} from './component/courses/course-detail/course-forum/course-forum-list/course-forum-list.component';
 import {CourseForumPostComponent} from './component/courses/course-detail/course-forum/course-forum-post/course-forum-post.component';
+import {CourseActivityListComponent} from './component/courses/course-detail/course-activities/course-activity-list/course-activity-list.component';
+import {CourseActivityDetailsComponent} from './component/courses/course-detail/course-activities/course-activity-details/course-activity-details.component';
 
 
 const routes: Routes = [
@@ -47,6 +49,20 @@ const routes: Routes = [
               {
                 path: 'post',
                 component: CourseForumPostComponent
+              }
+            ]
+          },
+          {
+            path: 'activity',
+            component: CourseForumComponent,
+            children: [
+              {
+                path: 'list',
+                component: CourseActivityListComponent
+              },
+              {
+                path: 'post',
+                component: CourseActivityDetailsComponent
               }
             ]
           }
