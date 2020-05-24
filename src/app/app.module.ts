@@ -21,6 +21,7 @@ import { CourseActivityListComponent } from './component/courses/course-detail/c
 import { CourseActivityDetailsComponent } from './component/courses/course-detail/course-activities/course-activity-details/course-activity-details.component';
 import { CourseGradeComponent } from './component/courses/course-detail/course-grade/course-grade.component';
 import { CourseGradeListComponent } from './component/courses/course-detail/course-grade-list/course-grade-list.component';
+import { GradeBookComponent } from './component/grade-book/grade-book.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { CourseGradeListComponent } from './component/courses/course-detail/cour
     CourseActivityDetailsComponent,
     CourseGradeComponent,
     CourseGradeListComponent,
+    GradeBookComponent,
   ],
   imports: [
     BrowserModule,
