@@ -11,6 +11,8 @@ import {CourseForumListComponent} from './component/courses/course-detail/course
 import {CourseForumPostComponent} from './component/courses/course-detail/course-forum/course-forum-post/course-forum-post.component';
 import {CourseActivityListComponent} from './component/courses/course-detail/course-activities/course-activity-list/course-activity-list.component';
 import {CourseActivityDetailsComponent} from './component/courses/course-detail/course-activities/course-activity-details/course-activity-details.component';
+import {CourseGradeComponent} from './component/courses/course-detail/course-grade/course-grade.component';
+import {CourseGradeListComponent} from './component/courses/course-detail/course-grade-list/course-grade-list.component';
 
 
 const routes: Routes = [
@@ -61,10 +63,18 @@ const routes: Routes = [
                 component: CourseActivityListComponent
               },
               {
-                path: 'post',
+                path: 'details',
                 component: CourseActivityDetailsComponent
               }
             ]
+          },
+          {
+            path: 'grade',
+            component: CourseGradeComponent
+          },
+          {
+            path: 'grade-list',
+            component: CourseGradeListComponent
           }
         ]
       }

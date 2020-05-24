@@ -19,6 +19,8 @@ import { CourseForumPostComponent } from './component/courses/course-detail/cour
 import { CourseActivitiesComponent } from './component/courses/course-detail/course-activities/course-activities.component';
 import { CourseActivityListComponent } from './component/courses/course-detail/course-activities/course-activity-list/course-activity-list.component';
 import { CourseActivityDetailsComponent } from './component/courses/course-detail/course-activities/course-activity-details/course-activity-details.component';
+import { CourseGradeComponent } from './component/courses/course-detail/course-grade/course-grade.component';
+import { CourseGradeListComponent } from './component/courses/course-detail/course-grade-list/course-grade-list.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,8 @@ import { CourseActivityDetailsComponent } from './component/courses/course-detai
     CourseActivityDetailsComponent,
     CourseActivityListComponent,
     CourseActivityDetailsComponent,
+    CourseGradeComponent,
+    CourseGradeListComponent,
   ],
   imports: [
     BrowserModule,

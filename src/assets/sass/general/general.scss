@@ -1,3 +1,13 @@
+.table{
+  a{
+    text-decoration: none;
+    color: #363636!important;
+    &:hover{
+      text-decoration: none;
+    }
+  }
+}
+
 .margin-none{
   margin: 0;
 }
@@ -29,4 +39,31 @@
 
 .is-yellow{
   color: #ffdd57;
+}
+
+.is-primary-light{
+  background-color: #fffbeb;
+  color: #947600!important;
+
+  th{
+    color: #947600!important;
+  }
+}
+
+.is-danger-light{
+  background-color: #feecf0;
+  color: #cc0f35!important;
+
+  td{
+    color: #cc0f35!important;
+  }
+}
+
+.is-success-light{
+  background-color: #effaf3;
+  color: #257942!important;
+
+  td,th{
+    color: #257942!important;
+  }
 }
