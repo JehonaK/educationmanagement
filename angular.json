@@ -96,7 +96,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
+              "src/styles.scss"
             ],
             "scripts": []
           }
@@ -127,6 +127,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "educationmanagement"
+    }
+  },
+  "defaultProject": "educationmanagement",
+  "cli": {
+    "analytics": "05312f68-cc31-436a-9375-ab051c4bfa0c"
+  }
 }

@@ -11,7 +11,11 @@ import {CourseForumListComponent} from './component/courses/course-detail/course
 import {CourseForumPostComponent} from './component/courses/course-detail/course-forum/course-forum-post/course-forum-post.component';
 import {CourseActivityListComponent} from './component/courses/course-detail/course-activities/course-activity-list/course-activity-list.component';
 import {CourseActivityDetailsComponent} from './component/courses/course-detail/course-activities/course-activity-details/course-activity-details.component';
-
+import { LoginComponent } from './component/auth/login/login.component';
+import { AuthComponent } from './component/auth/auth.component';
+import { RegisterComponent } from './component/auth/register/register.component';
+import { ResetPasswordComponent } from './component/auth/reset-password/reset-password.component';
+import { ForgotPasswordComponent } from './component/auth/forgot-password/forgot-password.component';
 
 const routes: Routes = [
   {
@@ -21,6 +25,28 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component:  DashboardComponent,
+  },
+  {
+    path: 'auth',
+    component: AuthComponent,
+    children: [
+      {
+        path: 'login',
+        component: LoginComponent
+      },
+      {
+        path: 'register',
+        component: RegisterComponent
+      },
+      {
+        path: 'reset-password',
+        component: ResetPasswordComponent
+      },
+      {
+        path: 'forgot-password',
+        component: ForgotPasswordComponent
+      },
+    ]
   },
   {
     path: 'courses',

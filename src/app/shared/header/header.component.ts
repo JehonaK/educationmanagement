@@ -33,6 +33,6 @@ export class HeaderComponent implements OnInit {
   }
 
   isLoggedIn(): boolean {
-    return true;
+    return false;
   }
 }
