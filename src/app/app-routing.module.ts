@@ -16,6 +16,9 @@ import { AuthComponent } from './component/auth/auth.component';
 import { RegisterComponent } from './component/auth/register/register.component';
 import { ResetPasswordComponent } from './component/auth/reset-password/reset-password.component';
 import { ForgotPasswordComponent } from './component/auth/forgot-password/forgot-password.component';
+import { MeetingsComponent } from './component/meetings/meetings.component';
+import { CreateMeetingComponent } from './component/meetings/create-meeting/create-meeting.component';
+import { EditMeetingComponent } from './component/meetings/edit-meeting/edit-meeting.component';
 
 const routes: Routes = [
   {
@@ -47,6 +50,18 @@ const routes: Routes = [
         component: ForgotPasswordComponent
       },
     ]
+  },
+  {
+    path: 'meetings',
+    component: MeetingsComponent
+  },
+  {
+    path: 'meetings/create-meeting',
+    component: CreateMeetingComponent
+  },
+  {
+    path: 'meetings/edit-meeting',
+    component: EditMeetingComponent
   },
   {
     path: 'courses',
