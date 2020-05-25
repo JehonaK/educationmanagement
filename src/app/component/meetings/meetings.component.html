@@ -1,0 +1,49 @@
+<section class="section main-container">
+        <app-header></app-header>
+      
+        <div class="container">
+          <div class="columns">
+            <div class="column is-3-desktop">
+              <app-sidebar></app-sidebar>
+            </div>
+            <div class="column is-9-desktop st-pusher" id="content">
+              <div class="st-content">
+                <!-- extra div for emulating position:fixed of the menu -->
+                <div class="st-content-inner padding-none">
+                  <div class="container-fluid">
+                    <div class="page-section">
+                      <div class="media v-middle">
+                        <div class="media-body">
+                          <h1 class="text-headline margin-none">Meetings</h1>
+                        </div>
+                        <div class="media-right">
+                          <div class="width-100 text-right">
+                            <div class="btn-group">
+                              <a
+                                class="btn btn-grey-800 add-meeting-button"
+                                [routerLink]="['/meetings/create-meeting']"
+                              >
+                                <i class="fa fa-plus"></i> Create Meeting</a
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+      
+                    <div class="row row-cols-1 row-cols-md-3">
+                      <app-meeting-item></app-meeting-item>
+                      <app-meeting-item></app-meeting-item>
+                      <app-meeting-item></app-meeting-item>
+                      <app-meeting-item></app-meeting-item>
+                    </div>
+      
+                    <router-outlet></router-outlet>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      

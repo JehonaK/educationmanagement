@@ -1,0 +1,36 @@
+<div class="col mb-4">
+  <div
+    class="card border-secondary mb-3"
+    style="max-width: 18rem; margin-top: 5%;"
+  >
+    <div class="card-header meeting-text-heading">
+      Students achievements during the week
+    </div>
+    <div class="card-body text-secondary">
+      <p class="card-text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+      <br />
+      <h5 class="card-title">
+        <strong><i>Created By: </i></strong> Vedat Apuk
+      </h5>
+      <h5 class="card-title">
+        <strong><i>Meeting Date: </i></strong> 2020/10/10
+      </h5>
+    </div>
+    <div class="card-footer">
+      <button
+        type="button"
+        class="btn btn-primary btn-sm"
+        style="margin-right: 3%;"
+        [routerLink]="['/meetings/edit-meeting']"
+      >
+        <i class="fas fa-pen"></i> Edit
+      </button>
+      <button type="button" class="btn btn-secondary btn-sm">
+        <i class="fas fa-trash"></i> Delete
+      </button>
+    </div>
+  </div>
+</div>

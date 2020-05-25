@@ -19,6 +19,15 @@ import { CourseForumPostComponent } from './component/courses/course-detail/cour
 import { CourseActivitiesComponent } from './component/courses/course-detail/course-activities/course-activities.component';
 import { CourseActivityListComponent } from './component/courses/course-detail/course-activities/course-activity-list/course-activity-list.component';
 import { CourseActivityDetailsComponent } from './component/courses/course-detail/course-activities/course-activity-details/course-activity-details.component';
+import { AuthComponent } from './component/auth/auth.component';
+import { LoginComponent } from './component/auth/login/login.component';
+import { RegisterComponent } from './component/auth/register/register.component';
+import { ResetPasswordComponent } from './component/auth/reset-password/reset-password.component';
+import { ForgotPasswordComponent } from './component/auth/forgot-password/forgot-password.component';
+import { MeetingsComponent } from './component/meetings/meetings.component';
+import { MeetingItemComponent } from './component/meetings/meeting-item/meeting-item.component';
+import { CreateMeetingComponent } from './component/meetings/create-meeting/create-meeting.component';
+import { EditMeetingComponent } from './component/meetings/edit-meeting/edit-meeting.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +49,15 @@ import { CourseActivityDetailsComponent } from './component/courses/course-detai
     CourseActivityDetailsComponent,
     CourseActivityListComponent,
     CourseActivityDetailsComponent,
+    AuthComponent,
+    LoginComponent,
+    RegisterComponent,
+    ResetPasswordComponent,
+    ForgotPasswordComponent,
+    MeetingsComponent,
+    MeetingItemComponent,
+    CreateMeetingComponent,
+    EditMeetingComponent,
   ],
   imports: [
     BrowserModule,
