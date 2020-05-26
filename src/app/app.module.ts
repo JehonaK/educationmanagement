@@ -30,6 +30,7 @@ import { PresenceComponent } from './component/schedule/presence/presence.compon
 import { CreateScheduleComponent } from './component/schedule/create-schedule/create-schedule.component';
 import { CreateSchedulePeriodicComponent } from './component/schedule/create-schedule/create-schedule-periodic/create-schedule-periodic.component';
 import { CreateScheduleDateBasedComponent } from './component/schedule/create-schedule/create-schedule-date-based/create-schedule-date-based.component';
+import { CourseCurriculumComponent } from './component/courses/course-detail/course-curriculum/course-curriculum.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { CreateScheduleDateBasedComponent } from './component/schedule/create-sc
     CreateScheduleComponent,
     CreateSchedulePeriodicComponent,
     CreateScheduleDateBasedComponent,
+    CourseCurriculumComponent,
   ],
   imports: [
     BrowserModule,

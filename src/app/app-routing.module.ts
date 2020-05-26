@@ -22,6 +22,7 @@ import {PresenceComponent} from './component/schedule/presence/presence.componen
 import {CreateScheduleComponent} from './component/schedule/create-schedule/create-schedule.component';
 import {CreateSchedulePeriodicComponent} from './component/schedule/create-schedule/create-schedule-periodic/create-schedule-periodic.component';
 import {CreateScheduleDateBasedComponent} from './component/schedule/create-schedule/create-schedule-date-based/create-schedule-date-based.component';
+import {CourseCurriculumComponent} from './component/courses/course-detail/course-curriculum/course-curriculum.component';
 
 
 const routes: Routes = [
@@ -84,6 +85,10 @@ const routes: Routes = [
           {
             path: 'grade-list',
             component: CourseGradeListComponent
+          },
+          {
+            path: 'curriculum',
+            component: CourseCurriculumComponent
           }
         ]
       }

@@ -76,3 +76,9 @@
 body{
   font-size: 0.9rem!important;
 }
+
+a{
+  &:hover{
+    text-decoration: none;
+  }
+}
