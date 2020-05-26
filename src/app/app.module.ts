@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,6 +28,12 @@ import { MeetingsComponent } from './component/meetings/meetings.component';
 import { MeetingItemComponent } from './component/meetings/meeting-item/meeting-item.component';
 import { CreateMeetingComponent } from './component/meetings/create-meeting/create-meeting.component';
 import { EditMeetingComponent } from './component/meetings/edit-meeting/edit-meeting.component';
+import { ProfileComponent } from './component/profile/profile.component';
+import { ChatComponent } from './component/chat/chat.component';
+import { ChatContactMessageComponent } from './component/chat/chat-contact-message/chat-contact-message.component';
+import { ChatIncomingMessageComponent } from './component/chat/chat-incoming-message/chat-incoming-message.component';
+import { ChatOutgoingMessageComponent } from './component/chat/chat-outgoing-message/chat-outgoing-message.component';
+import { CreateSchoolWizzardComponent } from './component/chat/create-school-wizzard/create-school-wizzard.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +64,15 @@ import { EditMeetingComponent } from './component/meetings/edit-meeting/edit-mee
     MeetingItemComponent,
     CreateMeetingComponent,
     EditMeetingComponent,
+    ProfileComponent,
+    ChatComponent,
+    ChatContactMessageComponent,
+    ChatIncomingMessageComponent,
+    ChatOutgoingMessageComponent,
+    CreateSchoolWizzardComponent,
+  ],
+  schemas: [
+    NO_ERRORS_SCHEMA
   ],
   imports: [
     BrowserModule,

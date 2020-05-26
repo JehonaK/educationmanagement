@@ -19,6 +19,9 @@ import { ForgotPasswordComponent } from './component/auth/forgot-password/forgot
 import { MeetingsComponent } from './component/meetings/meetings.component';
 import { CreateMeetingComponent } from './component/meetings/create-meeting/create-meeting.component';
 import { EditMeetingComponent } from './component/meetings/edit-meeting/edit-meeting.component';
+import { ProfileComponent } from './component/profile/profile.component';
+import { ChatComponent } from './component/chat/chat.component';
+import { CreateSchoolWizzardComponent } from './component/chat/create-school-wizzard/create-school-wizzard.component';
 
 const routes: Routes = [
   {
@@ -62,6 +65,14 @@ const routes: Routes = [
   {
     path: 'meetings/edit-meeting',
     component: EditMeetingComponent
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent
+  },
+  {
+    path: 'chat',
+    component: ChatComponent
   },
   {
     path: 'courses',

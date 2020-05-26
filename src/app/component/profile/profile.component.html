@@ -1,0 +1,77 @@
+<section class="section main-container">
+  <app-header></app-header>
+
+  <div class="container">
+    <div class="columns">
+      <div class="column is-3-desktop">
+        <app-sidebar></app-sidebar>
+      </div>
+      <div class="column is-9-desktop st-pusher profile-container" id="content">
+        <div class="st-content">
+          <!-- extra div for emulating position:fixed of the menu -->
+          <div class="st-content-inner padding-none">
+            <div class="container-fluid">
+              <section class="hero is-primary">
+                <div class="hero-body">
+                  <div class="container">
+                    <h1 class="title">
+                      Vedat Apuk
+                    </h1>
+                    <h2 class="subtitle">
+                      Parent
+                    </h2>
+                  </div>
+                </div>
+              </section>
+
+              <div class="profile-information">
+                <div class="profile-information-left">
+                  <h3 class="subtitle">First Name:</h3>
+                  <h3 class="subtitle">Last Name:</h3>
+                  <h3 class="subtitle">Email:</h3>
+                  <h3 class="subtitle">Role:</h3>
+                  <h3 class="subtitle">Birth Date:</h3>
+                  <h3 class="subtitle">Gender:</h3>
+                </div>
+                <div class="profile-information-right">
+                  <h2 class="title is-4">Vedat</h2>
+                  <h2 class="title is-4">Apuk</h2>
+                  <h2 class="title is-4">vedatapuk1@gmail.com</h2>
+                  <h2 class="title is-4">Parent</h2>
+                  <h2 class="title is-4">8 June 1999.</h2>
+                  <h2 class="title is-4">Male</h2>
+                </div>
+                <div class="relation-verification">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th>Children</th>
+                        <th>Status of verification</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Rinor</td>
+                        <td>Verified</td>
+                      </tr>
+                      <tr>
+                        <td>Jehona</td>
+                        <td>Not Verified</td>
+                      </tr>
+                      <tr>
+                        <td>Ilir</td>
+                        <td>Verified</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <router-outlet></router-outlet>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
