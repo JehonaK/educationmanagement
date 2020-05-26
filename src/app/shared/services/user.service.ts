@@ -22,24 +22,7 @@ export class UserService {
   }
 
   login(email: string, password: string) {
-    return this.restService.publicRequest<any>(HttpRequestMethod.POST, ENDPOINTS.auth.login,  {
-      body: {
-        email,
-        password
-      }
-      
-    }).pipe(map(user => {
-      if (user) {
-        if (user.accessToken) {
-          this.baseStorage.setStorage(LocalStorageKey.ACCESS_TOKEN, user.accessToken, true);
-        }
-        if (user.customerId) {
-          this.baseStorage.setStorage(LocalStorageKey.USER_ID, user.customerId, true);
-        }
-      }
-
-      return user;
-    }));
+    return this.httpClient.post<any>(ENDPOINTS.auth.login,  {email, password}, {observe: 'response'});
   }
 
   register(payload: any) {

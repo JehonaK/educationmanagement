@@ -35,7 +35,8 @@ export class LoginComponent implements OnInit {
         email: this.loginControls.email.value,
         password: this.loginControls.password.value
       };
-      this.userService.login(payload.email, payload.password).subscribe(res => {
+      this.userService.login(payload.email, payload.password).subscribe(response => {
+        localStorage.setItem("token", response.headers.get("Authorization"))
         this.router.navigate(['/dashboard']);
         },
         (err) => {
