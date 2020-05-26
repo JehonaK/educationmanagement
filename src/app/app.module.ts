@@ -45,6 +45,7 @@ import { CreateScheduleComponent } from './component/schedule/create-schedule/cr
 import { CreateSchedulePeriodicComponent } from './component/schedule/create-schedule/create-schedule-periodic/create-schedule-periodic.component';
 import { CreateScheduleDateBasedComponent } from './component/schedule/create-schedule/create-schedule-date-based/create-schedule-date-based.component';
 import { CourseCurriculumComponent } from './component/courses/course-detail/course-curriculum/course-curriculum.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -80,8 +81,6 @@ import { CourseCurriculumComponent } from './component/courses/course-detail/cou
     ChatContactMessageComponent,
     ChatIncomingMessageComponent,
     ChatOutgoingMessageComponent,
-  ],
-  schemas: [
     CourseGradeComponent,
     CourseGradeListComponent,
     GradeBookComponent,
@@ -93,12 +92,13 @@ import { CourseCurriculumComponent } from './component/courses/course-detail/cou
     CreateScheduleComponent,
     CreateSchedulePeriodicComponent,
     CreateScheduleDateBasedComponent,
-    CourseCurriculumComponent,
+    CourseCurriculumComponent
   ],
   imports: [
     BrowserModule,
     FlexLayoutModule,
     AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
