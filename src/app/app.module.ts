@@ -22,6 +22,14 @@ import { CourseActivityDetailsComponent } from './component/courses/course-detai
 import { CourseGradeComponent } from './component/courses/course-detail/course-grade/course-grade.component';
 import { CourseGradeListComponent } from './component/courses/course-detail/course-grade-list/course-grade-list.component';
 import { GradeBookComponent } from './component/grade-book/grade-book.component';
+import { NotificationComponent } from './component/notification/notification.component';
+import { ScheduleComponent } from './component/schedule/schedule.component';
+import { GeneralScheduleSettingsComponent } from './component/schedule/general-schedule-settings/general-schedule-settings.component';
+import { ScheduleViewComponent } from './component/schedule/schedule-view/schedule-view.component';
+import { PresenceComponent } from './component/schedule/presence/presence.component';
+import { CreateScheduleComponent } from './component/schedule/create-schedule/create-schedule.component';
+import { CreateSchedulePeriodicComponent } from './component/schedule/create-schedule/create-schedule-periodic/create-schedule-periodic.component';
+import { CreateScheduleDateBasedComponent } from './component/schedule/create-schedule/create-schedule-date-based/create-schedule-date-based.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +54,14 @@ import { GradeBookComponent } from './component/grade-book/grade-book.component'
     CourseGradeComponent,
     CourseGradeListComponent,
     GradeBookComponent,
+    NotificationComponent,
+    ScheduleComponent,
+    GeneralScheduleSettingsComponent,
+    ScheduleViewComponent,
+    PresenceComponent,
+    CreateScheduleComponent,
+    CreateSchedulePeriodicComponent,
+    CreateScheduleDateBasedComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,87 @@
+<div class="item col-xs-12 col-lg-11">
+  <h4 class="page-section-heading">7A - Students' Presence - Monday 20/05/2020, Lesson 2</h4>
+  <div class="panel-default">
+    <div class="panel-body">
+      <table class="table is-striped is-fullwidth">
+        <thead>
+        <tr class="">
+          <th class="text-left">Full name</th>
+          <th>Email</th>
+          <th class="text-right">Presence Status</th>
+        </tr>
+        </thead>
+        <tr>
+          <td class="text-left">John Doe<br></td>
+          <td>Contact@gmail,com<br></td>
+          <td class="text-right"><button class="button is-success is-small">PRESENT</button></td>
+        </tr>
+        <tr>
+          <td class="text-left">John Doe<br></td>
+          <td>Contact@gmail,com<br></td>
+          <td class="text-right"><button class="button is-success is-small">PRESENT</button></td>
+        </tr>
+        <tr>
+          <td class="text-left">John Doe<br></td>
+          <td>Contact@gmail,com<br></td>
+          <td class="text-right"><button class="button is-danger is-small">MISSING</button></td>
+        </tr>
+        <tfoot>
+        <td colspan="3">Students missing: 4</td>
+        </tfoot>
+      </table>
+
+      <div class="col-md-12 text-right">
+        <button class="button is-info is-small">Save</button>
+      </div>
+
+      <!-- Button trigger modal -->
+
+      <!-- Student Modal -->
+      <div class="modal fade" id="time-slot-modal-student" tabindex="-1" role="dialog"  aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title text-primary" id="exampleModalCenterTitle">Biology - Monday</h5>
+            </div>
+            <div class="modal-body">
+              <p><b>Start time: </b>09:15</p>
+              <p><b>End time: </b>11:15</p>
+              <br>
+              <p><b>Description:</b> </p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum explicabo porro a, et dicta nihil vero facere eaque aut cum aliquid, commodi libero voluptatibus dignissimos ea consequatur quisquam, quidem provident!</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Teacher Modal -->
+      <div class="modal fade" id="time-slot-modal-teacher" tabindex="-1" role="dialog"  aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title text-primary" id="exampleModalCenterTitle">Biology - Monday</h5>
+            </div>
+            <div class="modal-body">
+              <p><b>Start time: </b>09:15</p>
+              <p><b>End time: </b>11:15</p>
+              <br>
+              <label for="reply">Description</label>
+              <textarea id="reply" class="form-control" placeholder="description ..">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis iusto culpa autem nesciunt reiciendis architecto adipisci, sed corporis, quisquam quid</textarea>
+              <br>
+              <button type="button" class="btn btn-warning">Edit Student's Presence</button>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

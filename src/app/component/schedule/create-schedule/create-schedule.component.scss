@@ -1,0 +1,94 @@
+//keep
+.item{
+  margin: 0 auto;
+  padding: 0;
+
+  h4{
+    font-weight: bolder;
+    font-size: large;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+.list-group-item{
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
+  display: flex;
+
+  button{
+    border: 1px solid #efefef;;
+  }
+}
+
+.panel-heading{
+  background-color: white;
+  border-radius: 0;
+
+  h6{
+    font-size: small;
+  }
+}
+
+.panel-body{
+  background-color: white;
+  padding: 20px;
+}
+
+.panel-footer{
+  padding: 10px 15px;
+  background-color: #fcfcfc;
+
+  button{
+    border:1px solid #efefef;
+  }
+}
+
+.week-days{
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+
+  label{
+    margin-left: 5px;
+  }
+}
+
+.input-group{
+  position: relative;
+  display: table;
+  border-collapse: separate;
+}
+
+.tabs-center-h > .nav-tabs {
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+
+.nav-tabs{
+  border-bottom: none;
+  li{
+    a{
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      color: #a4abb2;
+      text-decoration: none;
+
+      &:hover{
+        text-decoration: none;
+      }
+
+      i{
+        text-align: center;
+      }
+    }
+  }
+}
+
+.tab-content{
+  margin-top: 15px;
+}
