@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {UserService} from '../../../shared/services/user.service';
 import {Router} from '@angular/router';
-import {FormBuilder} from '@angular/forms';
+import {FormBuilder, FormGroup, FormControl, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -10,27 +10,41 @@ import {FormBuilder} from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
+  loginForm: FormGroup;
+
   constructor(
     private router: Router,
     private userService: UserService,
     private formBuilder: FormBuilder
   ) { }
 
-  ngOnInit(): void {
+  get loginControls() {
+    return this.loginForm.controls;
+  }
+
+  ngOnInit() {
+    this.loginForm = this.formBuilder.group({
+      email: new FormControl('', [Validators.email, Validators.required]),
+      password: new FormControl('', Validators.required),
+    });
   }
 
   onLoginFormSubmit() {
-    // if (this.loginForm.valid) {
-    const payload = {
-      email: 'jehonaakonushefci@gmail.com',
-      password: 'rinori123',
-    };
-    this.userService.login(payload.email, payload.password).subscribe(res => {
-        console.log('');
-      },
-      (err) => {
-        console.error(err);
-      });
+    if (this.loginForm.valid) {
+      const payload = {
+        email: this.loginControls.email.value,
+        password: this.loginControls.password.value
+      };
+      this.userService.login(payload.email, payload.password).subscribe(res => {
+        this.router.navigate(['/dashboard']);
+        },
+        (err) => {
+          console.error(err);
+        });
+    } else {
+      alert('form not valid');
+    }
+  
   }
 
   onRegisterFormSubmit() {

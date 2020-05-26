@@ -7,6 +7,7 @@ import {map} from 'rxjs/operators';
 import {ENDPOINTS} from '../constants/api.constants';
 import {BaseStorageService} from './base-storage.service';
 import {Router} from '@angular/router';
+import { UserModel } from '../models/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -21,11 +22,12 @@ export class UserService {
   }
 
   login(email: string, password: string) {
-    return this.restService.publicRequest<any>(HttpRequestMethod.POST, ENDPOINTS.auth.login, {
+    return this.restService.publicRequest<any>(HttpRequestMethod.POST, ENDPOINTS.auth.login,  {
       body: {
         email,
         password
       }
+      
     }).pipe(map(user => {
       if (user) {
         if (user.accessToken) {

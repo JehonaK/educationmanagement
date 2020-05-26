@@ -7,9 +7,10 @@
     />
     <h1 class="auth-text-body">Sign In</h1>
     <p id="profile-name" class="profile-name-card"></p>
-    <form class="form-signin">
+    <form [formGroup]="loginForm" (submit)="onLoginFormSubmit()" class="form-signin">
       <span id="reauth-email" class="reauth-email"></span>
-      <input
+      <input 
+        [formControlName]="'email'"
         type="email"
         id="loginEmail"
         class="form-control"
@@ -18,6 +19,7 @@
         autofocus
       />
       <input
+      [formControlName]="'password'"
         type="password"
         id="loginPassword"
         class="form-control"
@@ -29,7 +31,7 @@
           <input type="checkbox" value="remember-me" /> Remember me
         </label>
       </div>
-      <button (click)="onRegisterFormSubmit()" class="btn btn-lg btn-primary btn-block btn-signin" type="submit">
+      <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">
         Sign In <i class="fas fa-sign-in-alt"></i>
       </button>
     </form>
