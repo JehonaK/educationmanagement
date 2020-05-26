@@ -34,7 +34,7 @@ const SCHOOL = {
   deleteSubjectById: ENVIRONMENT + '/school/subject',
   getSubjectByLevelId: ENVIRONMENT + '/school/subject',
   assignTeacherToSubject: ENVIRONMENT + '/school/subject/assignment',
-  getStudentsBYClassId: ENVIRONMENT + '/school/user',
+  getStudentsByClassId: ENVIRONMENT + '/school/user',
 };
 
 const COURSE = {
@@ -75,14 +75,14 @@ const COURSE = {
 
 const SCHEDULE = {
   getCourseScheduleByCourseId: ENVIRONMENT + '/schedule-presence/course-schedule',
-  saveCourseSchedule: ENVIRONMENT + '/schedule-presence/course-schedule',
+  createCourseSchedule: ENVIRONMENT + '/schedule-presence/course-schedule',
   updateCourseSchedule: ENVIRONMENT + '/schedule-presence/course-schedule',
   deleteCourseScheduleByCourseId: ENVIRONMENT + '/schedule-presence/course-schedule',
   setTimeFrameDescription: ENVIRONMENT + '/schedule-presence/course-schedule',
   getPresenceReportByStudentId: ENVIRONMENT + '/schedule-presence/presence',
   getPresenceReportByTeacherId: ENVIRONMENT + '/schedule-presence/presence',
   createStudentPresence: ENVIRONMENT + '/schedule-presence/presence',
-  saveTeacherPresence: ENVIRONMENT + '/schedule-presence/presence/teacher',
+  createTeacherPresence: ENVIRONMENT + '/schedule-presence/presence/teacher',
   updateStudentPresence: ENVIRONMENT + '/schedule-presence/presence',
   getSchoolScheduleBySchoolId: ENVIRONMENT + '/schedule-presence/school-schedule',
   createSchoolSchedule: ENVIRONMENT + '/schedule-presence/school-schedule',
