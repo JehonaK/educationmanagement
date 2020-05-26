@@ -45,4 +45,12 @@ export class UserService {
   register(payload: any) {
     return this.httpClient.post<any>(ENDPOINTS.user.register, payload);
   }
+
+  requestPasswordRecovery(email: string) {
+    return this.httpClient.post<any>(ENDPOINTS.user.requestPasswordRecovery, {} , {
+      params: {
+        email: email
+      }
+    });
+  }
 }

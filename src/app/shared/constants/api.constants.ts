@@ -6,9 +6,9 @@ const AUTH = {
 
 const USER = {
   register: ENVIRONMENT + '/user/users/', // post
-  requestPasswordRecovery: ENVIRONMENT + 'user/password-recoveries/', // post
-  validatePasswordRecoveryLink: ENVIRONMENT + 'user/password-recoveries/', // get and add a pathVariable {passwordRecoveryId}
-  changePassword: ENVIRONMENT + 'user/password-recoveries/', // put
+  requestPasswordRecovery: ENVIRONMENT + '/user/password-recoveries', // post
+  validatePasswordRecoveryLink: ENVIRONMENT + '/user/password-recoveries/', // get and add a pathVariable {passwordRecoveryId}
+  changePassword: ENVIRONMENT + '/user/password-recoveries/', // put
 };
 
 const SCHOOL = {

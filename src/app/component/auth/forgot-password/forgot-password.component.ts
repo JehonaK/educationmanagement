@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {FormBuilder, FormGroup, FormControl, Validators} from '@angular/forms';
+import {UserService} from '../../../shared/services/user.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-forgot-password',
@@ -7,9 +10,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ForgotPasswordComponent implements OnInit {
 
-  constructor() { }
+  forgotPasswordForm: FormGroup;
 
-  ngOnInit(): void {
+  constructor(private router: Router,
+    private userService: UserService,
+    private formBuilder: FormBuilder) { }
+
+  get forgotPasswordControls() {
+    return this.forgotPasswordForm.controls;
+  }
+
+  ngOnInit() {
+    this.forgotPasswordForm = this.formBuilder.group({
+      email: new FormControl('', [Validators.email, Validators.required]),
+    });
+  }
+
+  onForgotPasswordFormSubmit() {
+    if (this.forgotPasswordForm.valid) {
+      const payload = {
+        email: this.forgotPasswordControls.email.value
+      };
+      this.userService.requestPasswordRecovery(this.forgotPasswordControls.email.value).subscribe(res => {
+        this.router.navigate(['/dashboard']);
+        },
+        (err) => {
+          console.error(err);
+        });
+    } else {
+      alert('form not valid');
+    }
   }
 
 }
