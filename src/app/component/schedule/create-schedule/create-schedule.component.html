@@ -1,0 +1,22 @@
+<div class="item col-xs-12 col-lg-11">
+  <h4 class="page-section-heading">Algebra 1 - schedule setup</h4>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <form class="form-horizontal">
+        <div class="tabbable tabs-blocks tabs-center-h tabs-primary">
+
+          <ul class="nav nav-tabs">
+            <li class="active"><a routerLink="../create/periodic" data-toggle="tab"><i class="fa fa-repeat"></i><span>Periodic</span></a></li>
+            <li><a routerLink="../create/date-based" class="is-info-light"><i class="fa fa-calendar "></i><span>Date-based</span></a></li>
+          </ul>
+
+          <div class="tab-content">
+            <router-outlet></router-outlet>
+          </div>
+
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,77 @@
+<div class="item col-xs-12 col-lg-11">
+  <h4 class="page-section-heading">School's general schedule setup</h4>
+  <div class="panel-default paper-shadow" data-z="0.5">
+    <div class="panel-body">
+      <form class="form-horizontal">
+        <div class="form-group">
+          <p>Select the days of week in which the school holds lessons</p>
+          <div class="week-days">
+            <div class="checkbox checkbox-success">
+              <input type="checkbox" id="inlineCheckbox1" value="option1" checked="">
+              <label for="inlineCheckbox1">Monday</label>
+            </div>
+            <div class="checkbox checkbox-success">
+              <input type="checkbox" id="inlineCheckbox2" value="option2" checked="">
+              <label for="inlineCheckbox2">Tuesday</label>
+            </div>
+            <div class="checkbox checkbox-success">
+              <input type="checkbox" id="inlineCheckbox3" value="option3" checked="">
+              <label for="inlineCheckbox3">Wednesday</label>
+            </div>
+            <div class="checkbox checkbox-success">
+              <input type="checkbox" id="inlineCheckbox4" value="option4" checked="">
+              <label for="inlineCheckbox4">Thursday</label>
+            </div>
+            <div class="checkbox checkbox-success">
+              <input type="checkbox" id="inlineCheckbox5" value="option5" checked="">
+              <label for="inlineCheckbox5">Friday</label>
+            </div>
+            <div class="checkbox checkbox-success">
+              <input type="checkbox" id="inlineCheckbox6" value="option5">
+              <label for="inlineCheckbox6">Saturday</label>
+            </div>
+            <div class="checkbox checkbox-success">
+              <input type="checkbox" id="inlineCheckbox7" value="option5">
+              <label for="inlineCheckbox7">Sunday</label>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="form-group">
+          <p>Set the duration of a lesson in minutes</p>
+<!--          <input data-slider="formatter" type="text" data-slider-min="10" data-slider-max="180" data-slider-value="60" data-slider-step="1"  data-slider-handle="square"/>-->
+            <input style="width: 100%" type="range" id="vol" name="vol" min="10" max="180">
+        </div>
+        <hr>
+        <div class="form-group">
+          <p>Set the number of lessons per day</p>
+          <input id="touch-spin-1" data-toggle="touch-spin" data-min="1" data-max="48" data-step="1"  type="number" value="3" name="demo1" />
+        </div>
+        <hr>
+        <div class="form-group">
+          <p>At what time does the first lesson start?</p>
+          <input type="time" value="08:10">
+        </div>
+        <hr>
+        <div class="form-group">
+          <p>Set the duration of a break in minutes</p>
+          <input data-slider="formatter" type="text" data-slider-min="10" data-slider-max="180" data-slider-value="60" data-slider-step="1"  data-slider-handle="square"/>
+        </div>
+        <hr>
+        <div class="form-group">
+          <p>Set the number of breaks per day</p>
+          <input id="touch-spin" data-toggle="touch-spin" data-min="1" data-max="48" data-step="1"  type="number" value="3" name="demo1" />
+        </div>
+        <hr>
+        <div class="row row-space">
+          <div class="col-lg-6">
+            <button class="button is-light">Reset</button>
+          </div>
+          <div class="col-lg-6 text-right">
+            <button class="button is-success">Save</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

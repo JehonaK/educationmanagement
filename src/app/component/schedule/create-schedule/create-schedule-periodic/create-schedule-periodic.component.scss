@@ -1,16 +1,15 @@
 //keep
 .item{
-  margin-top: 30px;
+  margin: 0 auto;
   padding: 0;
-}
-.list-group{
-  a {
-    &:hover{
-      text-decoration: none;
-    }
+
+  h4{
+    font-weight: bolder;
+    font-size: large;
+    text-align: center;
+    margin-bottom: 20px;
   }
 }
-
 .list-group-item{
   border-radius: 0;
   border-left: none;
@@ -31,6 +30,11 @@
   }
 }
 
+.panel-body{
+  background-color: white;
+  padding: 20px;
+}
+
 .panel-footer{
   padding: 10px 15px;
   background-color: #fcfcfc;
@@ -40,19 +44,19 @@
   }
 }
 
-.text-course{
+.week{
   display: flex;
-  font-size: 0.9rem;
-  p{
-    font-weight: bold;
+  flex-direction: column;
+  margin-top: 15px;
+
+  label{
+    margin-left: 5px;
   }
 }
 
-.text-caption{
-  display: flex;
-  font-size: 0.7rem;
-  p{
-    font-weight: bold;
-  }
+.input-group{
+  position: relative;
+  display: table;
+  border-collapse: separate;
 }
 

@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -33,7 +33,18 @@ import { ChatComponent } from './component/chat/chat.component';
 import { ChatContactMessageComponent } from './component/chat/chat-contact-message/chat-contact-message.component';
 import { ChatIncomingMessageComponent } from './component/chat/chat-incoming-message/chat-incoming-message.component';
 import { ChatOutgoingMessageComponent } from './component/chat/chat-outgoing-message/chat-outgoing-message.component';
-import { CreateSchoolWizzardComponent } from './component/chat/create-school-wizzard/create-school-wizzard.component';
+import { CourseGradeComponent } from './component/courses/course-detail/course-grade/course-grade.component';
+import { CourseGradeListComponent } from './component/courses/course-detail/course-grade-list/course-grade-list.component';
+import { GradeBookComponent } from './component/grade-book/grade-book.component';
+import { NotificationComponent } from './component/notification/notification.component';
+import { ScheduleComponent } from './component/schedule/schedule.component';
+import { GeneralScheduleSettingsComponent } from './component/schedule/general-schedule-settings/general-schedule-settings.component';
+import { ScheduleViewComponent } from './component/schedule/schedule-view/schedule-view.component';
+import { PresenceComponent } from './component/schedule/presence/presence.component';
+import { CreateScheduleComponent } from './component/schedule/create-schedule/create-schedule.component';
+import { CreateSchedulePeriodicComponent } from './component/schedule/create-schedule/create-schedule-periodic/create-schedule-periodic.component';
+import { CreateScheduleDateBasedComponent } from './component/schedule/create-schedule/create-schedule-date-based/create-schedule-date-based.component';
+import { CourseCurriculumComponent } from './component/courses/course-detail/course-curriculum/course-curriculum.component';
 
 @NgModule({
   declarations: [
@@ -69,10 +80,20 @@ import { CreateSchoolWizzardComponent } from './component/chat/create-school-wiz
     ChatContactMessageComponent,
     ChatIncomingMessageComponent,
     ChatOutgoingMessageComponent,
-    CreateSchoolWizzardComponent,
   ],
   schemas: [
-    NO_ERRORS_SCHEMA
+    CourseGradeComponent,
+    CourseGradeListComponent,
+    GradeBookComponent,
+    NotificationComponent,
+    ScheduleComponent,
+    GeneralScheduleSettingsComponent,
+    ScheduleViewComponent,
+    PresenceComponent,
+    CreateScheduleComponent,
+    CreateSchedulePeriodicComponent,
+    CreateScheduleDateBasedComponent,
+    CourseCurriculumComponent,
   ],
   imports: [
     BrowserModule,
