@@ -19,6 +19,20 @@ import { CourseForumPostComponent } from './component/courses/course-detail/cour
 import { CourseActivitiesComponent } from './component/courses/course-detail/course-activities/course-activities.component';
 import { CourseActivityListComponent } from './component/courses/course-detail/course-activities/course-activity-list/course-activity-list.component';
 import { CourseActivityDetailsComponent } from './component/courses/course-detail/course-activities/course-activity-details/course-activity-details.component';
+import { AuthComponent } from './component/auth/auth.component';
+import { LoginComponent } from './component/auth/login/login.component';
+import { RegisterComponent } from './component/auth/register/register.component';
+import { ResetPasswordComponent } from './component/auth/reset-password/reset-password.component';
+import { ForgotPasswordComponent } from './component/auth/forgot-password/forgot-password.component';
+import { MeetingsComponent } from './component/meetings/meetings.component';
+import { MeetingItemComponent } from './component/meetings/meeting-item/meeting-item.component';
+import { CreateMeetingComponent } from './component/meetings/create-meeting/create-meeting.component';
+import { EditMeetingComponent } from './component/meetings/edit-meeting/edit-meeting.component';
+import { ProfileComponent } from './component/profile/profile.component';
+import { ChatComponent } from './component/chat/chat.component';
+import { ChatContactMessageComponent } from './component/chat/chat-contact-message/chat-contact-message.component';
+import { ChatIncomingMessageComponent } from './component/chat/chat-incoming-message/chat-incoming-message.component';
+import { ChatOutgoingMessageComponent } from './component/chat/chat-outgoing-message/chat-outgoing-message.component';
 import { CourseGradeComponent } from './component/courses/course-detail/course-grade/course-grade.component';
 import { CourseGradeListComponent } from './component/courses/course-detail/course-grade-list/course-grade-list.component';
 import { GradeBookComponent } from './component/grade-book/grade-book.component';
@@ -52,6 +66,22 @@ import { CourseCurriculumComponent } from './component/courses/course-detail/cou
     CourseActivityDetailsComponent,
     CourseActivityListComponent,
     CourseActivityDetailsComponent,
+    AuthComponent,
+    LoginComponent,
+    RegisterComponent,
+    ResetPasswordComponent,
+    ForgotPasswordComponent,
+    MeetingsComponent,
+    MeetingItemComponent,
+    CreateMeetingComponent,
+    EditMeetingComponent,
+    ProfileComponent,
+    ChatComponent,
+    ChatContactMessageComponent,
+    ChatIncomingMessageComponent,
+    ChatOutgoingMessageComponent,
+  ],
+  schemas: [
     CourseGradeComponent,
     CourseGradeListComponent,
     GradeBookComponent,

@@ -24,6 +24,16 @@ import {CreateSchedulePeriodicComponent} from './component/schedule/create-sched
 import {CreateScheduleDateBasedComponent} from './component/schedule/create-schedule/create-schedule-date-based/create-schedule-date-based.component';
 import {CourseCurriculumComponent} from './component/courses/course-detail/course-curriculum/course-curriculum.component';
 
+import { LoginComponent } from './component/auth/login/login.component';
+import { AuthComponent } from './component/auth/auth.component';
+import { RegisterComponent } from './component/auth/register/register.component';
+import { ResetPasswordComponent } from './component/auth/reset-password/reset-password.component';
+import { ForgotPasswordComponent } from './component/auth/forgot-password/forgot-password.component';
+import { MeetingsComponent } from './component/meetings/meetings.component';
+import { CreateMeetingComponent } from './component/meetings/create-meeting/create-meeting.component';
+import { EditMeetingComponent } from './component/meetings/edit-meeting/edit-meeting.component';
+import { ProfileComponent } from './component/profile/profile.component';
+import { ChatComponent } from './component/chat/chat.component';
 
 const routes: Routes = [
   {
@@ -33,6 +43,48 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component:  DashboardComponent,
+  },
+  {
+    path: 'auth',
+    component: AuthComponent,
+    children: [
+      {
+        path: 'login',
+        component: LoginComponent
+      },
+      {
+        path: 'register',
+        component: RegisterComponent
+      },
+      {
+        path: 'reset-password',
+        component: ResetPasswordComponent
+      },
+      {
+        path: 'forgot-password',
+        component: ForgotPasswordComponent
+      },
+    ]
+  },
+  {
+    path: 'meetings',
+    component: MeetingsComponent
+  },
+  {
+    path: 'meetings/create-meeting',
+    component: CreateMeetingComponent
+  },
+  {
+    path: 'meetings/edit-meeting',
+    component: EditMeetingComponent
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent
+  },
+  {
+    path: 'chat',
+    component: ChatComponent
   },
   {
     path: 'courses',
