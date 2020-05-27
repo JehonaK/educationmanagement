@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {RestService} from './rest.service';
-import {HttpRequestMethod} from '../constants/http-request.method';
-import {LocalStorageKey} from '../constants/local-storage-key';
-import {map} from 'rxjs/operators';
-import {ENDPOINTS} from '../constants/api.constants';
-import {BaseStorageService} from './base-storage.service';
-import {Router} from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { RestService } from './rest.service';
+import { HttpRequestMethod } from '../constants/http-request.method';
+import { LocalStorageKey } from '../constants/local-storage-key';
+import { map } from 'rxjs/operators';
+import { ENDPOINTS } from '../constants/api.constants';
+import { BaseStorageService } from './base-storage.service';
+import { Router } from '@angular/router';
 import { UserModel } from '../models/user.model';
 
 @Injectable({
@@ -22,7 +22,7 @@ export class UserService {
   }
 
   login(email: string, password: string) {
-    return this.httpClient.post<any>(ENDPOINTS.auth.login,  {email, password}, {observe: 'response'});
+    return this.httpClient.post<any>(ENDPOINTS.auth.login, { email, password }, { observe: 'response' });
   }
 
   register(payload: any) {
@@ -30,10 +30,21 @@ export class UserService {
   }
 
   requestPasswordRecovery(email: string) {
-    return this.httpClient.post<any>(ENDPOINTS.user.requestPasswordRecovery, {} , {
+    return this.httpClient.post<any>(ENDPOINTS.user.requestPasswordRecovery, {}, {
       params: {
         email: email
       }
     });
   }
+
+  validatePasswordRecovery(id: string) {
+    //id=
+    return this.httpClient.get<any>(ENDPOINTS.user.validatePasswordRecoveryLink + id);
+  }
+
+  changePassword(id: string, password: string) {
+    return this.httpClient.put<any>(ENDPOINTS.user.changePassword, { userId: id, newPassword: password });
+  }
+
+
 }

@@ -1,4 +1,4 @@
-const ENVIRONMENT = 'http://localhost:8662';
+const ENVIRONMENT = 'http://192.168.0.138:8662';
 
 const AUTH = {
   login: ENVIRONMENT + '/auth/login', // post

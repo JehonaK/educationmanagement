@@ -32,7 +32,9 @@ export class ForgotPasswordComponent implements OnInit {
         email: this.forgotPasswordControls.email.value
       };
       this.userService.requestPasswordRecovery(this.forgotPasswordControls.email.value).subscribe(res => {
-        this.router.navigate(['/dashboard']);
+        this.userService.validatePasswordRecovery("").subscribe(resp => {
+          this.router.navigateByUrl('/auth/reset-password');
+        });
         },
         (err) => {
           console.error(err);
