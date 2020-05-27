@@ -9,3 +9,18 @@
     </div>
   </div>
 </div>
+<div *ngFor="let lesson of lessons">
+  <div class="panel panel-default paper-shadow" data-z="0.5">
+
+    <div class="panel-heading">
+      <h4 class="text-headline margin-v-0-10"><a routerLink="/">{{lesson.name}}</a></h4>
+
+    </div>
+    <hr class="margin-none" />
+    <div class="panel-body">
+
+      <p>{{lesson.description}}</p>
+
+    </div>
+  </div>
+</div>

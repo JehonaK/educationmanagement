@@ -12,6 +12,40 @@ export class CoursesGridComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.getLessons();
   }
-
+  getLessons() {
+    this.courses = [
+      {
+        name: 'Lession One',
+        description: 'kldjhfljsdhbfljsdbfldjhbflsdj',
+        teacherId: 'sd',
+        id: 'd',
+        subjectId: 'd',
+        activities: null,
+        forumPosts: null,
+        students: null
+      },
+      {
+        name: 'Lession One',
+        description: 'kldjhfljsdhbfljsdbfldjhbflsdj',
+        teacherId: 'sd',
+        id: 'd',
+        subjectId: 'd',
+        activities: null,
+        forumPosts: null,
+        students: null
+      },
+      {
+        name: 'Lession One',
+        description: 'kldjhfljsdhbfljsdbfldjhbflsdj',
+        teacherId: 'sd',
+        id: 'd',
+        subjectId: 'd',
+        activities: null,
+        forumPosts: null,
+        students: null
+      },
+    ];
+  }
 }
