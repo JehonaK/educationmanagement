@@ -18,7 +18,7 @@ export class CoursesGridComponent implements OnInit {
     this.courses = [
       {
         name: 'Lession One',
-        description: 'kldjhfljsdhbfljsdbfldjhbflsdj',
+        description: 'kldjhfljsdhbfljsdbfldjhbflsdjkldjhfljsdhbfljsdbfldjhbflsdjkldjhfljsdhbfljsdbfldjhbflsdj',
         teacherId: 'sd',
         id: 'd',
         subjectId: 'd',

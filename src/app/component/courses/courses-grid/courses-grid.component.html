@@ -15,29 +15,25 @@
   </div>
 </div>
 <div class="row" data-toggle="isotope">
+  <div *ngFor="let course of courses" class="item col-xs-12 col-sm-6 col-lg-4">
+    <div class="panel panel-default paper-shadow" data-z="0.5">
 
-  <div *ngFor="let course of courses">
-    <div class="item col-xs-12 col-sm-6 col-lg-4">
-      <div class="panel panel-default paper-shadow" data-z="0.5">
+      <div class="panel-heading">
+        <h4 class="text-headline margin-v-0-10"><a>{{course.name}}</a></h4>
 
-        <div class="panel-heading">
-          <h4 class="text-headline margin-v-0-10"><a>{{course.name}}</a></h4>
+      </div>
+      <hr class="margin-none" />
+      <div class="panel-body">
 
-        </div>
-        <hr class="margin-none" />
-        <div class="panel-body">
+        <p>{{course.description}}</p>
 
-          <p>{{course.description}}</p>
-
-        </div>
-        <div class="panel-footer">
-          <h4><a href="">{{course.teacherId}}</a>
-            <br/>
-          </h4>
-          Teacher
-        </div>
+      </div>
+      <div class="panel-footer">
+        <h4><a href="">{{course.teacherId}}</a>
+          <br/>
+        </h4>
+        Teacher
       </div>
     </div>
   </div>
-
 </div>
