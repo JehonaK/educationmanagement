@@ -1,19 +1,22 @@
-<div class="list_item_details__container">
-    <div class="school_content">
-        <div class="title">
-            {{level.name}}
+<div class="list_item_details__container list_item_details__container--smaller">
+    <div class="title">
+        {{level.name}}
+    </div>
+
+    <div class="level_list_item">
+        <div class="level_list_item_details">
+            <div class="data_holder__title level_list_item_details__title">
+                Classes
+            </div>
+            <app-list [list]="level.schoolClasses" [path]="'./classes'"></app-list>
+
         </div>
-        <div class="data_holder__title">
-            Classes
-        </div>
-        <div class="data_holder__content" *ngFor="let class of level.schoolClasses">
-            {{ class.name }}
-        </div>
-        <div class="data_holder__title">
-            Subjects
-        </div>
-        <div class="data_holder__content" *ngFor="let subject of level.subjects">
-            {{  subject.name  }}
+        <div class="level_list_item_details">
+            <div class="data_holder__title level_list_item_details__title">
+                Subjects
+            </div>
+            <app-list [list]="level.subjects" [path]="'./subjects'"></app-list>
         </div>
     </div>
+
 </div>

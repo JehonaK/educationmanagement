@@ -1,4 +1,9 @@
-<div class="school_content__container">
+<div class="list_item_details__container">
+
+    <div class="title">
+        School Details
+    </div>
+
     <div class="school_content">
         <div class="data_holder">
             <div class="data_holder__title">
@@ -46,11 +51,11 @@
             </div>
 
             <div class="data_holder__content">
-                {{  school.schoolCreationDate.toLocaleString("en-GB", {month:'short',day:'numeric',year:'numeric'}) }}
+                {{  school.schoolCreationDate.toLocaleString("en-GB", {month:'short', day:'numeric', year:'numeric'}) }}
             </div>
         </div>
 
-        <div class="data_holder">
+        <div class="btn--right">
             <button (click)="onClick()" class="edit_button">
                 Edit
             </button>

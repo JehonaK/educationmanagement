@@ -16,9 +16,10 @@ export class ClassManagementItemDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
-      this.schoolManagementService.getClassById(params.get('id')).subscribe(res =>
-        this.schoolClass = res
-      )
+      // this.schoolManagementService.getClassById(params.get('id')).subscribe(res =>
+      //   this.schoolClass = res
+      // )
+      this.schoolClass = SCHOOL_CLASSES.filter(schoolClass => schoolClass.id == params.get('classId'))[0];
     }
     )
   }

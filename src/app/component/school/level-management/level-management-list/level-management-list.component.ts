@@ -7,13 +7,12 @@ import { LevelCreationModalComponent } from '../level-creation-modal/level-creat
 
 @Component({
     selector: 'level-management-list',
-    template: `<button (click)="openModal()" class="btn btn-default create-btn"><i class="fas fa-plus"></i>Add Level</button>
-    <app-list [list]="listDetails()"></app-list>`
-
+    templateUrl: './level-management-list.component.html',
+    styleUrls: ['./level-management-list.component.scss']
 })
 export class LevelManagementListComponent implements OnInit {
 
-    levels: LevelModel[];
+    levels: LevelModel[] = LEVELS;
 
     levelCreationForm: FormGroup
 
@@ -21,9 +20,9 @@ export class LevelManagementListComponent implements OnInit {
         private schoolManagementService: SchoolManagementService, private matDialog: MatDialog) { }
 
     ngOnInit() {
-        this.schoolManagementService.getLevels().subscribe(res=>{
-            this.levels = res;
-        })
+        // this.schoolManagementService.getLevels().subscribe(res=>{
+        //     this.levels = res;
+        // })
     }
 
     openModal() {

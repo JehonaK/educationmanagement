@@ -10,6 +10,9 @@ export class ListComponent implements OnInit {
   @Input()
   list
 
+  @Input()
+  path
+
   constructor() { }
 
   ngOnInit(): void {

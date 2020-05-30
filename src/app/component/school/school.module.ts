@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
 import { SchoolSettingsModalComponent } from './school-settings/school-settings-modal/school-settings-modal.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { LevelManagementListComponent } from './level-management/level-management-list/level-management-list-component';
+import { LevelManagementListComponent } from './level-management/level-management-list/level-management-list.component';
 import { LevelManagementItemDetailsComponent } from './level-management/level-management-item-details/level-management-item-details.component';
 import { ListComponent } from './list/list.component';
 import { ClassManagementListComponent } from './class-management/class-management-list/class-management-list';
@@ -42,7 +42,7 @@ import { SchoolRoutingModule } from './school-routing.module';
     MatDialogModule,
     FormsModule,
     ReactiveFormsModule,
-    SchoolRoutingModule
+    SchoolRoutingModule,
   ],
   exports: [
     SchoolComponent,

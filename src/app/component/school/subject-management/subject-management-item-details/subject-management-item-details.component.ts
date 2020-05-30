@@ -17,7 +17,7 @@ export class SubjectManagementItemDetails implements OnInit {
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
-      this.schoolSubject = SUBJECTS.filter(subject => subject.id === params.get('id'))[0];
+      this.schoolSubject = SUBJECTS.filter(subject => subject.id === params.get('subjectId'))[0];
     })
   }
 

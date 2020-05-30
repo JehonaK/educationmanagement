@@ -1,24 +1,27 @@
 <div class="list_item_details__container">
-    <div class="school_content">
-    
-            <div class="title">
-                {{schoolSubject.name}}
-            </div>
+    <div class="back_navigation_holder" routerLink="../../">
+        <i class="fas fa-arrow-alt-circle-left fa-lg"></i> Back to Levels
+    </div>
+    <div class="list_item_details__container--inner">
 
-            <div class="data_holder__title">
-                Description
-            </div>
-            <div class="data_holder__content">
-                {{schoolSubject.description}}
-            </div>
-            <div class="data_holder__title">
-                Type
-            </div>
-            <div class="data_holder__content">
-                {{  schoolSubject.subjectType  }}
-            </div>
+        <div class="title">
+            {{schoolSubject.name}}
         </div>
 
-
-        <button (click)="openModal()">Create course</button>
+        <div class="data_holder__title">
+            Description
+        </div>
+        <div class="data_holder__content">
+            {{schoolSubject.description}}
+        </div>
+        <div class="data_holder__title">
+            Type
+        </div>
+        <div class="data_holder__content">
+            {{  schoolSubject.subjectType  }}
+        </div>
     </div>
+
+
+    <button class="button is-light is-small btn-create" (click)="openModal()">Create course</button>
+</div>
