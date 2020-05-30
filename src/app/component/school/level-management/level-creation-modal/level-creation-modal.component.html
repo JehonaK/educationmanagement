@@ -1,0 +1,14 @@
+<div class="title">
+    New Level
+</div>
+
+<form [formGroup]="levelCreationForm">
+    <div class="form-group">
+        <label for="name">
+            Name
+        </label>
+        <input class="form-control" type="text" formControlName="name" name="name" id="name"/>
+    </div>
+
+    <button (submit)="submitForm()" class="btn btn-success">Create</button>
+</form>

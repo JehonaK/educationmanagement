@@ -9,14 +9,14 @@ export class AuthGuard implements CanActivate {
     canActivate(
         next: ActivatedRouteSnapshot,
         state: RouterStateSnapshot): boolean {
-        if (localStorage.getItem('token')) {
-            console.log('TOKEN!');
+        if (localStorage.getItem("token")) {
+            console.log("TOKEN!");
             return true;
 
         }
-        console.log('NTE TOKEN');
+        console.log("INTE TOKEN");
         return true;
-        // this.router.navigateByUrl("/auth/login");
+        this.router.navigateByUrl("/auth/login");
         //   return true;
     }
 }

@@ -4,8 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BaseComponent } from './shared/layout/base/base.component';
-import {FlexLayoutModule} from '@angular/flex-layout';
-import {HeaderComponent} from './shared/header/header.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { HeaderComponent } from './shared/header/header.component';
 import { TestingComponent } from './shared/testing/testing.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
@@ -45,8 +45,10 @@ import { CreateScheduleComponent } from './component/schedule/create-schedule/cr
 import { CreateSchedulePeriodicComponent } from './component/schedule/create-schedule/create-schedule-periodic/create-schedule-periodic.component';
 import { CreateScheduleDateBasedComponent } from './component/schedule/create-schedule/create-schedule-date-based/create-schedule-date-based.component';
 import { CourseCurriculumComponent } from './component/courses/course-detail/course-curriculum/course-curriculum.component';
-import {HttpClientModule} from '@angular/common/http';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SchoolModule } from './component/school/school.module';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { NewForumPostModalComponent } from './component/courses/course-detail/course-forum/new-forum-post-modal/new-forum-post-modal.component';
 import { NewActivityModalComponent } from './component/courses/course-detail/course-activities/new-activity-modal/new-activity-modal.component';
 import { EditCourseCurriculumModalComponent } from './component/courses/course-detail/edit-course-curriculum-modal/edit-course-curriculum-modal.component';
@@ -109,6 +111,8 @@ import { EditCourseCurriculumModalComponent } from './component/courses/course-d
     BrowserModule /* or CommonModule */,
     FormsModule,
     ReactiveFormsModule,
+    SchoolModule,
+    NoopAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

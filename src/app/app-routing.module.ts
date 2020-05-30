@@ -204,6 +204,11 @@ const routes: Routes = [
           },
         ],
       },
+      {
+        path:'school',
+        loadChildren: () => import('./component/school/school-routing.module')
+          .then(m => m.SchoolRoutingModule)
+      }
     ],
   },
 ];
