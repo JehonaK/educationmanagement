@@ -18,7 +18,7 @@ export class CoursesGridComponent implements OnInit {
     this.courses = [
       {
         name: 'Lession One',
-        description: 'kldjhfljsdhbfljsdbfldjhbflsdjkldjhfljsdhbfljsdbfldjhbflsdjkldjhfljsdhbfljsdbfldjhbflsdj',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet commodi delectus, excepturi.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet commodi delectus, excepturi.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet commodi delectus, excepturi.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet commodi delectus, excepturi.',
         teacherId: 'sd',
         id: 'd',
         subjectId: 'd',
@@ -28,7 +28,7 @@ export class CoursesGridComponent implements OnInit {
       },
       {
         name: 'Lession One',
-        description: 'kldjhfljsdhbfljsdbfldjhbflsdj',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet commodi delectus, excepturi.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet commodi delectus, excepturi.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet commodi delectus, excepturi.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet commodi delectus, excepturi.',
         teacherId: 'sd',
         id: 'd',
         subjectId: 'd',
@@ -38,7 +38,7 @@ export class CoursesGridComponent implements OnInit {
       },
       {
         name: 'Lession One',
-        description: 'kldjhfljsdhbfljsdbfldjhbflsdj',
+        description: 'Amet commodi delectus, excepturi.',
         teacherId: 'sd',
         id: 'd',
         subjectId: 'd',
