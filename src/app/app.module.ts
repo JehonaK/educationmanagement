@@ -47,6 +47,9 @@ import { CreateScheduleDateBasedComponent } from './component/schedule/create-sc
 import { CourseCurriculumComponent } from './component/courses/course-detail/course-curriculum/course-curriculum.component';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { NewForumPostModalComponent } from './component/courses/course-detail/course-forum/new-forum-post-modal/new-forum-post-modal.component';
+import { NewActivityModalComponent } from './component/courses/course-detail/course-activities/new-activity-modal/new-activity-modal.component';
+import { EditCourseCurriculumModalComponent } from './component/courses/course-detail/edit-course-curriculum-modal/edit-course-curriculum-modal.component';
 
 @NgModule({
   declarations: [
@@ -93,7 +96,10 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     CreateScheduleComponent,
     CreateSchedulePeriodicComponent,
     CreateScheduleDateBasedComponent,
-    CourseCurriculumComponent
+    CourseCurriculumComponent,
+    NewForumPostModalComponent,
+    NewActivityModalComponent,
+    EditCourseCurriculumModalComponent
   ],
   imports: [
     BrowserModule,

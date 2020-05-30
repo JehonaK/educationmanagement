@@ -1,0 +1,62 @@
+<h4 class="modal-title">New activity</h4>
+<form [formGroup]="">
+  <div class="form-group">
+    <label for="name">
+      Activity name
+    </label>
+    <input type="text" formControlName="name" name="name" id="name" class="form-control"/>
+  </div>
+
+  <div class="form-group">
+    <label for="description">
+      Description
+    </label>
+    <textarea type="text" formControlName="description" name="description" id="description" class="form-control"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="sel1">Grading system</label>
+    <select class="form-control" id="sel1">
+      <option value="A-F">A-F</option>
+      <option value="1-100">1-100</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label class="checkbox">
+      <input type="checkbox">
+      Has submissions
+    </label>
+  </div>
+
+  <div class="form-group">
+    <label for="deadline">
+      Deadline
+    </label>
+    <input type="text" formControlName="deadline" name="deadline" id="deadline" class="form-control"/>
+  </div>
+
+  <div class="form-group">
+    <div class="file has-name">
+      <label class="file-label">
+        <input class="file-input" type="file" name="resume">
+        <span class="file-cta">
+      <span class="file-icon">
+        <i class="fas fa-upload"></i>
+      </span>
+      <span class="file-label">
+        Choose a file…
+      </span>
+    </span>
+        <span class="file-name">
+      Screen Shot 2017-07-29 at 15.54.25.png
+    </span>
+      </label>
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <button class="button is-success">Save</button>
+    <button class="button is-light">Cancel</button>
+  </div>
+</form>

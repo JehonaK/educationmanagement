@@ -46,6 +46,26 @@ export class CoursesGridComponent implements OnInit {
         forumPosts: null,
         students: null
       },
+      {
+        name: 'Lession One',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet commodi delectus, excepturi.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet commodi delectus, excepturi.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet commodi delectus, excepturi.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet commodi delectus, excepturi.',
+        teacherId: 'sd',
+        id: 'd',
+        subjectId: 'd',
+        activities: null,
+        forumPosts: null,
+        students: null
+      },
+      {
+        name: 'Lession One',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet commodi delectus, excepturi.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet commodi delectus, excepturi.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet commodi delectus, excepturi.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet commodi delectus, excepturi.',
+        teacherId: 'sd',
+        id: 'd',
+        subjectId: 'd',
+        activities: null,
+        forumPosts: null,
+        students: null
+      },
     ];
   }
 }

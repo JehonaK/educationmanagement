@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ForumModel} from '../../../../../shared/models/forum.model';
+import {CommentModel} from '../../../../../shared/models/comment.model';
 
 @Component({
   selector: 'app-course-forum-list',
@@ -11,6 +12,42 @@ export class CourseForumListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.getForumPostByCourseId()
   }
-
+  getForumPostByCourseId(){
+    this.forumPosts = [
+      {
+        id: 'dsf',
+        title: 'forum title',
+        content: 'am i doing it the right way?',
+        courseId: '244d',
+        authorId: 'fdf',
+        comments: null,
+      },
+      {
+        id: 'dsf',
+        title: 'forum title',
+        content: 'am i doing it the right way?',
+        courseId: '244d',
+        authorId: 'fdf',
+        comments: null,
+      },
+      {
+        id: 'dsf',
+        title: 'forum title',
+        content: 'am i doing it the right way?',
+        courseId: '244d',
+        authorId: 'fdf',
+        comments: null,
+      },
+      {
+        id: 'dsf',
+        title: 'forum title',
+        content: 'am i doing it the right way?',
+        courseId: '244d',
+        authorId: 'fdf',
+        comments: null,
+      },
+    ];
+  }
 }
