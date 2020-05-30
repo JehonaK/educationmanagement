@@ -1,0 +1,60 @@
+<div class="school_content__container">
+    <div class="school_content">
+        <div class="data_holder">
+            <div class="data_holder__title">
+                Name
+            </div>
+
+            <div class="data_holder__content">
+                {{  school.name }}
+            </div>
+        </div>
+
+        <div class="data_holder">
+            <div class="data_holder__title">
+                City
+            </div>
+
+            <div class="data_holder__content">
+                {{  school.city }}
+            </div>
+        </div>
+
+        <div class="data_holder">
+            <div class="data_holder__title">
+                Address
+            </div>
+
+            <div class="data_holder__content">
+                {{  school.address }}
+            </div>
+        </div>
+
+        <div class="data_holder">
+            <div class="data_holder__title">
+                School type
+            </div>
+
+            <div class="data_holder__content">
+                {{  school.schoolType }}
+            </div>
+        </div>
+
+        <div class="data_holder">
+            <div class="data_holder__title">
+                School creation date
+            </div>
+
+            <div class="data_holder__content">
+                {{  school.schoolCreationDate.toLocaleString("en-GB", {month:'short',day:'numeric',year:'numeric'}) }}
+            </div>
+        </div>
+
+        <div class="data_holder">
+            <button (click)="onClick()" class="edit_button">
+                Edit
+            </button>
+        </div>
+        <router-outlet></router-outlet>
+    </div>
+</div>

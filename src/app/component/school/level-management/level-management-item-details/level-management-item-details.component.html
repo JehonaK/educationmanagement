@@ -1,0 +1,19 @@
+<div class="list_item_details__container">
+    <div class="school_content">
+        <div class="title">
+            {{level.name}}
+        </div>
+        <div class="data_holder__title">
+            Classes
+        </div>
+        <div class="data_holder__content" *ngFor="let class of level.schoolClasses">
+            {{ class.name }}
+        </div>
+        <div class="data_holder__title">
+            Subjects
+        </div>
+        <div class="data_holder__content" *ngFor="let subject of level.subjects">
+            {{  subject.name  }}
+        </div>
+    </div>
+</div>

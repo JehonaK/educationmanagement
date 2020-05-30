@@ -47,6 +47,7 @@ import { CreateScheduleDateBasedComponent } from './component/schedule/create-sc
 import { CourseCurriculumComponent } from './component/courses/course-detail/course-curriculum/course-curriculum.component';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { SchoolModule } from './component/school/school.module';
 
 @NgModule({
   declarations: [
@@ -103,6 +104,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     BrowserModule /* or CommonModule */,
     FormsModule,
     ReactiveFormsModule,
+    SchoolModule
   ],
   providers: [],
   bootstrap: [AppComponent]
