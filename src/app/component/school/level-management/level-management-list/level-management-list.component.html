@@ -1,0 +1,16 @@
+<!-- <app-list [list]="listDetails()"></app-list> -->
+<div class="school_item_list__container school_item_list__container--small">
+    <div class="title title--centered levels_title">
+        Levels
+    </div>
+    <div class="school_item_list">
+        <div class="school_item_list__item" *ngFor="let level of levels" routerLinkActive="selected"
+            [routerLink]="level.id">
+            {{ level.name  }}
+        </div>
+    </div>
+    <div class="create_button_holder">
+        <button (click)="openModal()" class="button is-small is-dark"> Add Level</button>
+    </div>
+</div>
+<router-outlet></router-outlet>

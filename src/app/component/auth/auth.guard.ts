@@ -15,6 +15,7 @@ export class AuthGuard implements CanActivate {
 
         }
         console.log("INTE TOKEN");
+        return true;
         this.router.navigateByUrl("/auth/login");
         //   return true;
     }
