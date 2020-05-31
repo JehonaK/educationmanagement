@@ -1,1 +1,46 @@
-<p>course-curriculum works!</p>
+<div class="page-section">
+  <div class="media v-middle">
+    <div class="media-body">
+      <h1 class="text-headline margin-none">Course Name</h1>
+      <p class="text-subhead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae consectetur dignissimos itaque nesciunt nostrum, provident saepe similique. Delectus dicta distinctio quibusdam velit veniam? Aperiam cum dignissimos doloremque officiis quisquam velit!</p>
+    </div>
+    <div class="media-right">
+      <button (click)="openModalEditCourse()" class="button is-white" data-z="0.5" data-hover-z="1" data-animated><i class="fa fa-fw fa-plus"></i> Edit Course</button>
+    </div>
+  </div>
+</div>
+
+<div class="lesson-button text-right">
+  <button (click)="openModalAddLesson()" class="button is-white"><i class="fa fa-fw fa-plus"></i> Add lesson</button>
+</div>
+<div class="lesson-button text-left">
+  <h5 class="text-subhead-2 text-light">Curriculum</h5>
+</div>
+<div *ngFor="let lesson of lessons">
+  <div class="panel panel-default paper-shadow" data-z="0.5">
+
+    <div class="panel-heading">
+      <h4 class="text-headline margin-v-0-10"><a class="is-green" routerLink="/">{{lesson.name}}</a></h4>
+    </div>
+    <hr class="margin-none" />
+    <div class="panel-body">
+
+      <p>{{lesson.description}}</p>
+
+      <div class="lesson-file">
+        <a class="" onclick="" href="assets/img/Claim Application Form Student IN and Student UT.pdf">
+          <img src="assets/img/pdf-icon.png" class="pdf-icon" alt="" role="presentation">
+          <span class="is-black document-name">Document Name</span>
+        </a>
+        <span class="resourcelinkdetails">PDF document Uploaded 12/03/20, 09:58</span>
+      </div>
+      <div class="lesson-file">
+        <a class="" onclick="" href="assets/img/Claim Application Form Student IN and Student UT.pdf">
+          <img src="assets/img/pdf-icon.png" class="pdf-icon" alt="" role="presentation">
+          <span class="is-black document-name">Document Name</span>
+        </a>
+        <span class="resourcelinkdetails">PDF document Uploaded 12/03/20, 09:58</span>
+      </div>
+    </div>
+  </div>
+</div>

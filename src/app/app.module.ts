@@ -30,8 +30,6 @@ import { CreateMeetingComponent } from './component/meetings/create-meeting/crea
 import { EditMeetingComponent } from './component/meetings/edit-meeting/edit-meeting.component';
 import { ProfileComponent } from './component/profile/profile.component';
 import { ChatComponent } from './component/chat/chat.component';
-import { ChatConversationBoxComponent } from  './component/chat/chat-conversation-box/chat-conversation-box.component';
-import { ChatConversaationListComponent } from  './component/chat/chat-conversation-list/chat-conversation-list.component';
 import { ChatContactMessageComponent } from './component/chat/chat-conversation-list/chat-contact-message/chat-contact-message.component';
 import { ChatIncomingMessageComponent } from './component/chat/chat-conversation-box/chat-incoming-message/chat-incoming-message.component';
 import { ChatOutgoingMessageComponent } from './component/chat/chat-conversation-box/chat-outgoing-message/chat-outgoing-message.component';
@@ -48,12 +46,17 @@ import { CreateSchedulePeriodicComponent } from './component/schedule/create-sch
 import { CreateScheduleDateBasedComponent } from './component/schedule/create-schedule/create-schedule-date-based/create-schedule-date-based.component';
 import { CourseCurriculumComponent } from './component/courses/course-detail/course-curriculum/course-curriculum.component';
 import { AuthenticationInterceptor } from './shared/interceptors/authentication-interceptor';
-import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SchoolModule } from './component/school/school.module';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations'
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { NewForumPostModalComponent } from './component/courses/course-detail/course-forum/new-forum-post-modal/new-forum-post-modal.component';
+import { NewActivityModalComponent } from './component/courses/course-detail/course-activities/new-activity-modal/new-activity-modal.component';
+import { EditCourseCurriculumModalComponent } from './component/courses/course-detail/edit-course-curriculum-modal/edit-course-curriculum-modal.component';
+import { AddLessonModalComponent } from './component/courses/course-detail/add-lesson-modal/add-lesson-modal.component';
+import { AddSubmissionModalComponent } from './component/courses/course-detail/course-activities/add-submission-modal/add-submission-modal.component';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {ChatConversationBoxComponent} from './component/chat/chat-conversation-box/chat-conversation-box.component';
+import {ChatConversaationListComponent} from './component/chat/chat-conversation-list/chat-conversation-list.component';
 
 @NgModule({
   declarations: [
@@ -102,7 +105,12 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations'
     CreateScheduleComponent,
     CreateSchedulePeriodicComponent,
     CreateScheduleDateBasedComponent,
-    CourseCurriculumComponent
+    CourseCurriculumComponent,
+    NewForumPostModalComponent,
+    NewActivityModalComponent,
+    EditCourseCurriculumModalComponent,
+    AddLessonModalComponent,
+    AddSubmissionModalComponent
   ],
   imports: [
     BrowserModule,

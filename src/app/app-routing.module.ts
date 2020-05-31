@@ -36,6 +36,9 @@ import { ProfileComponent } from './component/profile/profile.component';
 import { ChatComponent } from './component/chat/chat.component';
 import { AuthGuard } from './component/auth/auth.guard';
 import { ChatConversationBoxComponent } from './component/chat/chat-conversation-box/chat-conversation-box.component';
+import {NewForumPostModalComponent} from './component/courses/course-detail/course-forum/new-forum-post-modal/new-forum-post-modal.component';
+import {NewActivityModalComponent} from './component/courses/course-detail/course-activities/new-activity-modal/new-activity-modal.component';
+import {EditCourseCurriculumModalComponent} from './component/courses/course-detail/edit-course-curriculum-modal/edit-course-curriculum-modal.component';
 
 const routes: Routes = [
   {
@@ -121,9 +124,13 @@ const routes: Routes = [
                   },
                   {
                     path: 'post',
-                    component: CourseForumPostComponent
-                  }
-                ]
+                    component: CourseForumPostComponent,
+                  },
+                  {
+                    path: 'new-forum-post-modal',
+                    component: NewForumPostModalComponent,
+                  },
+                ],
               },
               {
                 path: 'activity',
@@ -135,9 +142,13 @@ const routes: Routes = [
                   },
                   {
                     path: 'details',
-                    component: CourseActivityDetailsComponent
-                  }
-                ]
+                    component: CourseActivityDetailsComponent,
+                  },
+                  {
+                    path: 'new-activity',
+                    component: NewActivityModalComponent,
+                  },
+                ],
               },
               {
                 path: 'grade',
@@ -149,11 +160,15 @@ const routes: Routes = [
               },
               {
                 path: 'curriculum',
-                component: CourseCurriculumComponent
-              }
-            ]
-          }
-        ]
+                component: CourseCurriculumComponent,
+              },
+              {
+                path: 'edit-course',
+                component: EditCourseCurriculumModalComponent,
+              },
+            ],
+          },
+        ],
       },
       {
         path: 'grade-book',
@@ -189,14 +204,15 @@ const routes: Routes = [
               },
               {
                 path: 'date-based',
-                component: CreateScheduleDateBasedComponent
-              }
-            ]
-          }
-        ]
-      }, {
-        path: "school",
-        loadChildren: () => import("./component/school/school-routing.module")
+                component: CreateScheduleDateBasedComponent,
+              },
+            ],
+          },
+        ],
+      },
+      {
+        path:'school',
+        loadChildren: () => import('./component/school/school-routing.module')
           .then(m => m.SchoolRoutingModule)
       }
     ]
