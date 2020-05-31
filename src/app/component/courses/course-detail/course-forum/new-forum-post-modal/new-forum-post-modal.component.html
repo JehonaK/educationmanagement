@@ -14,5 +14,8 @@
     <textarea type="text" formControlName="content" name="content" id="content" class="form-control"></textarea>
   </div>
 
-  <button class="button is-success">Post</button>
+  <div class="modal-footer">
+    <button class="button is-success">Post</button>
+    <button (click)="closeDialog()" class="button is-light">Cancel</button>
+  </div>
 </form>

@@ -2,12 +2,19 @@
   <div class="media v-middle">
     <div class="media-body">
       <h1 class="text-headline margin-none">Course Name</h1>
-      <p class="text-subhead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae consectetur dignissimos itaque nesciunt nostrum, provident saepe similique. Delectus dicta distinctio quibusdam velit veniam? Aperiam cum dignissimos doloremque officiis quisquam velit!</p>
+      <p class="text-subhead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae consectetur dignissimos itaque nesciunt nostrum, provident saepe similique. Delectus dicta distinctio quibusdam velit veniam? Aperiam cum dignissimos doloremque officiis quisquam velit!</p>
     </div>
     <div class="media-right">
-      <button routerLink="../edit-course" class="button is-white" data-z="0.5" data-hover-z="1" data-animated><i class="fa fa-fw fa-plus"></i> Edit Course</button>
+      <button (click)="openModalEditCourse()" class="button is-white" data-z="0.5" data-hover-z="1" data-animated><i class="fa fa-fw fa-plus"></i> Edit Course</button>
     </div>
   </div>
+</div>
+
+<div class="lesson-button text-right">
+  <button (click)="openModalAddLesson()" class="button is-white"><i class="fa fa-fw fa-plus"></i> Add lesson</button>
+</div>
+<div class="lesson-button text-left">
+  <h5 class="text-subhead-2 text-light">Curriculum</h5>
 </div>
 <div *ngFor="let lesson of lessons">
   <div class="panel panel-default paper-shadow" data-z="0.5">

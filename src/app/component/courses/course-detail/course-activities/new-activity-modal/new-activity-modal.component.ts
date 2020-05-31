@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialog, MatDialogRef} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-new-activity-modal',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewActivityModalComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialogRef: MatDialogRef<NewActivityModalComponent>) { }
 
   ngOnInit(): void {
   }
-
+  closeDialog() {
+    this.dialogRef.close('');
+  }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialogRef} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-edit-course-curriculum-modal',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditCourseCurriculumModalComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialogRef: MatDialogRef<EditCourseCurriculumModalComponent>) { }
 
   ngOnInit(): void {
   }
-
+  closeDialog() {
+    this.dialogRef.close('');
+  }
 }

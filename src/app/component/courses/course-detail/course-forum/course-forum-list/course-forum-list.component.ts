@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {ForumModel} from '../../../../../shared/models/forum.model';
 import {CommentModel} from '../../../../../shared/models/comment.model';
+import {MatDialog} from '@angular/material/dialog';
+import {NewActivityModalComponent} from '../../course-activities/new-activity-modal/new-activity-modal.component';
+import {NewForumPostModalComponent} from '../new-forum-post-modal/new-forum-post-modal.component';
 
 @Component({
   selector: 'app-course-forum-list',
@@ -9,10 +12,15 @@ import {CommentModel} from '../../../../../shared/models/comment.model';
 })
 export class CourseForumListComponent implements OnInit {
   forumPosts: ForumModel[];
-  constructor() { }
+  constructor(private dialog: MatDialog) { }
 
   ngOnInit(): void {
-    this.getForumPostByCourseId()
+    this.getForumPostByCourseId();
+  }
+  openModal() {
+    this.dialog.open(NewForumPostModalComponent, {
+      width: '50%',
+    });
   }
   getForumPostByCourseId(){
     this.forumPosts = [

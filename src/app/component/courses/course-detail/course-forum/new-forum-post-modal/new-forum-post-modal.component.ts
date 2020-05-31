@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialogRef} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-new-forum-post-modal',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewForumPostModalComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialogRef: MatDialogRef<NewForumPostModalComponent>) { }
 
   ngOnInit(): void {
   }
-
+  closeDialog() {
+    this.dialogRef.close('');
+  }
 }

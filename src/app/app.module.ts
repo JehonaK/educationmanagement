@@ -52,6 +52,8 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { NewForumPostModalComponent } from './component/courses/course-detail/course-forum/new-forum-post-modal/new-forum-post-modal.component';
 import { NewActivityModalComponent } from './component/courses/course-detail/course-activities/new-activity-modal/new-activity-modal.component';
 import { EditCourseCurriculumModalComponent } from './component/courses/course-detail/edit-course-curriculum-modal/edit-course-curriculum-modal.component';
+import { AddLessonModalComponent } from './component/courses/course-detail/add-lesson-modal/add-lesson-modal.component';
+import { AddSubmissionModalComponent } from './component/courses/course-detail/course-activities/add-submission-modal/add-submission-modal.component';
 
 @NgModule({
   declarations: [
@@ -101,7 +103,9 @@ import { EditCourseCurriculumModalComponent } from './component/courses/course-d
     CourseCurriculumComponent,
     NewForumPostModalComponent,
     NewActivityModalComponent,
-    EditCourseCurriculumModalComponent
+    EditCourseCurriculumModalComponent,
+    AddLessonModalComponent,
+    AddSubmissionModalComponent
   ],
   imports: [
     BrowserModule,
