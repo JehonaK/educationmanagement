@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { RestService } from './rest.service';
 import { CourseModel } from '../models/course.model';
 import { ENDPOINTS } from '../constants/api.constants';
+import {Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -15,8 +16,8 @@ export class CourseService {
     return this.http.put(ENDPOINTS.course.updateCourse + '/{id}', course);
   }
 
-  getCourseById(id: string) {
-    return this.http.get(ENDPOINTS.course.getCourseById + '/{id}');
+  getCourseById(id: string): Observable<CourseModel> {
+    return this.http.get<CourseModel>(ENDPOINTS.course.getCourseById + '/' + id);
   }
 
   deleteCourseById(id: string) {
