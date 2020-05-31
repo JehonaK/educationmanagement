@@ -28,7 +28,7 @@ export class CourseService {
   }
 
   getCoursesByStudentId(studentId: string) {
-    return this.http.get(ENDPOINTS.course.getCoursesByStudentId + '/{studentId}');
+    return this.http.get(ENDPOINTS.course.getCoursesByStudentId, {params: { studentId: studentId}});
   }
 
 }

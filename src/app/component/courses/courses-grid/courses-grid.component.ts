@@ -17,14 +17,17 @@ export class CoursesGridComponent implements OnInit {
               private commentService: CommentService) { }
 
   ngOnInit(): void {
-    this.getLessons();
+    this.getCourses();
+  }
+  getCourses() {
+    this.courseService.getCoursesByTeacherId('6619afe0-f0ef-4aa5-a1e4-a597e8174bbf').subscribe(res => {
+      this.courses = res;
+      console.log(res);
+    });
   }
   getLessons() {
     this.commentService.getCommentById('6619afe0-f0ef-4aa5-a1e4-a597e8174bbf').subscribe(res => {
       this.comment = res;
-      console.log(res);
     });
-    console.log(this.courses);
-    console.log(localStorage.getItem("token"));
   }
 }

@@ -1,0 +1,21 @@
+<div class="mesgs">
+  <div class="msg_history" #scrollMe [scrollTop]="scrollMe.scrollHeight">
+    <div *ngFor="let message of messages">
+        <app-chat-incoming-message  [message]="message" *ngIf="message.senderId!=myId"></app-chat-incoming-message>
+        <app-chat-outgoing-message [message]="message" *ngIf="message.senderId==myId"></app-chat-outgoing-message>
+    </div>
+  </div>
+  <div class="type_msg">
+    <form [formGroup]="loginForm" (submit)="onMessageSubmit()" class="input_msg_write">
+      <input
+        type="text"
+        class="write_msg"
+        placeholder="Type a message"
+        [formControlName]="'message'"
+      />
+      <button class="msg_send_btn" type="button" type="submit">
+        <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+      </button>
+    </form>
+  </div>
+</div>

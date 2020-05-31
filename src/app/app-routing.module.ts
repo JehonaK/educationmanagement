@@ -35,6 +35,7 @@ import { EditMeetingComponent } from './component/meetings/edit-meeting/edit-mee
 import { ProfileComponent } from './component/profile/profile.component';
 import { ChatComponent } from './component/chat/chat.component';
 import { AuthGuard } from './component/auth/auth.guard';
+import { ChatConversationBoxComponent } from './component/chat/chat-conversation-box/chat-conversation-box.component';
 import {NewForumPostModalComponent} from './component/courses/course-detail/course-forum/new-forum-post-modal/new-forum-post-modal.component';
 import {NewActivityModalComponent} from './component/courses/course-detail/course-activities/new-activity-modal/new-activity-modal.component';
 import {EditCourseCurriculumModalComponent} from './component/courses/course-detail/edit-course-curriculum-modal/edit-course-curriculum-modal.component';
@@ -46,21 +47,21 @@ const routes: Routes = [
     children: [
       {
         path: 'login',
-        component: LoginComponent,
+        component: LoginComponent
       },
       {
         path: 'register',
-        component: RegisterComponent,
+        component: RegisterComponent
       },
       {
         path: 'reset-password',
-        component: ResetPasswordComponent,
+        component: ResetPasswordComponent
       },
       {
         path: 'forgot-password',
-        component: ForgotPasswordComponent,
+        component: ForgotPasswordComponent
       },
-    ],
+    ]
   },
   {
     path: '', canActivate: [AuthGuard], children: [
@@ -74,23 +75,28 @@ const routes: Routes = [
       },
       {
         path: 'meetings',
-        component: MeetingsComponent,
+        component: MeetingsComponent
       },
       {
         path: 'meetings/create-meeting',
-        component: CreateMeetingComponent,
+        component: CreateMeetingComponent
       },
       {
         path: 'meetings/edit-meeting',
-        component: EditMeetingComponent,
+        component: EditMeetingComponent
       },
       {
         path: 'profile',
-        component: ProfileComponent,
+        component: ProfileComponent
       },
       {
         path: 'chat',
         component: ChatComponent,
+        children: [{
+          path: ":id",
+          component: ChatConversationBoxComponent
+        }
+        ]
       },
       {
         path: 'courses',
@@ -98,11 +104,11 @@ const routes: Routes = [
         children: [
           {
             path: 'grid',
-            component: CoursesGridComponent,
+            component: CoursesGridComponent
           },
           {
             path: 'list',
-            component: CoursesListComponent,
+            component: CoursesListComponent
           },
           {
             path: 'course-detail',
@@ -114,7 +120,7 @@ const routes: Routes = [
                 children: [
                   {
                     path: 'list',
-                    component: CourseForumListComponent,
+                    component: CourseForumListComponent
                   },
                   {
                     path: 'post',
@@ -132,7 +138,7 @@ const routes: Routes = [
                 children: [
                   {
                     path: 'list',
-                    component: CourseActivityListComponent,
+                    component: CourseActivityListComponent
                   },
                   {
                     path: 'details',
@@ -146,11 +152,11 @@ const routes: Routes = [
               },
               {
                 path: 'grade',
-                component: CourseGradeComponent,
+                component: CourseGradeComponent
               },
               {
                 path: 'grade-list',
-                component: CourseGradeListComponent,
+                component: CourseGradeListComponent
               },
               {
                 path: 'curriculum',
@@ -166,11 +172,11 @@ const routes: Routes = [
       },
       {
         path: 'grade-book',
-        component: GradeBookComponent,
+        component: GradeBookComponent
       },
       {
         path: 'notification',
-        component: NotificationComponent,
+        component: NotificationComponent
       },
       {
         path: 'schedule',
@@ -178,15 +184,15 @@ const routes: Routes = [
         children: [
           {
             path: 'general-settings',
-            component: GeneralScheduleSettingsComponent,
+            component: GeneralScheduleSettingsComponent
           },
           {
             path: 'view',
-            component: ScheduleViewComponent,
+            component: ScheduleViewComponent
           },
           {
             path: 'presence',
-            component: PresenceComponent,
+            component: PresenceComponent
           },
           {
             path: 'create',
@@ -194,7 +200,7 @@ const routes: Routes = [
             children: [
               {
                 path: 'periodic',
-                component: CreateSchedulePeriodicComponent,
+                component: CreateSchedulePeriodicComponent
               },
               {
                 path: 'date-based',
@@ -209,8 +215,8 @@ const routes: Routes = [
         loadChildren: () => import('./component/school/school-routing.module')
           .then(m => m.SchoolRoutingModule)
       }
-    ],
-  },
+    ]
+  }
 ];
 
 @NgModule({
