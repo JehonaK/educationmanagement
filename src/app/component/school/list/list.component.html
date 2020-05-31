@@ -1,0 +1,7 @@
+<div class="school_item_list__container">
+    <div class="school_item_list__item" *ngFor="let item of list" [routerLink]="[path,item.id]">
+        {{  item.name  }}
+    </div>
+</div>
+
+<router-outlet> </router-outlet>

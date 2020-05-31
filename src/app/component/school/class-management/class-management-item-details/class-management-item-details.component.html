@@ -1,0 +1,32 @@
+<div class="list_item_details__container">
+    <div class="back_navigation_holder" routerLink="../../">
+        <i class="fas fa-arrow-alt-circle-left fa-lg"></i> Back to Levels
+    </div>
+
+    <div class="list_item_details__container--inner">
+        <div class="title">
+            {{ schoolClass.name }}
+        </div>
+        <div class="data_holder__title">
+            Level
+        </div>
+        <div class="data_holder__content">
+            {{ schoolClass.levelId }}
+        </div>
+        <div class="data_holder__title">
+            Status
+        </div>
+        <div class="data_holder__content">
+            {{ schoolClass.classStatus }}
+        </div>
+        <div class="data_holder__title">
+            Students
+        </div>
+        <div class="data_holder__content" *ngFor="let student of schoolClass.students">
+            {{ student.firstName + " " + student.lastName }}
+        </div>
+        <div class="insert_student_button">
+            <button class="button is-small is-dark">Add Student</button>
+        </div>
+    </div>
+</div>

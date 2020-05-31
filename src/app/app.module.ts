@@ -4,8 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BaseComponent } from './shared/layout/base/base.component';
-import {FlexLayoutModule} from '@angular/flex-layout';
-import {HeaderComponent} from './shared/header/header.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { HeaderComponent } from './shared/header/header.component';
 import { TestingComponent } from './shared/testing/testing.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
@@ -50,6 +50,10 @@ import { CourseCurriculumComponent } from './component/courses/course-detail/cou
 import { AuthenticationInterceptor } from './shared/interceptors/authentication-interceptor';
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SchoolModule } from './component/school/school.module';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations'
 
 @NgModule({
   declarations: [
@@ -108,6 +112,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     BrowserModule /* or CommonModule */,
     FormsModule,
     ReactiveFormsModule,
+    SchoolModule,
+    NoopAnimationsModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS, useClass: AuthenticationInterceptor, multi: true
