@@ -14,18 +14,18 @@ export class CommentService {
 
   createComment(comment: CommentModel) {
     return this.http.post(ENDPOINTS.course.createComment, comment);
-  } 
-    
+  }
+
   updateComment(comment: CommentModel, id: string) {
     return this.http.put(ENDPOINTS.course.updateComment + '/{id}', comment);
   }
 
   getCommentById(id: string) {
-    return this.http.get(ENDPOINTS.course.getCommentById + '/{id}');
+    return this.http.get<any>(ENDPOINTS.course.getCommentById + '/90d903d2-3edd-41dc-94d9-1106d9d7d373');
   }
 
   deleteCommentById(id: string) {
     return this.http.delete(ENDPOINTS.course.deleteCommentById + '/{id}');
   }
-  
+
 }

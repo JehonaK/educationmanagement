@@ -30,9 +30,9 @@ import { CreateMeetingComponent } from './component/meetings/create-meeting/crea
 import { EditMeetingComponent } from './component/meetings/edit-meeting/edit-meeting.component';
 import { ProfileComponent } from './component/profile/profile.component';
 import { ChatComponent } from './component/chat/chat.component';
-import { ChatContactMessageComponent } from './component/chat/chat-contact-message/chat-contact-message.component';
-import { ChatIncomingMessageComponent } from './component/chat/chat-incoming-message/chat-incoming-message.component';
-import { ChatOutgoingMessageComponent } from './component/chat/chat-outgoing-message/chat-outgoing-message.component';
+import { ChatContactMessageComponent } from './component/chat/chat-conversation-list/chat-contact-message/chat-contact-message.component';
+import { ChatIncomingMessageComponent } from './component/chat/chat-conversation-box/chat-incoming-message/chat-incoming-message.component';
+import { ChatOutgoingMessageComponent } from './component/chat/chat-conversation-box/chat-outgoing-message/chat-outgoing-message.component';
 import { CourseGradeComponent } from './component/courses/course-detail/course-grade/course-grade.component';
 import { CourseGradeListComponent } from './component/courses/course-detail/course-grade-list/course-grade-list.component';
 import { GradeBookComponent } from './component/grade-book/grade-book.component';
@@ -45,11 +45,19 @@ import { CreateScheduleComponent } from './component/schedule/create-schedule/cr
 import { CreateSchedulePeriodicComponent } from './component/schedule/create-schedule/create-schedule-periodic/create-schedule-periodic.component';
 import { CreateScheduleDateBasedComponent } from './component/schedule/create-schedule/create-schedule-date-based/create-schedule-date-based.component';
 import { CourseCurriculumComponent } from './component/courses/course-detail/course-curriculum/course-curriculum.component';
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AuthenticationInterceptor } from './shared/interceptors/authentication-interceptor';
 import { SchoolModule } from './component/school/school.module';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { StudentParentAssociationComponent } from './component/student-parent-association/student-parent-association.component'
+import { ChatConversationBoxComponent } from './component/chat/chat-conversation-box/chat-conversation-box.component';
+import { ChatConversaationListComponent } from './component/chat/chat-conversation-list/chat-conversation-list.component';
+import { NewForumPostModalComponent } from './component/courses/course-detail/course-forum/new-forum-post-modal/new-forum-post-modal.component';
+import { NewActivityModalComponent } from './component/courses/course-detail/course-activities/new-activity-modal/new-activity-modal.component';
+import { EditCourseCurriculumModalComponent } from './component/courses/course-detail/edit-course-curriculum-modal/edit-course-curriculum-modal.component';
+import { AddLessonModalComponent } from './component/courses/course-detail/add-lesson-modal/add-lesson-modal.component';
+import { AddSubmissionModalComponent } from './component/courses/course-detail/course-activities/add-submission-modal/add-submission-modal.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -82,6 +90,8 @@ import { StudentParentAssociationComponent } from './component/student-parent-as
     EditMeetingComponent,
     ProfileComponent,
     ChatComponent,
+    ChatConversationBoxComponent,
+    ChatConversaationListComponent,
     ChatContactMessageComponent,
     ChatIncomingMessageComponent,
     ChatOutgoingMessageComponent,
@@ -97,6 +107,11 @@ import { StudentParentAssociationComponent } from './component/student-parent-as
     CreateSchedulePeriodicComponent,
     CreateScheduleDateBasedComponent,
     CourseCurriculumComponent,
+    NewForumPostModalComponent,
+    NewActivityModalComponent,
+    EditCourseCurriculumModalComponent,
+    AddLessonModalComponent,
+    AddSubmissionModalComponent,
     StudentParentAssociationComponent
   ],
   imports: [
@@ -110,7 +125,9 @@ import { StudentParentAssociationComponent } from './component/student-parent-as
     SchoolModule,
     NoopAnimationsModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS, useClass: AuthenticationInterceptor, multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

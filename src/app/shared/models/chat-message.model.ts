@@ -1,7 +1,9 @@
+import { Timestamp } from 'rxjs/internal/operators/timestamp';
+
 export class ChatMessageModel {
-    id: string;
-    senderId: string;
-    conversationId: string;
-    content: string;
+    id?: String;
+    senderId: String;
+    conversationId: String;
+    content: String;
     timeSent: Date;
 }

@@ -73,12 +73,29 @@
   color: #1d72aa!important;
 }
 
+.is-black{
+  color: #4a4a4a;
+}
+
+.is-green{
+  color: #257942!important;
+}
+
 body{
   font-size: 0.9rem!important;
 }
 
 a{
+  text-decoration: none;
   &:hover{
     text-decoration: none;
   }
+}
+
+.pdf-icon{
+  height: 24px;
+}
+
+.text-headline{
+  margin-bottom: 10px;
 }

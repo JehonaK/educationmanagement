@@ -1,4 +1,4 @@
-const ENVIRONMENT = 'http://localhost:8662';
+const ENVIRONMENT = 'http://192.168.0.105:8080';
 
 const AUTH = {
   login: ENVIRONMENT + '/auth/login', // post
@@ -41,7 +41,7 @@ const COURSE = {
   updateCourse: ENVIRONMENT + '/course/course',
   getCourseById: ENVIRONMENT + '/course/course',
   deleteCourseById: ENVIRONMENT + '/course/course',
-  getCoursesByTeacherId: ENVIRONMENT + '/course/course/teacher',
+  getCoursesByTeacherId: ENVIRONMENT + '/course/teacher',
   getCoursesByStudentId: ENVIRONMENT + '/course/course/student',
   createActivity: ENVIRONMENT + '/course/activity',
   updateActivity: ENVIRONMENT + '/course/activity',
@@ -50,7 +50,7 @@ const COURSE = {
   getActivitiesByCourseId: ENVIRONMENT + '/course/activity',
   createComment: ENVIRONMENT + '/course/comment',
   updateComment: ENVIRONMENT + '/course/comment',
-  getCommentById: ENVIRONMENT + '/course/comment',
+  getCommentById: ENVIRONMENT + '/post-comment',
   deleteCommentById: ENVIRONMENT + '/course/comment',
   createCustomActivity: ENVIRONMENT + '/course/custom-activity',
   updateCustomActivity: ENVIRONMENT + '/course/custom-activity',
@@ -91,10 +91,11 @@ const SCHEDULE = {
 };
 
 const CHAT = {
-  getConversationsByUserId: ENVIRONMENT + '/chat/chat-users/conversations',
-  getUsersByConversationId: ENVIRONMENT + '/chat/conversations/', // {conversationId} + '/participants'
+  getConversationsByUserId: ENVIRONMENT + 'chat/chat-users/conversations',
+  getUsersByConversationId: ENVIRONMENT + 'chat/chat/conversations/', // {conversationId} + '/participants'
   getOnlineMeetingsByConversationId: ENVIRONMENT + '/chat/conversations/', // {conversationId} + '/online-meetings'
-  getMessagesByConversationId: ENVIRONMENT + '/chat/messages',
+  getMessagesByConversationId: ENVIRONMENT + '/messages',
+  createConversation: ENVIRONMENT + 'chat/conversations',
 };
 
 const MEETINGS = {

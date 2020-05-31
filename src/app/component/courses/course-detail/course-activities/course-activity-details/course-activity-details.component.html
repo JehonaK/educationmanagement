@@ -5,7 +5,7 @@
       <p class="text-subhead">Activity description..</p>
     </div>
     <div class="media-right">
-      <button class="button is-info is-light is-outlined" data-z="0.5" data-hover-z="1" data-animated>Edit Activity</button>
+      <button (click)="openModalEditActivity()" class="button is-info is-light is-outlined" data-z="0.5" data-hover-z="1" data-animated>Edit Activity</button>
     </div>
   </div>
 </div>
@@ -40,7 +40,7 @@
     </tbody>
   </table>
   <div class="add-submission">
-    <button class="button is-success is-light is-outlined">Add submission</button>
+    <button (click)="openModalAddSubmission()" class="button is-success is-light is-outlined">Add submission</button>
   </div>
 </div>
 <div class="teacher-table">

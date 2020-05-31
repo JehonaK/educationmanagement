@@ -5,26 +5,26 @@
       <p class="text-subhead">Browse through course activities.</p>
     </div>
     <div class="media-right">
-      <button class="button is-white" data-z="0.5" data-hover-z="1" data-animated><i class="fa fa-fw fa-plus"></i> New Activity</button>
+      <button (click)="openModal()" class="button is-white" data-z="0.5" data-hover-z="1" data-animated><i class="fa fa-fw fa-plus"></i> New Activity</button>
     </div>
   </div>
 </div>
 <div class="item col-xs-12 col-lg-12">
   <div class="panel panel-default paper-shadow" data-z="0.5">
-    <ul class="list-group relative paper-shadow" data-hover-z="0.5" data-animated>
+    <ul *ngFor="let activity of activities" class="list-group relative paper-shadow" data-hover-z="0.5" data-animated>
       <a routerLink="../details">
       <li class="list-group-item v-middle">
         <div class="media-body">
           <h4 class="text-subhead margin-none is-green">
-            Assignment Name
+            {{activity.name}}
           </h4>
           <div class="text-light text">
-            is due 28.05.2020, 22:00
+            is due {{activity.deadline}}
           </div>
         </div>
         <div class="media-right">
           <div class="text-light text-course">
-            <p>Course-name</p>
+            <p>{{activity.courseId}}</p>
           </div>
           <div class="text-light text-caption">
             Posted by:
@@ -33,234 +33,6 @@
         </div>
       </li>
       </a>
-      <li class="list-group-item v-middle">
-        <div class="media-body">
-          <h4 class="text-subhead margin-none is-red">
-            Assignment Name
-          </h4>
-          <div class="text-light text">
-            is due 28.05.2020, 22:00
-          </div>
-        </div>
-        <div class="media-right">
-          <div class="text-light text-course">
-            <p>Course-name</p>
-          </div>
-          <div class="text-light text-caption">
-            Posted by:
-            <p>Adrian Demian</p>
-          </div>
-        </div>
-      </li>
-      <li class="list-group-item v-middle">
-        <div class="media-body">
-          <h4 class="text-subhead margin-none is-yellow">
-            Assignment Name
-          </h4>
-          <div class="text-light text">
-            is due 28.05.2020, 22:00
-          </div>
-        </div>
-        <div class="media-right">
-          <div class="text-light text-course">
-            <p>Course-name</p>
-          </div>
-          <div class="text-light text-caption">
-            Posted by:
-            <p>Adrian Demian</p>
-          </div>
-        </div>
-      </li>
-      <li class="list-group-item v-middle">
-        <div class="media-body">
-          <h4 class="text-subhead margin-none">
-            Assignment Name
-          </h4>
-          <div class="text-light text">
-            is due 28.05.2020, 22:00
-          </div>
-        </div>
-        <div class="media-right">
-          <div class="text-light text-course">
-            <p>Course-name</p>
-          </div>
-          <div class="text-light text-caption">
-            Posted by:
-            <p>Adrian Demian</p>
-          </div>
-        </div>
-      </li>
-      <li class="list-group-item v-middle">
-        <div class="media-body">
-          <h4 class="text-subhead margin-none is-green">
-            Assignment Name
-          </h4>
-          <div class="text-light text">
-            is due 28.05.2020, 22:00
-          </div>
-        </div>
-        <div class="media-right">
-          <div class="text-light text-course">
-            <p>Course-name</p>
-          </div>
-          <div class="text-light text-caption">
-            Posted by:
-            <p>Adrian Demian</p>
-          </div>
-        </div>
-      </li>
-      <li class="list-group-item v-middle">
-        <div class="media-body">
-          <h4 class="text-subhead margin-none">
-            Assignment Name
-          </h4>
-          <div class="text-light text">
-            is due 28.05.2020, 22:00
-          </div>
-        </div>
-        <div class="media-right">
-          <div class="text-light text-course">
-            <p>Course-name</p>
-          </div>
-          <div class="text-light text-caption">
-            Posted by:
-            <p>Adrian Demian</p>
-          </div>
-        </div>
-      </li>
-      <li class="list-group-item v-middle">
-        <div class="media-body">
-          <h4 class="text-subhead margin-none">
-            Assignment Name
-          </h4>
-          <div class="text-light text">
-            is due 28.05.2020, 22:00
-          </div>
-        </div>
-        <div class="media-right">
-          <div class="text-light text-course">
-            <p>Course-name</p>
-          </div>
-          <div class="text-light text-caption">
-            Posted by:
-            <p>Adrian Demian</p>
-          </div>
-        </div>
-      </li>
-      <li class="list-group-item v-middle">
-        <div class="media-body">
-          <h4 class="text-subhead margin-none is-green">
-            Assignment Name
-          </h4>
-          <div class="text-light text">
-            is due 28.05.2020, 22:00
-          </div>
-        </div>
-        <div class="media-right">
-          <div class="text-light text-course">
-            <p>Course-name</p>
-          </div>
-          <div class="text-light text-caption">
-            Posted by:
-            <p>Adrian Demian</p>
-          </div>
-        </div>
-      </li>
-      <li class="list-group-item v-middle">
-        <div class="media-body">
-          <h4 class="text-subhead margin-none">
-            Assignment Name
-          </h4>
-          <div class="text-light text">
-            is due 28.05.2020, 22:00
-          </div>
-        </div>
-        <div class="media-right">
-          <div class="text-light text-course">
-            <p>Course-name</p>
-          </div>
-          <div class="text-light text-caption">
-            Posted by:
-            <p>Adrian Demian</p>
-          </div>
-        </div>
-      </li>
-      <li class="list-group-item v-middle">
-        <div class="media-body">
-          <h4 class="text-subhead margin-none is-red">
-            Assignment Name
-          </h4>
-          <div class="text-light text">
-            is due 28.05.2020, 22:00
-          </div>
-        </div>
-        <div class="media-right">
-          <div class="text-light text-course">
-            <p>Course-name</p>
-          </div>
-          <div class="text-light text-caption">
-            Posted by:
-            <p>Adrian Demian</p>
-          </div>
-        </div>
-      </li>
-      <li class="list-group-item v-middle">
-        <div class="media-body">
-          <h4 class="text-subhead margin-none is-yellow">
-            Assignment Name
-          </h4>
-          <div class="text-light text">
-            is due 28.05.2020, 22:00
-          </div>
-        </div>
-        <div class="media-right">
-          <div class="text-light text-course">
-            <p>Course-name</p>
-          </div>
-          <div class="text-light text-caption">
-            Posted by:
-            <p>Adrian Demian</p>
-          </div>
-        </div>
-      </li>
-      <li class="list-group-item v-middle">
-        <div class="media-body">
-          <h4 class="text-subhead margin-none is-red">
-            Assignment Name
-          </h4>
-          <div class="text-light text">
-            is due 28.05.2020, 22:00
-          </div>
-        </div>
-        <div class="media-right">
-          <div class="text-light text-course">
-            <p>Course-name</p>
-          </div>
-          <div class="text-light text-caption">
-            Posted by:
-            <p>Adrian Demian</p>
-          </div>
-        </div>
-      </li>
-      <li class="list-group-item v-middle">
-        <div class="media-body">
-          <h4 class="text-subhead margin-none is-yellow">
-            Assignment Name
-          </h4>
-          <div class="text-light text">
-            is due 28.05.2020, 22:00
-          </div>
-        </div>
-        <div class="media-right">
-          <div class="text-light text-course">
-            <p>Course-name</p>
-          </div>
-          <div class="text-light text-caption">
-            Posted by:
-            <p>Adrian Demian</p>
-          </div>
-        </div>
-      </li>
     </ul>
   </div>
 </div>

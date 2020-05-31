@@ -1,0 +1,21 @@
+<h4 class="modal-title">New forum post</h4>
+<form [formGroup]="">
+  <div class="form-group">
+    <label for="title">
+      Title
+    </label>
+    <input type="text" formControlName="title" name="title" id="title" class="form-control"/>
+  </div>
+
+  <div class="form-group">
+    <label for="content">
+      Content
+    </label>
+    <textarea type="text" formControlName="content" name="content" id="content" class="form-control"></textarea>
+  </div>
+
+  <div class="modal-footer">
+    <button class="button is-success">Post</button>
+    <button (click)="closeDialog()" class="button is-light">Cancel</button>
+  </div>
+</form>
