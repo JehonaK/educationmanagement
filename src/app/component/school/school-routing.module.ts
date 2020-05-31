@@ -10,17 +10,13 @@ import { LevelManagementItemDetailsComponent } from './level-management/level-ma
 
 const schoolRoutes = [{
     path: '',
-    component: SchoolComponent,
+    component: SchoolSettingsComponent,
     children: [
         {
-            path: "settings",
-            component: SchoolSettingsComponent,
-            children: [{
-                path: "edit",
-                component: SchoolSettingsModalComponent
-            }
-            ]
-        },
+            path: "edit",
+            component: SchoolSettingsModalComponent
+        }
+        ,
         {
             path: "levels",
             component: LevelManagementListComponent,

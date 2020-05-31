@@ -18,19 +18,20 @@ export class SchoolService {
   }
 
   updateSchool(school: SchoolModel, id: string): Observable<SchoolModel> {
-    return this.http.put<SchoolModel>(ENDPOINTS.school.updateSchool + '/{id}', school);
+    delete(school.schoolAdminId);
+    return this.http.put<SchoolModel>(ENDPOINTS.school.updateSchool + `/${id}`, school);
   }
 
   getSchoolById(id: string): Observable<SchoolModel> {
-    return this.http.get<SchoolModel>(ENDPOINTS.school.getSchoolById + '/{id}');
+    return this.http.get<SchoolModel>(ENDPOINTS.school.getSchoolById + `/${id}`);
   }
 
   deleteSchoolById(id: string) {
-    return this.http.delete(ENDPOINTS.school.deleteSchoolById + '/{id}');
+    return this.http.delete(ENDPOINTS.school.deleteSchoolById + `/${id}`);
   }
 
   getSchoolByAdmin(schoolAdminId: string): Observable<SchoolModel> {
-    return this.http.get<SchoolModel>(ENDPOINTS.school.getSchoolByAdmin + '/{schoolAdminId}');
+    return this.http.get<SchoolModel>(ENDPOINTS.school.getSchoolByAdmin, { params: { schoolAdminId: schoolAdminId } });
   }
 
 }
