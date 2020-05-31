@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LevelCreationModalComponent } from './level-creation-modal.component';
+import { LevelConfigurationModalComponent } from './level-configuration-modal.component';
 
 describe('LevelCreationModalComponent', () => {
-  let component: LevelCreationModalComponent;
-  let fixture: ComponentFixture<LevelCreationModalComponent>;
+  let component: LevelConfigurationModalComponent;
+  let fixture: ComponentFixture<LevelConfigurationModalComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LevelCreationModalComponent ]
+      declarations: [ LevelConfigurationModalComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LevelCreationModalComponent);
+    fixture = TestBed.createComponent(LevelConfigurationModalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

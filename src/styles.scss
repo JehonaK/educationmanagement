@@ -99,3 +99,18 @@ body {
     cursor: pointer;
     display: inline-block;
 }
+
+.create_button_holder {
+    text-align: center;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.btns_holder {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn_edit {
+    margin-right: 10px;
+}

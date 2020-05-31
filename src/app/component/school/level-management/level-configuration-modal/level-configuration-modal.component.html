@@ -1,5 +1,5 @@
 <div class="title">
-    New Level
+    {{this.data ? 'Edit' : 'New' }} Level
 </div>
 
 <form [formGroup]="levelCreationForm">
@@ -7,7 +7,7 @@
         <label for="name">
             Name
         </label>
-        <input class="form-control" type="text" formControlName="name" name="name" id="name"/>
+        <input class="form-control" type="text" formControlName="name" name="name" id="name" />
     </div>
 
     <button (submit)="submitForm()" class="btn btn-success">Create</button>

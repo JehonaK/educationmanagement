@@ -48,7 +48,8 @@ import { CourseCurriculumComponent } from './component/courses/course-detail/cou
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SchoolModule } from './component/school/school.module';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations'
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { StudentParentAssociationComponent } from './component/student-parent-association/student-parent-association.component'
 
 @NgModule({
   declarations: [
@@ -95,7 +96,8 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations'
     CreateScheduleComponent,
     CreateSchedulePeriodicComponent,
     CreateScheduleDateBasedComponent,
-    CourseCurriculumComponent
+    CourseCurriculumComponent,
+    StudentParentAssociationComponent
   ],
   imports: [
     BrowserModule,

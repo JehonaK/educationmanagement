@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { SCHOOL_CLASSES, SchoolClassModel } from '../../entities/school-class.model';
-import { SchoolManagementService } from '../../services/school-management.service';
+import { SchoolClassModel, SCHOOL_CLASSES } from 'src/app/shared/models/school/school-class.model';
+import { SchoolClassService } from 'src/app/shared/services/school/school-class.service';
+import { MatDialog } from '@angular/material/dialog';
+import { SchoolClassConfigurationModalComponent } from '../school-class-configuration-modal/school-class-configuration-modal.component';
+import { SchoolClassStudentInsertionModalComponent } from '../school-class-student-insertion-modal/school-class-student-insertion-modal.component';
 
 @Component({
   selector: 'class-management-item-details',
@@ -12,16 +15,42 @@ export class ClassManagementItemDetailsComponent implements OnInit {
 
   schoolClass: SchoolClassModel;
 
-  constructor(private route: ActivatedRoute, private schoolManagementService: SchoolManagementService) { }
+  constructor(private route: ActivatedRoute,
+    private schoolClassService: SchoolClassService,
+    private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       // this.schoolManagementService.getClassById(params.get('id')).subscribe(res =>
       //   this.schoolClass = res
       // )
-      this.schoolClass = SCHOOL_CLASSES.filter(schoolClass => schoolClass.id == params.get('classId'))[0];
+      this.schoolClassService.getSchoolClassById(params.get('id')).subscribe(resBody => {
+        this.schoolClass = resBody;
+      })
+      // this.schoolClass = SCHOOL_CLASSES.filter(schoolClass => schoolClass.id == params.get('classId'))[0];
     }
     )
   }
 
+  editClass() {
+    this.dialog.open(SchoolClassConfigurationModalComponent, {
+      width: "50%",
+      data: this.schoolClass
+    });
+  }
+
+  openStudentInsertionModal() {
+    this.dialog.open(SchoolClassStudentInsertionModalComponent, {
+      width: "50%",
+      data: this.schoolClass
+    })
+  }
+
+  deleteClass() {
+    if (confirm("Are you sure you want to delete " + this.schoolClass.name + "?"))
+      this.schoolClassService.deleteSchoolClassById(this.schoolClass.id).subscribe(
+        res => {
+          alert("Class " + this.schoolClass.name + " has been deleted.")
+        })
+  }
 }

@@ -1,11 +1,12 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { SchoolModel } from '../../entities/school.model';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { SchoolType } from '../../entities/school-type.model';
+import { SchoolType } from '../../../../shared/models/school/school-type.model';
 import { formatDate } from '@angular/common';
 import { SchoolSettingsService } from '../school-settings.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { SchoolManagementService } from '../../services/school-management.service';
+import { SchoolService } from 'src/app/shared/services/school/school.service';
+import { SchoolModel } from 'src/app/shared/models/school/school.model';
 
 @Component({
   selector: 'school-settings-modal',
@@ -23,7 +24,7 @@ export class SchoolSettingsModalComponent implements OnInit {
   constructor(
     private dialogRef: MatDialogRef<SchoolSettingsModalComponent>,
     private formBuilder: FormBuilder,
-    private schoolManagementService: SchoolManagementService,
+    private schoolService: SchoolService,
     @Inject(MAT_DIALOG_DATA) public data: SchoolModel) {
     this.school = this.data;
   }
@@ -45,15 +46,15 @@ export class SchoolSettingsModalComponent implements OnInit {
     return Object.values(this.schoolTypes);
   }
 
-  setSchoolTypeValue() {
-    this.schoolForm.get('type').setValue(this.school.schoolType);
-  }
-
   submitForm() {
-    this.schoolManagementService.updateSchool(this.school).subscribe( res =>{
-      console.log(res)
-      alert('suc')
+    this.schoolService.updateSchool(this.school, this.school.id).subscribe(resBody => {
+      alert("Successfully updated");
+      this.dialogRef.close();
     })
+    // this.schoolManagementService.updateSchool(this.school).subscribe( res =>{
+    //   console.log(res)
+    //   alert('suc')
+    // })
   }
 
 }

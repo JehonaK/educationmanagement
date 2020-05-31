@@ -35,6 +35,7 @@ import { EditMeetingComponent } from './component/meetings/edit-meeting/edit-mee
 import { ProfileComponent } from './component/profile/profile.component';
 import { ChatComponent } from './component/chat/chat.component';
 import { AuthGuard } from './component/auth/auth.guard';
+import { StudentParentAssociationComponent } from './component/student-parent-association/student-parent-association.component';
 
 const routes: Routes = [
   {
@@ -192,6 +193,10 @@ const routes: Routes = [
         path: "school",
         loadChildren: () => import("./component/school/school-routing.module")
           .then(m => m.SchoolRoutingModule)
+      },
+      {
+        path: "students/associate",
+        component: StudentParentAssociationComponent
       }
     ]
   }
