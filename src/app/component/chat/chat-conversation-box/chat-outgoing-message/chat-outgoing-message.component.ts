@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ChatMessageModel } from 'src/app/shared/models/chat-message.model';
 
 @Component({
   selector: 'app-chat-outgoing-message',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./chat-outgoing-message.component.scss']
 })
 export class ChatOutgoingMessageComponent implements OnInit {
+
+  @Input() message: ChatMessageModel
 
   constructor() { }
 

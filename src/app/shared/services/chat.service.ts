@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { RestService } from './rest.service';
 import { ENDPOINTS } from '../constants/api.constants';
 
@@ -12,11 +12,17 @@ export class ChatService {
               private restService: RestService) { }
 
   getConversationByUserId(userId: string) {
-    return this.http.get(ENDPOINTS.chat.getConversationsByUserId + '/${userId}');
+    return this.http.get<any>(ENDPOINTS.chat.getConversationsByUserId);
   }
 
   getMessagesByConversationId(conversationId: string) {
-    return this.http.get(ENDPOINTS.chat.getMessagesByConversationId + '/${conversationId}');
+    return this.http.get<any>(ENDPOINTS.chat.getMessagesByConversationId + "/" + conversationId);
+  }
+
+  createConversation(email: string) {
+    return this.http.post<any>(ENDPOINTS.chat.createConversation, { params: {
+      email
+    }});
   }
   
 }
