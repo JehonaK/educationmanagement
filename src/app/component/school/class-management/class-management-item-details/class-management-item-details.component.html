@@ -4,9 +4,22 @@
     </div>
 
     <div class="list_item_details__container--inner">
+        <div class="btns_holder">
+            <button (click)="editClass()" class="button is-info is-small btn_edit">
+                Edit
+            </button>
+            <button (click)="deleteClass()" class="button is-danger is-small">
+                Delete
+            </button>
+        </div>
+
+        <div class="data_holder__title">
+            Class name
+        </div>
         <div class="title">
             {{ schoolClass.name }}
         </div>
+
         <div class="data_holder__title">
             Level
         </div>
@@ -17,7 +30,7 @@
             Status
         </div>
         <div class="data_holder__content">
-            {{ schoolClass.classStatus }}
+            {{ schoolClass.status }}
         </div>
         <div class="data_holder__title">
             Students
@@ -26,7 +39,7 @@
             {{ student.firstName + " " + student.lastName }}
         </div>
         <div class="insert_student_button">
-            <button class="button is-small is-dark">Add Student</button>
+            <button (click)="openStudentInsertionModal()" class="button is-small is-dark">Add Student</button>
         </div>
     </div>
 </div>

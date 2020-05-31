@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { SchoolModel } from '../entities/school.model';
+import { SchoolModel } from 'src/app/shared/models/school/school.model';
 
 @Injectable(
     {
@@ -59,7 +59,7 @@ export class SchoolManagementService {
     }
 
     updateSchool(school: SchoolModel) {
-        delete(school.schoolAdmin);
+        delete(school.schoolAdminId);
         return this.http.put<any>(this.ip + "/school/school/" + localStorage.getItem('schoolId'), school)
     }
 }

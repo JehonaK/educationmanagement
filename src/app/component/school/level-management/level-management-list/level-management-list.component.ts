@@ -1,9 +1,9 @@
 import { Component, Input, OnInit } from "@angular/core";
-import { LevelModel, LEVELS } from '../../entities/level.model';
-import { SchoolManagementService } from '../../services/school-management.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
-import { LevelCreationModalComponent } from '../level-creation-modal/level-creation-modal.component';
+import { LevelConfigurationModalComponent } from '../level-configuration-modal/level-configuration-modal.component';
+import { LevelModel, LEVELS } from 'src/app/shared/models/school/level.model';
+import { LevelService } from 'src/app/shared/services/school/level.service';
 
 @Component({
     selector: 'level-management-list',
@@ -17,22 +17,26 @@ export class LevelManagementListComponent implements OnInit {
     levelCreationForm: FormGroup
 
     constructor(private fb: FormBuilder,
-        private schoolManagementService: SchoolManagementService, private matDialog: MatDialog) { }
+        private levelService: LevelService,
+        private matDialog: MatDialog) { }
 
     ngOnInit() {
         // this.schoolManagementService.getLevels().subscribe(res=>{
         //     this.levels = res;
         // })
+        this.levelService.getLevelsBySchoolId(localStorage.getItem("schoolId")).subscribe(resBody => {
+            this.levels = resBody;
+        })
     }
 
     openModal() {
-        this.matDialog.open(LevelCreationModalComponent, {
+        this.matDialog.open(LevelConfigurationModalComponent, {
             width: '50%'
         });
     }
 
-    listDetails() {
-        return this.levels.map(level => { return { id: level.id, name: level.name } });
-    }
+    // listDetails() {
+    //     return this.levels.map(level => { return { id: level.id, name: level.name } });
+    // }
 
 }

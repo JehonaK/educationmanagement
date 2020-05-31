@@ -48,15 +48,16 @@ import { CourseCurriculumComponent } from './component/courses/course-detail/cou
 import { AuthenticationInterceptor } from './shared/interceptors/authentication-interceptor';
 import { SchoolModule } from './component/school/school.module';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { StudentParentAssociationComponent } from './component/student-parent-association/student-parent-association.component'
+import { ChatConversationBoxComponent } from './component/chat/chat-conversation-box/chat-conversation-box.component';
+import { ChatConversaationListComponent } from './component/chat/chat-conversation-list/chat-conversation-list.component';
 import { NewForumPostModalComponent } from './component/courses/course-detail/course-forum/new-forum-post-modal/new-forum-post-modal.component';
 import { NewActivityModalComponent } from './component/courses/course-detail/course-activities/new-activity-modal/new-activity-modal.component';
 import { EditCourseCurriculumModalComponent } from './component/courses/course-detail/edit-course-curriculum-modal/edit-course-curriculum-modal.component';
 import { AddLessonModalComponent } from './component/courses/course-detail/add-lesson-modal/add-lesson-modal.component';
 import { AddSubmissionModalComponent } from './component/courses/course-detail/course-activities/add-submission-modal/add-submission-modal.component';
-import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {ChatConversationBoxComponent} from './component/chat/chat-conversation-box/chat-conversation-box.component';
-import {ChatConversaationListComponent} from './component/chat/chat-conversation-list/chat-conversation-list.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -110,7 +111,8 @@ import {ChatConversaationListComponent} from './component/chat/chat-conversation
     NewActivityModalComponent,
     EditCourseCurriculumModalComponent,
     AddLessonModalComponent,
-    AddSubmissionModalComponent
+    AddSubmissionModalComponent,
+    StudentParentAssociationComponent
   ],
   imports: [
     BrowserModule,
