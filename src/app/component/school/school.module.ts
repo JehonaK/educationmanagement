@@ -10,14 +10,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LevelManagementListComponent } from './level-management/level-management-list/level-management-list.component';
 import { LevelManagementItemDetailsComponent } from './level-management/level-management-item-details/level-management-item-details.component';
 import { ListComponent } from './list/list.component';
-import { ClassManagementListComponent } from './class-management/class-management-list/class-management-list';
 import { ClassManagementItemDetailsComponent } from './class-management/class-management-item-details/class-management-item-details.component';
-import { SubjectManagementListComponent } from './subject-management/subject-management-list/subject-management-list.component';
 import { SubjectManagementItemDetails } from './subject-management/subject-management-item-details/subject-management-item-details.component';
-import { SubjectManagementLevelListComponent } from './subject-management/subject-management-level-list/subject-management-level-list.component';
 import { SubjectTeacherAssignmentModalComponent } from './subject-management/subject-teacher-assignment-modal/subject-teacher-assignment-modal.component';
-import { LevelCreationModalComponent } from './level-management/level-creation-modal/level-creation-modal.component';
+import { LevelConfigurationModalComponent } from './level-management/level-configuration-modal/level-configuration-modal.component';
 import { SchoolRoutingModule } from './school-routing.module';
+import { SchoolClassConfigurationModalComponent } from './class-management/school-class-configuration-modal/school-class-configuration-modal.component';
+import { SchoolSubjectConfigurationModalComponent } from './subject-management/school-subject-configuration-modal/school-subject-configuration-modal.component';
+import { SchoolClassStudentInsertionModalComponent } from './class-management/school-class-student-insertion-modal/school-class-student-insertion-modal.component';
 
 @NgModule({
   declarations: [
@@ -29,12 +29,12 @@ import { SchoolRoutingModule } from './school-routing.module';
     SchoolSettingsModalComponent,
     LevelManagementItemDetailsComponent,
     ListComponent,
-    ClassManagementListComponent,
-    SubjectManagementListComponent,
     SubjectManagementItemDetails,
-    SubjectManagementLevelListComponent,
     SubjectTeacherAssignmentModalComponent,
-    LevelCreationModalComponent
+    LevelConfigurationModalComponent,
+    SchoolClassConfigurationModalComponent,
+    SchoolSubjectConfigurationModalComponent,
+    SchoolClassStudentInsertionModalComponent
   ],
   imports: [
     CommonModule,
@@ -53,11 +53,10 @@ import { SchoolRoutingModule } from './school-routing.module';
     ListComponent,
     LevelManagementItemDetailsComponent,
     LevelManagementListComponent,
-    ClassManagementListComponent,
     SubjectManagementItemDetails,
-    SubjectManagementLevelListComponent,
     SubjectTeacherAssignmentModalComponent,
-    LevelCreationModalComponent
+    LevelConfigurationModalComponent,
+    SchoolClassConfigurationModalComponent
   ]
 })
 export class SchoolModule { }

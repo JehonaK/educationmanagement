@@ -1,17 +1,17 @@
-<form [formGroup]="subjectAssignmentForm">
+<form [formGroup]="studentInsertionForm">
     <div class="form-group">
         <label for="name">
-            Subject
+            Class name
         </label>
         <input type="text" formControlName="name" name="name" id="name" class="form-control"/>
     </div>
 
     <div class="form-group">
         <label for="email">
-            Teacher Email
+            Student Email
         </label>
         <input type="email" formControlName="email" name="email" id="email" class="form-control"/>
     </div>
 
-    <button (click)="inviteTeacher()" class="btn btn-success">Send</button>
+    <button (click)="insertStudent()" class="btn btn-success">Send</button>
 </form>

@@ -35,10 +35,11 @@ import { EditMeetingComponent } from './component/meetings/edit-meeting/edit-mee
 import { ProfileComponent } from './component/profile/profile.component';
 import { ChatComponent } from './component/chat/chat.component';
 import { AuthGuard } from './component/auth/auth.guard';
+import { StudentParentAssociationComponent } from './component/student-parent-association/student-parent-association.component';
 import { ChatConversationBoxComponent } from './component/chat/chat-conversation-box/chat-conversation-box.component';
-import {NewForumPostModalComponent} from './component/courses/course-detail/course-forum/new-forum-post-modal/new-forum-post-modal.component';
-import {NewActivityModalComponent} from './component/courses/course-detail/course-activities/new-activity-modal/new-activity-modal.component';
-import {EditCourseCurriculumModalComponent} from './component/courses/course-detail/edit-course-curriculum-modal/edit-course-curriculum-modal.component';
+import { NewForumPostModalComponent } from './component/courses/course-detail/course-forum/new-forum-post-modal/new-forum-post-modal.component';
+import { NewActivityModalComponent } from './component/courses/course-detail/course-activities/new-activity-modal/new-activity-modal.component';
+import { EditCourseCurriculumModalComponent } from './component/courses/course-detail/edit-course-curriculum-modal/edit-course-curriculum-modal.component';
 
 const routes: Routes = [
   {
@@ -214,6 +215,10 @@ const routes: Routes = [
         path:'school',
         loadChildren: () => import('./component/school/school-routing.module')
           .then(m => m.SchoolRoutingModule)
+      },
+      {
+        path: "students/associate",
+        component: StudentParentAssociationComponent
       }
     ]
   }

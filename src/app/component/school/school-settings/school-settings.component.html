@@ -55,9 +55,12 @@
             </div>
         </div>
 
-        <div class="btn--right">
-            <button (click)="onClick()" class="edit_button">
+        <div class="btns_holder">
+            <button class="button is-info btn_edit" (click)="edit()">
                 Edit
+            </button>
+            <button class="button is-danger" (click)="delete()"> 
+                Delete
             </button>
         </div>
         <router-outlet></router-outlet>

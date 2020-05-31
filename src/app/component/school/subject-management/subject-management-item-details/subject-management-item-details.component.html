@@ -3,9 +3,28 @@
         <i class="fas fa-arrow-alt-circle-left fa-lg"></i> Back to Levels
     </div>
     <div class="list_item_details__container--inner">
+        <div class="btns_holder">
+            <button (click)="editSubject()" class="button is-info is-small btn_edit">
+                Edit
+            </button>
+            <button (click)="deleteSubject()" class="button is-danger is-small">
+                Delete
+            </button>
+        </div>
 
+        <div class="data_holder__title">
+            Subject name
+        </div>
         <div class="title">
             {{schoolSubject.name}}
+        </div>
+
+        <div class="data_holder__title">
+            Level
+        </div>
+
+        <div class="data_holder__content">
+            {{schoolSubject.levelId}}
         </div>
 
         <div class="data_holder__title">
@@ -23,5 +42,5 @@
     </div>
 
 
-    <button class="button is-light is-small btn-create" (click)="openModal()">Create course</button>
+    <button class="button is-dark is-small btn-create" (click)="openModal()">Create course</button>
 </div>

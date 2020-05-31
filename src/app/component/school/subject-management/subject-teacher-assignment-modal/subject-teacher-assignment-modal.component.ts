@@ -2,6 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
+import { SchoolSubjectService } from 'src/app/shared/services/school/school-subject.service';
 
 @Component({
   selector: 'app-subject-teacher-assignment-modal',
@@ -10,24 +11,29 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class SubjectTeacherAssignmentModalComponent implements OnInit {
 
-  subjectAssignment: FormGroup
+  subjectAssignmentForm: FormGroup
 
   constructor(private fb: FormBuilder, private route: ActivatedRoute,
-    private matDialog: MatDialogRef<SubjectTeacherAssignmentModalComponent>,
-    @Inject(MAT_DIALOG_DATA) private data) { }
+    private dialogRef: MatDialogRef<SubjectTeacherAssignmentModalComponent>,
+    @Inject(MAT_DIALOG_DATA) private data,
+    private schoolSubjectService: SchoolSubjectService) { }
 
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe(params => {
-      console.log(params.get('name'));
-      console.log(params.get('title'));
-      console.log(params.get('id'))
-    })
-    this.subjectAssignment = this.fb.group({
-      subjectName: [{ value: this.data, disabled: true }],
+    this.subjectAssignmentForm = this.fb.group({
+      name: [{ value: this.data.name, disabled: true }],
       email: ['']
 
     })
+  }
+
+  inviteTeacher() {
+    this.schoolSubjectService.assignTeacherToSubject(
+      this.subjectAssignmentForm.get('email').value, this.data.id)
+      .subscribe(resBody => {
+        alert("Invitation sent");
+        this.dialogRef.close();
+      })
   }
 
 }

@@ -1,0 +1,30 @@
+<div class="title">
+    {{this.data ? 'Edit' : 'New' }} Subject
+</div>
+
+<form [formGroup]="schoolSubjectConfigurationForm">
+    <div class="form-group">
+        <label for="name">
+            Name
+        </label>
+        <input class="form-control" type="text" formControlName="name" name="name" id="name" required/>
+    </div>
+
+    <div class="form-group">
+        <label for="description">
+            Description
+        </label>
+        <input class="form-control" type="text" formControlName="description" name="description" id="description" required/>
+    </div>
+
+    <div class="form-group">
+        <label for="type">
+            Type
+        </label>
+        <select formControlName="type" name="type" class="form-control" id="type" formControlName="type" required>
+            <option *ngFor="let type of getSchoolSubjectTypes()" [value]="type">{{type}}</option>
+        </select>
+    </div>
+
+    <button (submit)="submitForm()" class="btn btn-success">Create</button>
+</form>
