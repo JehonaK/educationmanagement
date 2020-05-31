@@ -17,39 +17,10 @@ export class CourseActivityListComponent implements OnInit {
   constructor(private dialog: MatDialog) { }
 
   ngOnInit(): void {
-    this.getActivities();
   }
   openModal() {
     this.dialog.open(NewActivityModalComponent, {
       width: '50%',
     });
-  }
-  getActivities(){
-    this.activities = [
-      {
-        id: '61d4c861-18e6-4c76-a59b-36202fc2015b',
-        name: 'string',
-        description: 'dsfsdfasd dfdsf fdsf sd f sd  d ',
-        deadline: null,
-        courseId: 'string',
-        evaluations: null,
-      },
-      {
-        id: '61d4c861-18e6-4c76-a59b-36202fc2015b',
-        name: 'string',
-        description: 'dsfsdfasd dfdsf fdsf sd f sd  d ',
-        deadline: null,
-        courseId: 'string',
-        evaluations: null,
-      },
-      {
-        id: '61d4c861-18e6-4c76-a59b-36202fc2015b',
-        name: 'string',
-        description: 'dsfsdfasd dfdsf fdsf sd f sd  d ',
-        deadline: null,
-        courseId: 'string',
-        evaluations: null,
-      },
-    ];
   }
 }

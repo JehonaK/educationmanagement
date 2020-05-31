@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {CourseModel} from '../../../shared/models/course.model';
+import {CourseService} from '../../../shared/services/course.service';
+import {CommentService} from '../../../shared/services/comment.service';
+import {CommentModel} from '../../../shared/models/comment.model';
 
 @Component({
   selector: 'app-courses-grid',
@@ -8,64 +11,20 @@ import {CourseModel} from '../../../shared/models/course.model';
 })
 export class CoursesGridComponent implements OnInit {
   courses: CourseModel[];
+  comment: CommentModel;
 
-  constructor() { }
+  constructor(private courseService: CourseService,
+              private commentService: CommentService) { }
 
   ngOnInit(): void {
     this.getLessons();
   }
   getLessons() {
-    this.courses = [
-      {
-        name: 'Lession One',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet commodi delectus, excepturi.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet commodi delectus, excepturi.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet commodi delectus, excepturi.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet commodi delectus, excepturi.',
-        teacherId: 'sd',
-        id: 'd',
-        subjectId: 'd',
-        activities: null,
-        forumPosts: null,
-        students: null
-      },
-      {
-        name: 'Lession One',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet commodi delectus, excepturi.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet commodi delectus, excepturi.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet commodi delectus, excepturi.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet commodi delectus, excepturi.',
-        teacherId: 'sd',
-        id: 'd',
-        subjectId: 'd',
-        activities: null,
-        forumPosts: null,
-        students: null
-      },
-      {
-        name: 'Lession One',
-        description: 'Amet commodi delectus, excepturi.',
-        teacherId: 'sd',
-        id: 'd',
-        subjectId: 'd',
-        activities: null,
-        forumPosts: null,
-        students: null
-      },
-      {
-        name: 'Lession One',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet commodi delectus, excepturi.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet commodi delectus, excepturi.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet commodi delectus, excepturi.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet commodi delectus, excepturi.',
-        teacherId: 'sd',
-        id: 'd',
-        subjectId: 'd',
-        activities: null,
-        forumPosts: null,
-        students: null
-      },
-      {
-        name: 'Lession One',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet commodi delectus, excepturi.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet commodi delectus, excepturi.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet commodi delectus, excepturi.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet commodi delectus, excepturi.',
-        teacherId: 'sd',
-        id: 'd',
-        subjectId: 'd',
-        activities: null,
-        forumPosts: null,
-        students: null
-      },
-    ];
+    this.commentService.getCommentById('6619afe0-f0ef-4aa5-a1e4-a597e8174bbf').subscribe(res => {
+      this.comment = res;
+      console.log(res);
+    });
+    console.log(this.courses);
+    console.log(localStorage.getItem("token"));
   }
 }

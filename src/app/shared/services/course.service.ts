@@ -9,8 +9,7 @@ import { ENDPOINTS } from '../constants/api.constants';
 })
 export class CourseService {
 
-  constructor( private http: HttpClient,
-    private restService: RestService) { }
+  constructor( private http: HttpClient, private restService: RestService) { }
 
   updateCourse(course: CourseModel, id: string) {
     return this.http.put(ENDPOINTS.course.updateCourse + '/{id}', course);
@@ -25,11 +24,11 @@ export class CourseService {
   }
 
   getCoursesByTeacherId(teacherId: string) {
-    return this.http.get(ENDPOINTS.course.getCoursesByTeacherId + '/{teacherId}');
+    return this.http.get<any>(ENDPOINTS.course.getCoursesByTeacherId, {params: { teacherId: teacherId}});
   }
 
   getCoursesByStudentId(studentId: string) {
     return this.http.get(ENDPOINTS.course.getCoursesByStudentId + '/{studentId}');
-  }  
+  }
 
 }
