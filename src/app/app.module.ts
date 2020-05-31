@@ -30,9 +30,11 @@ import { CreateMeetingComponent } from './component/meetings/create-meeting/crea
 import { EditMeetingComponent } from './component/meetings/edit-meeting/edit-meeting.component';
 import { ProfileComponent } from './component/profile/profile.component';
 import { ChatComponent } from './component/chat/chat.component';
-import { ChatContactMessageComponent } from './component/chat/chat-contact-message/chat-contact-message.component';
-import { ChatIncomingMessageComponent } from './component/chat/chat-incoming-message/chat-incoming-message.component';
-import { ChatOutgoingMessageComponent } from './component/chat/chat-outgoing-message/chat-outgoing-message.component';
+import { ChatConversationBoxComponent } from  './component/chat/chat-conversation-box/chat-conversation-box.component';
+import { ChatConversaationListComponent } from  './component/chat/chat-conversation-list/chat-conversation-list.component';
+import { ChatContactMessageComponent } from './component/chat/chat-conversation-list/chat-contact-message/chat-contact-message.component';
+import { ChatIncomingMessageComponent } from './component/chat/chat-conversation-box/chat-incoming-message/chat-incoming-message.component';
+import { ChatOutgoingMessageComponent } from './component/chat/chat-conversation-box/chat-outgoing-message/chat-outgoing-message.component';
 import { CourseGradeComponent } from './component/courses/course-detail/course-grade/course-grade.component';
 import { CourseGradeListComponent } from './component/courses/course-detail/course-grade-list/course-grade-list.component';
 import { GradeBookComponent } from './component/grade-book/grade-book.component';
@@ -45,7 +47,8 @@ import { CreateScheduleComponent } from './component/schedule/create-schedule/cr
 import { CreateSchedulePeriodicComponent } from './component/schedule/create-schedule/create-schedule-periodic/create-schedule-periodic.component';
 import { CreateScheduleDateBasedComponent } from './component/schedule/create-schedule/create-schedule-date-based/create-schedule-date-based.component';
 import { CourseCurriculumComponent } from './component/courses/course-detail/course-curriculum/course-curriculum.component';
-import {HttpClientModule} from '@angular/common/http';
+import { AuthenticationInterceptor } from './shared/interceptors/authentication-interceptor';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
@@ -79,6 +82,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     EditMeetingComponent,
     ProfileComponent,
     ChatComponent,
+    ChatConversationBoxComponent,
+    ChatConversaationListComponent,
     ChatContactMessageComponent,
     ChatIncomingMessageComponent,
     ChatOutgoingMessageComponent,
@@ -104,7 +109,9 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS, useClass: AuthenticationInterceptor, multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

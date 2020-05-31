@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ConversationModel } from 'src/app/shared/models/conversation.model';
 
 @Component({
   selector: 'app-chat-contact-message',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./chat-contact-message.component.scss']
 })
 export class ChatContactMessageComponent implements OnInit {
+
+  @Input() conversation: ConversationModel
 
   constructor() { }
 

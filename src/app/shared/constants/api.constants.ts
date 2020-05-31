@@ -91,10 +91,11 @@ const SCHEDULE = {
 };
 
 const CHAT = {
-  getConversationsByUserId: ENVIRONMENT + '/chat/chat-users/conversations',
-  getUsersByConversationId: ENVIRONMENT + '/chat/conversations/', // {conversationId} + '/participants'
+  getConversationsByUserId: ENVIRONMENT + 'chat/chat-users/conversations',
+  getUsersByConversationId: ENVIRONMENT + 'chat/chat/conversations/', // {conversationId} + '/participants'
   getOnlineMeetingsByConversationId: ENVIRONMENT + '/chat/conversations/', // {conversationId} + '/online-meetings'
-  getMessagesByConversationId: ENVIRONMENT + '/chat/messages',
+  getMessagesByConversationId: ENVIRONMENT + '/messages',
+  createConversation: ENVIRONMENT + 'chat/conversations',
 };
 
 const MEETINGS = {

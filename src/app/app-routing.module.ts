@@ -35,6 +35,7 @@ import { EditMeetingComponent } from './component/meetings/edit-meeting/edit-mee
 import { ProfileComponent } from './component/profile/profile.component';
 import { ChatComponent } from './component/chat/chat.component';
 import { AuthGuard } from './component/auth/auth.guard';
+import { ChatConversationBoxComponent } from './component/chat/chat-conversation-box/chat-conversation-box.component';
 
 const routes: Routes = [
   {
@@ -87,7 +88,12 @@ const routes: Routes = [
       },
       {
         path: 'chat',
-        component: ChatComponent
+        component: ChatComponent,
+        children: [{
+          path: ":id",
+          component: ChatConversationBoxComponent
+        }
+        ]
       },
       {
         path: 'courses',

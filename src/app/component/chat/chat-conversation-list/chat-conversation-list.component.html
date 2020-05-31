@@ -1,0 +1,25 @@
+<div class="inbox_people">
+        <div class="headind_srch">
+          <div class="recent_heading">
+            <h4>Recent</h4>
+          </div>
+          <div class="srch_bar">
+            <form [formGroup]="newConvoForm" class="stylish-input-group" (submit)="createConversation()">
+                <span class="input-group-addon">
+                    <button type="submit">
+                      <i class="fa fa-plus" aria-hidden="true"></i>
+                    </button>
+                </span>
+              <input
+                type="text"
+                class="search-bar"
+                placeholder="Add by email"
+                [formControlName]="'email'"
+              />
+            </form>
+          </div>
+        </div>
+        <div class="inbox_chat">
+            <app-chat-contact-message *ngFor="let conversation of conversations" [conversation]="conversation" routerLink="{{conversation.id}}"></app-chat-contact-message>
+        </div>
+      </div>
