@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from "@angular/material/dialog";
 import { SchoolSettingsModalComponent } from './school-settings-modal/school-settings-modal.component';
-import { SchoolManagementService } from '../services/school-management.service';
 import { SchoolService } from 'src/app/shared/services/school/school.service';
 import { SchoolModel, SCHOOL } from 'src/app/shared/models/school/school.model';
 
@@ -18,10 +17,7 @@ export class SchoolSettingsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.schoolManagementService.getSchool().subscribe(res => {
-    //   this.school = res;
-    // })
-    this.schoolService.getSchoolByAdmin(localStorage.getItem("token")).subscribe(resBody => {
+    this.schoolService.getSchoolByAdmin(localStorage.getItem("adminId")).subscribe(resBody => {
       this.school = resBody;
     });
     // this.school = SCHOOL;
@@ -35,12 +31,10 @@ export class SchoolSettingsComponent implements OnInit {
   }
 
   delete() {
-
     if (confirm("Are you sure you want to delete" + this.school.name + "?")) {
       this.schoolService.deleteSchoolById(this.school.id).subscribe(res => {
         alert("School" + this.school.name + " has been deleted");
       });
-      // this.schoolManagementService.deleteSchool(this.school);
     }
   }
 

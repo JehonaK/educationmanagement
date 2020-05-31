@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SchoolManagementService } from './services/school-management.service';
+import { SchoolService } from 'src/app/shared/services/school/school.service';
 
 @Component({
   selector: 'app-school',
@@ -9,13 +9,13 @@ import { SchoolManagementService } from './services/school-management.service';
 export class SchoolComponent implements OnInit {
 
   contentFor: string;
-  constructor(private schoolService: SchoolManagementService) { }
+  constructor(private schoolService: SchoolService) { }
 
 
   ngOnInit(): void {
-    this.schoolService.getSchool().subscribe(res => {
-      localStorage.setItem("schoolId", res.id)
-    });
+    // this.schoolService.getSchoolByAdmin(localStorage.getItem("adminId")).subscribe(res => {
+    //   localStorage.setItem("schoolId", res.id)
+    // });
   }
 
   changeContent(contentFor: string) {

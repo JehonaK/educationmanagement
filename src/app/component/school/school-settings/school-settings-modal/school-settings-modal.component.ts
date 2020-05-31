@@ -2,9 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SchoolType } from '../../../../shared/models/school/school-type.model';
 import { formatDate } from '@angular/common';
-import { SchoolSettingsService } from '../school-settings.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { SchoolManagementService } from '../../services/school-management.service';
 import { SchoolService } from 'src/app/shared/services/school/school.service';
 import { SchoolModel } from 'src/app/shared/models/school/school.model';
 
@@ -29,6 +27,9 @@ export class SchoolSettingsModalComponent implements OnInit {
     this.school = this.data;
   }
 
+  get formControls() {
+    return this.schoolForm.controls;
+  }
   ngOnInit(): void {
     this.schoolForm = this.formBuilder.group({
       name: [this.school.name, Validators.required],
@@ -47,6 +48,11 @@ export class SchoolSettingsModalComponent implements OnInit {
   }
 
   submitForm() {
+    this.school.name = this.formControls.name.value;
+    this.school.city = this.formControls.city.value;
+    this.school.address = this.formControls.address.value;
+    this.school.schoolType = this.formControls.type.value;
+    this.school.schoolCreationDate = this.formControls.date.value;
     this.schoolService.updateSchool(this.school, this.school.id).subscribe(resBody => {
       alert("Successfully updated");
       this.dialogRef.close();
