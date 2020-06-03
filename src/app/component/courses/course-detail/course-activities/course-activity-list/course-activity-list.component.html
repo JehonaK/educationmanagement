@@ -24,11 +24,11 @@
         </div>
         <div class="media-right">
           <div class="text-light text-course">
-            <p>{{activity.courseId}}</p>
+            <p>{{activity.courseId.name}}</p>
           </div>
           <div class="text-light text-caption">
             Posted by:
-              <p>Adrian Demian</p>
+              <p>{{activity.courseId.teacherId.firstName}} {{activity.courseId.teacherId.lastName}}</p>
           </div>
         </div>
       </li>

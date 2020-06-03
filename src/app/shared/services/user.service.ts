@@ -8,6 +8,7 @@ import {ENDPOINTS} from '../constants/api.constants';
 import {BaseStorageService} from './base-storage.service';
 import {Router} from '@angular/router';
 import { UserModel } from '../models/user.model';
+import {UserRegisterModel} from '../models/user-register.model';
 
 @Injectable({
   providedIn: 'root'
@@ -35,5 +36,9 @@ export class UserService {
         email: email
       }
     });
+  }
+
+  getUserById() {
+    return this.httpClient.get<any>(ENDPOINTS.user.getUserById);
   }
 }

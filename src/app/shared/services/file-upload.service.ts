@@ -10,11 +10,11 @@ import { FileUploadModel } from '../models/file-upload.model';
 export class FileUploadService {
 
   constructor( private http: HttpClient,
-    private restService: RestService) { }
+               private restService: RestService) { }
 
   createFileUpload(fileUpload: FileUploadModel) {
     return this.http.post(ENDPOINTS.course.createFileUpload, fileUpload);
-  } 
+  }
 
   getFileUploadById(id: string) {
     return this.http.get(ENDPOINTS.course.getFileUploadById+ '/{id}');
@@ -24,8 +24,19 @@ export class FileUploadService {
     return this.http.delete(ENDPOINTS.course.deleteFileUploadById + '/{id}');
   }
 
-  // Cila eshte metoda per DOWNLOAD?
-  // downloadFileByFileUploadId(fileUploadId: string) {
-  //   return this.http.get(ENDPOINTS.course.downloadFileByFileUploadId + '/${fileUploadId}');
-  // }
+  getFileUploadsByActivityId(id: string) {
+    return this.http.get<any>(ENDPOINTS.course.getFileUploadsByActivityId, {
+      params: {
+        activityId: id
+      }
+    });
+  }
+
+  getFileUploadsByLessonId(id: string) {
+    return this.http.get<FileUploadModel[]>(ENDPOINTS.course.getFileUploadsByLessonId, {
+      params: {
+        lessonId: id
+      }
+    });
+  }
 }

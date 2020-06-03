@@ -14,8 +14,8 @@ export class ForumPostService {
 
   createForumPost(forum: ForumModel) {
     return this.http.post(ENDPOINTS.course.createForumPost, forum);
-  } 
-    
+  }
+
   updateForumPost(forum: ForumModel, id: string) {
     return this.http.put(ENDPOINTS.course.updateForumPost + '/${id}', forum);
   }
@@ -28,7 +28,7 @@ export class ForumPostService {
     return this.http.delete(ENDPOINTS.course.deleteForumPostById + '/${id}');
   }
 
-  getForumPostsByStudentId(studentId: string) {
-    return this.http.get(ENDPOINTS.course.getForumPostsByStudentId + '/${studentId}');
+  getForumPostsByCourseId(courseId: string) {
+    return this.http.get<ForumModel[]>(ENDPOINTS.course.getForumPostsByCourseId + '/' + courseId);
   }
 }

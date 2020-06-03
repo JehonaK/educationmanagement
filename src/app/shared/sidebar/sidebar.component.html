@@ -11,9 +11,9 @@
         <li><a routerLink="/courses/course-detail/curriculum">Course curriculum</a></li>
       </ul>
     </li>
-    <li><a routerLink="/grade-book">Grade Book</a></li>
+    <li *ngIf="canView('gradebook')"><a routerLink="/grade-book">Grade Book</a></li>
     <li><a routerLink="/notification">Notification</a></li>
-    <li><a>Schedule</a>
+    <li *ngIf="canView('schedule')"><a>Schedule</a>
       <ul>
         <li><a routerLink="/schedule/general-settings">General Settings</a></li>
         <li><a routerLink="/schedule/view">Schedule view</a></li>
@@ -21,12 +21,14 @@
         <li><a routerLink="/schedule/create/periodic">Create Schedule</a></li>
       </ul>
     </li>
-    <li><a>School</a>
+    <li *ngIf="canView('school')"><a>School</a>
       <ul>
         <li><a routerLink="/school/settings">School Settings</a></li>
         <li><a routerLink="/school/levels">Level Management</a></li>
       </ul>
     </li>
-    <li><a routerLink="/students/associate">Associate Student</a></li>
+    <li *ngIf="canView('associateStudent')"><a routerLink="/students/associate">Associate Student</a></li>
+    <li *ngIf="canView('chat')"><a routerLink="/chat">Chat</a></li>
+    <li *ngIf="canView('meetings')"><a routerLink="/meetings">Meetings</a></li>
   </ul>
 </aside>

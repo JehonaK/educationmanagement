@@ -1,5 +1,6 @@
 import { EvaluationModel } from './evaluation.model';
 import {FileUploadModel} from './file-upload.model';
+import {CourseModel} from './course.model';
 
 export class ActivityModel {
     id: string;
@@ -9,7 +10,7 @@ export class ActivityModel {
     deadline: Date;
     gradeSystem: string;
     grade: string;
-    courseId: string;
+    courseId: CourseModel;
     evaluations: Array<EvaluationModel>;
     fileUploads: Array<FileUploadModel>;
 }

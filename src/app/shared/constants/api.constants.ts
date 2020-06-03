@@ -1,4 +1,4 @@
-const ENVIRONMENT = 'http://192.168.0.105:8080';
+const ENVIRONMENT = 'http://192.168.0.138:8662';
 
 const AUTH = {
   login: ENVIRONMENT + '/auth/login', // post
@@ -9,6 +9,7 @@ const USER = {
   requestPasswordRecovery: ENVIRONMENT + '/user/password-recoveries', // post
   validatePasswordRecoveryLink: ENVIRONMENT + '/user/password-recoveries/', // get and add a pathVariable {passwordRecoveryId}
   changePassword: ENVIRONMENT + '/user/password-recoveries/', // put
+  getUserById: ENVIRONMENT + '/user/users',
 };
 
 const SCHOOL = {
@@ -65,12 +66,18 @@ const COURSE = {
   getFileUploadById: ENVIRONMENT + '/course/upload',
   deleteFileUploadById: ENVIRONMENT + '/course/upload',
   downloadFileByFileUploadId : ENVIRONMENT + '/course/upload/download',
-  getFileUploadsByActivityId: ENVIRONMENT + '/course/upload', // request param
+  getFileUploadsByActivityId: ENVIRONMENT + '/course/upload',
+  getFileUploadsByLessonId: ENVIRONMENT + '/course/upload',
   createForumPost: ENVIRONMENT + '/course/forum-post',
   updateForumPost: ENVIRONMENT + '/course/forum-post',
   getForumPostById: ENVIRONMENT + '/course/forum-post',
   deleteForumPostById: ENVIRONMENT + '/course/forum-post',
-  getForumPostsByStudentId: ENVIRONMENT + '/course/forum-post',
+  getForumPostsByCourseId: ENVIRONMENT + '/course/forum-post',
+  createLesson: ENVIRONMENT + '/course/lesson',
+  updateLesson: ENVIRONMENT + '/course/lesson',
+  getLessonById: ENVIRONMENT + '/course/lesson',
+  deleteLessonById: ENVIRONMENT + '/course/lesson',
+  getLessonsByCourseId: ENVIRONMENT + '/course/lesson/course',
 };
 
 const SCHEDULE = {

@@ -161,7 +161,12 @@ const routes: Routes = [
               },
               {
                 path: 'curriculum',
-                component: CourseCurriculumComponent,
+                children: [
+                  {
+                    path: ':id',
+                    component: CourseCurriculumComponent,
+                  }
+                ]
               },
               {
                 path: 'edit-course',

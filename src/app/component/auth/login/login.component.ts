@@ -36,7 +36,13 @@ export class LoginComponent implements OnInit {
         password: this.loginControls.password.value
       };
       this.userService.login(payload.email, payload.password).subscribe(response => {
-        localStorage.setItem("token", response.headers.get("Authorization"))
+        localStorage.setItem('token', response.headers.get('Authorization'));
+          this.userService.getUserById().subscribe(res => {
+            localStorage.setItem('role', res.role);
+            localStorage.setItem('firstName', res.firstName);
+            localStorage.setItem('lastName', res.lastName);
+            console.log(localStorage.getItem('role'));
+          });
         this.router.navigate(['/dashboard']);
         },
         (err) => {
@@ -45,7 +51,6 @@ export class LoginComponent implements OnInit {
     } else {
       alert('form not valid');
     }
-  
   }
 
   onRegisterFormSubmit() {
