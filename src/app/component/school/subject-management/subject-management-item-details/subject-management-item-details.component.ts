@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { SubjectTeacherAssignmentModalComponent } from '../subject-teacher-assignment-modal/subject-teacher-assignment-modal.component';
 import { SchoolSubjectModel, SUBJECTS } from 'src/app/shared/models/school/school-subject.model';
@@ -14,14 +14,15 @@ import { SchoolClassModel } from 'src/app/shared/models/school/school-class.mode
 })
 export class SubjectManagementItemDetails implements OnInit {
 
-  schoolSubject: SchoolSubjectModel;
+  schoolSubject: any;
   private classes: SchoolClassModel[];
 
-  constructor(private route: ActivatedRoute, private dialog: MatDialog, private schoolSubjectService: SchoolSubjectService) { }
+  constructor(private route: ActivatedRoute, private router: Router,
+    private dialog: MatDialog, private schoolSubjectService: SchoolSubjectService) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
-      this.schoolSubjectService.getSubjectById(params.get('id')).subscribe(resBody => {
+      this.schoolSubjectService.getSubjectById(params.get('subjectId')).subscribe(resBody => {
         this.schoolSubject = resBody;
       })
       // this.schoolSubject = SUBJECTS.filter(subject => subject.id === params.get('subjectId'))[0];
@@ -38,7 +39,8 @@ export class SubjectManagementItemDetails implements OnInit {
   deleteSubject() {
     if (confirm("Are you sure you want to delete " + this.schoolSubject.name + "?")) {
       this.schoolSubjectService.deleteSubjectById(this.schoolSubject.id).subscribe(res => {
-        alert(this.schoolSubject.name + " has been deleted.")
+        alert(this.schoolSubject.name + " has been deleted.");
+        this.router.navigate(['../../'], { relativeTo: this.route });
       })
     }
   }
@@ -46,7 +48,7 @@ export class SubjectManagementItemDetails implements OnInit {
   editSubject() {
     this.dialog.open(SchoolSubjectConfigurationModalComponent, {
       width: "50%",
-      data: this.schoolSubject
+      data: { subject: this.schoolSubject }
     });
   }
 

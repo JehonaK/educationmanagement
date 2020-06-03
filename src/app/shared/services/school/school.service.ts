@@ -18,7 +18,7 @@ export class SchoolService {
   }
 
   updateSchool(school: SchoolModel, id: string): Observable<SchoolModel> {
-    delete(school.schoolAdminId);
+    delete((school as any).schoolAdmin);
     return this.http.put<SchoolModel>(ENDPOINTS.school.updateSchool + `/${id}`, school);
   }
 

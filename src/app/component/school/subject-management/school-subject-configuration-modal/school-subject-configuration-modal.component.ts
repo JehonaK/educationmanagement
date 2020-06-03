@@ -16,12 +16,12 @@ export class SchoolSubjectConfigurationModalComponent implements OnInit {
   schoolSubjectConfigurationForm: FormGroup;
   constructor(private fb: FormBuilder,
     private dialogRef: MatDialogRef<SchoolSubjectConfigurationModalComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: SchoolSubjectModel,
+    @Inject(MAT_DIALOG_DATA) public data: any,
     private schoolSubjectService: SchoolSubjectService) { }
 
 
   ngOnInit(): void {
-    if (!this.data) {
+    if (!this.data.subject) {
       this.schoolSubjectConfigurationForm = this.fb.group({
         name: ['', Validators.required],
         type: ['', Validators.required],
@@ -29,9 +29,9 @@ export class SchoolSubjectConfigurationModalComponent implements OnInit {
       })
     } else {
       this.schoolSubjectConfigurationForm = this.fb.group({
-        name: [this.data.name, Validators.required],
-        type: [this.data.subjectType, Validators.required],
-        description: [this.data.description, Validators.required]
+        name: [this.data.subject.name, Validators.required],
+        type: [this.data.subject.subjectType, Validators.required],
+        description: [this.data.subject.description, Validators.required]
       })
     }
   }
@@ -41,19 +41,24 @@ export class SchoolSubjectConfigurationModalComponent implements OnInit {
   }
 
   submitForm() {
-    this.data.name = this.schoolSubjectConfigurationForm.get('name').value;
-    this.data.description = this.schoolSubjectConfigurationForm.get('description').value;
-    this.data.subjectType = this.schoolSubjectConfigurationForm.get('type').value;
-    if (this.data) {
-      this.schoolSubjectService.updateSubject(this.data, this.data.id).subscribe(resBody => {
-        this.data = resBody;
-        alert("Subject " + this.data.name + " successfully updated ");
+
+    if (this.data.subject) {
+      this.data.subject.name = this.schoolSubjectConfigurationForm.get('name').value;
+      this.data.subject.description = this.schoolSubjectConfigurationForm.get('description').value;
+      this.data.subject.subjectType = this.schoolSubjectConfigurationForm.get('type').value;
+      this.schoolSubjectService.updateSubject(this.data.subject, this.data.subject.id).subscribe(resBody => {
+        this.data.subject = resBody;
+        alert("Subject " + resBody.name + " successfully updated ");
         this.dialogRef.close();
       })
     } else {
-      this.schoolSubjectService.createSubject(this.data).subscribe(resBody => {
-        this.data = resBody;
-        alert("Subject " + this.data.name + " successfully created ");
+      this.data.subject = new SchoolSubjectModel(null, this.schoolSubjectConfigurationForm.get('name').value,
+        this.schoolSubjectConfigurationForm.get('description').value, this.data.level.id,
+        this.schoolSubjectConfigurationForm.get('type').value)
+      this.schoolSubjectService.createSubject(this.data.subject).subscribe(resBody => {
+        this.data.subject = resBody;
+        this.data.level.subjects.push(this.data.subject);
+        alert("Subject " + resBody.name + " successfully created ");
         this.dialogRef.close();
       })
     }

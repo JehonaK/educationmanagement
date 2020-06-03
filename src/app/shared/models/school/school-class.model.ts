@@ -7,7 +7,7 @@ export class SchoolClassModel {
     constructor(
         public id: string,
         public name: string,
-        public status: SchoolClassStatus,
+        public classStatus: SchoolClassStatus,
         public levelId: string,
         public students: Array<StudentModel>
     ) { }

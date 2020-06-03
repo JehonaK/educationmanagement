@@ -1,4 +1,4 @@
 export enum SchoolSubjectType{
-    MANDATORY="Mandatory",
-    OPTIONAL="Optional"
+    MANDATORY="MANDATORY",
+    OPTIONAL="OPTIONAL"
 }

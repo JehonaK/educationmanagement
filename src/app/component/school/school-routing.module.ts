@@ -9,9 +9,12 @@ import { LevelManagementListComponent } from './level-management/level-managemen
 import { LevelManagementItemDetailsComponent } from './level-management/level-management-item-details/level-management-item-details.component';
 
 const schoolRoutes = [{
-    path: '',
-    component: SchoolSettingsComponent,
+    path: 'school',
     children: [
+        {
+            path: 'details',
+            component: SchoolSettingsComponent,
+        },
         {
             path: "edit",
             component: SchoolSettingsModalComponent
