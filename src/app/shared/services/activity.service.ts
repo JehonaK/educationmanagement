@@ -14,8 +14,8 @@ export class ActivityService {
 
   createActivity(activity: ActivityModel) {
     return this.http.post(ENDPOINTS.course.createActivity, activity);
-  } 
-    
+  }
+
   updateActivity(activity: ActivityModel, id: string) {
     return this.http.put(ENDPOINTS.course.updateActivity + '/${id}', activity);
   }
@@ -29,7 +29,6 @@ export class ActivityService {
   }
 
   getActivitiesByCourseId(courseId: string) {
-    return this.http.get(ENDPOINTS.course.getActivitiesByCourseId + '/${courseId}');
+    return this.http.get<ActivityModel[]>(ENDPOINTS.course.getActivitiesByCourseId + '/' + courseId);
   }
-  
 }

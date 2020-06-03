@@ -39,7 +39,7 @@ const SCHOOL = {
 
 const COURSE = {
   updateCourse: ENVIRONMENT + '/course/course',
-  getCourseById: ENVIRONMENT + '/course/course',
+  getCourseById: ENVIRONMENT + '/course',
   deleteCourseById: ENVIRONMENT + '/course/course',
   getCoursesByTeacherId: ENVIRONMENT + '/course/teacher',
   getCoursesByStudentId: ENVIRONMENT + '/course/course/student',
@@ -71,6 +71,11 @@ const COURSE = {
   getForumPostById: ENVIRONMENT + '/course/forum-post',
   deleteForumPostById: ENVIRONMENT + '/course/forum-post',
   getForumPostsByStudentId: ENVIRONMENT + '/course/forum-post',
+  createLesson: ENVIRONMENT + '/course/lesson',
+  updateLesson: ENVIRONMENT + '/course/lesson',
+  getLessonById: ENVIRONMENT + '/course/lesson',
+  deleteLessonById: ENVIRONMENT + '/course/lesson',
+  getLessonsByCourseId: ENVIRONMENT + '/course/lesson',
 };
 
 const SCHEDULE = {
