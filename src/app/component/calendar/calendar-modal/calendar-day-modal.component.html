@@ -1,0 +1,19 @@
+<div class="calendar_day_modal">
+    <div class="calendar_day_modal-body">
+        <new-event [date]="date"></new-event>
+        <div class="calendar_day_modal__title">
+            {{  date.toLocaleString('en-us', {weekday:'long'})  }},
+            {{  date.toLocaleString('en-GB', {month:'long', year:'numeric', day:'numeric'})  }}
+        </div>
+        <ng-template [ngIf]="events && events.length > 0" [ngIfElse]="noEvents">
+            <calendar-day-modal-event [hostId]="this.date.getDate()" [event]="event" *ngFor="let event of events">
+            </calendar-day-modal-event>
+        </ng-template>
+    </div>
+</div>
+
+<ng-template #noEvents>
+    <div class="modal_description">
+        No events on this date.
+    </div>
+</ng-template>

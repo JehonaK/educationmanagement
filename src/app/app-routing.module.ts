@@ -41,6 +41,7 @@ import {NewForumPostModalComponent} from './component/courses/course-detail/cour
 import {NewActivityModalComponent} from './component/courses/course-detail/course-activities/new-activity-modal/new-activity-modal.component';
 import {EditCourseCurriculumModalComponent} from './component/courses/course-detail/edit-course-curriculum-modal/edit-course-curriculum-modal.component';
 import {CourseActivitiesComponent} from './component/courses/course-detail/course-activities/course-activities.component';
+import { CalendarComponent } from './component/calendar/calendar.component';
 
 const routes: Routes = [
   {
@@ -231,6 +232,11 @@ const routes: Routes = [
       {
         path: "students/associate",
         component: StudentParentAssociationComponent
+      },
+      {
+        path:'calendar',
+        loadChildren: () => import('./component/calendar/calendar-routing.module')
+        .then(m => m.CalendarRoutingModule)
       }
     ]
   }

@@ -1,0 +1,20 @@
+<div class="calendar__month">
+    <div class="calendar__day_holder">
+        <div class="calendar__day" *ngFor="let dayNumber of [].constructor(getStartingDay())">
+            <calendar-day></calendar-day>
+        </div>
+        <ng-template ngFor let-item [ngForOf]="[].constructor(getNumberOfDaysInMonth())" let-i="index">
+            <div
+                [ngClass]="currentDate.getDate() == i+1 && selectedDate==null ? 'calendar__day calendar__day--selected' : 'calendar__day'">
+                <calendar-day [date]="getDateByDay(i+1)" [events]="calendarEventsGrouped[i+1]">
+                </calendar-day>
+            </div>
+        </ng-template>
+        <ng-template [ngIf]="(getStartingDay()+getNumberOfDaysInMonth())%7!=0">
+            <div class="calendar__day"
+                *ngFor="let filler of [].constructor(7-((getStartingDay()+getNumberOfDaysInMonth())%7))">
+                <calendar-day></calendar-day>
+            </div>
+        </ng-template>
+    </div>
+</div>
