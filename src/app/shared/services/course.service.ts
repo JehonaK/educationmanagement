@@ -32,6 +32,10 @@ export class CourseService {
     return this.http.get<any>(ENDPOINTS.course.getCoursesByStudentId);
   }
 
+  createLesson(lesson: any) {
+    return this.http.put<any>(ENDPOINTS.course.updateLesson, lesson);
+  }
+
   updateLesson(lesson: LessonModel, id: string) {
     return this.http.put(ENDPOINTS.course.updateLesson + '/{id}', lesson);
   }
