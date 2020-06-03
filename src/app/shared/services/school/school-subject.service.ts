@@ -19,19 +19,20 @@ export class SchoolSubjectService {
   }
 
   updateSubject(subject: SchoolSubjectModel, id: string): Observable<SchoolSubjectModel> {
-    return this.http.put<SchoolSubjectModel>(ENDPOINTS.school.updateSubject + '/{id}', subject);
+    return this.http.put<SchoolSubjectModel>(ENDPOINTS.school.updateSubject + `/${id}`, subject);
   }
 
   getSubjectById(id: string): Observable<SchoolSubjectModel> {
-    return this.http.get<SchoolSubjectModel>(ENDPOINTS.school.getSubjectById + '/{id}');
+    return this.http.get<SchoolSubjectModel>(ENDPOINTS.school.getSubjectById + `/${id}`);
   }
 
   deleteSubjectById(id: string) {
-    return this.http.delete(ENDPOINTS.school.deleteSubjectById + '/{id}');
+    return this.http.delete(ENDPOINTS.school.deleteSubjectById + `/${id}`);
   }
 
-  assignTeacherToSubject(email: string, /*schoolClassId: string,*/ subjectId: string) {
-    return this.http.put(ENDPOINTS.school.assignTeacherToSubject, { email: email, subjectId: subjectId });
+  assignTeacherToSubject(email: string, subjectId: string, classes: string[]) {
+    return this.http.put(ENDPOINTS.school.assignTeacherToSubject,
+      { email: email, subjectId: subjectId, schoolClassIdList: classes });
   }
 
   getSubjectsByLevelId(levelId: string): Observable<SchoolSubjectModel[]> {

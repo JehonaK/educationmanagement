@@ -12,7 +12,7 @@ import { LevelService } from 'src/app/shared/services/school/level.service';
 })
 export class LevelManagementListComponent implements OnInit {
 
-    levels: LevelModel[] = LEVELS;
+    levels: LevelModel[];
 
     levelCreationForm: FormGroup
 
@@ -31,7 +31,8 @@ export class LevelManagementListComponent implements OnInit {
 
     openModal() {
         this.matDialog.open(LevelConfigurationModalComponent, {
-            width: '50%'
+            width: '50%',
+            data: { levels: this.levels }
         });
     }
 

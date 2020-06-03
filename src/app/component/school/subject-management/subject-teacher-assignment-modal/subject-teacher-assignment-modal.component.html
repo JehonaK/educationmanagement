@@ -3,15 +3,25 @@
         <label for="name">
             Subject
         </label>
-        <input type="text" formControlName="name" name="name" id="name" class="form-control"/>
+        <input type="text" formControlName="name" name="name" id="name" class="form-control" />
     </div>
 
     <div class="form-group">
         <label for="email">
             Teacher Email
         </label>
-        <input type="email" formControlName="email" name="email" id="email" class="form-control"/>
+        <input type="email" formControlName="email" name="email" id="email" class="form-control" />
     </div>
 
-    <button (click)="inviteTeacher()" class="btn btn-success">Send</button>
+    <div class="form-group">
+        <label for="classes">
+            Classes
+        </label>
+        <div *ngFor="let class of classes.controls; let i=index">
+            <input type="checkbox" [formControl]="class" value="{{class.value.selected}}" />
+            {{data.schoolClasses[i].name}}
+        </div>
+    </div>
+
+    <button (click)=" inviteTeacher()" class="btn btn-success">Send</button>
 </form>

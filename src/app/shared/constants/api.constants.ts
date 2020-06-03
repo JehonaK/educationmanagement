@@ -17,12 +17,12 @@ const SCHOOL = {
   updateSchool: ENVIRONMENT + '/school/school', // put and add a pathVariable in service
   getSchoolById: ENVIRONMENT + '/school/school', // get and add a pathVariable in service
   deleteSchoolById: ENVIRONMENT + '/school/school',
-  createClass: ENVIRONMENT + '/school/class',
-  updateClass: ENVIRONMENT + '/school/class',
-  getClassById: ENVIRONMENT + '/school/class',
-  getClassByLevelId: ENVIRONMENT + '/school/class',
-  deleteClassById: ENVIRONMENT + '/school/class',
-  addStudentToClass: ENVIRONMENT + '/school/class/student',
+  createClass: ENVIRONMENT + '/school/schoolClass',
+  updateClass: ENVIRONMENT + '/school/schoolClass',
+  getClassById: ENVIRONMENT + '/school/schoolClass',
+  getClassByLevelId: ENVIRONMENT + '/school/schoolClass',
+  deleteClassById: ENVIRONMENT + '/school/schoolClass',
+  addStudentToClass: ENVIRONMENT + '/school/schoolClass/student',
   createLevel: ENVIRONMENT + '/school/level',
   updateLevel: ENVIRONMENT + '/school/level',
   getLevelById: ENVIRONMENT + '/school/level',

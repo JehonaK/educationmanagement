@@ -15,7 +15,7 @@
         <div class="data_holder__title">
             Subject name
         </div>
-        <div class="title">
+        <div *ngIf="schoolSubject" class="title">
             {{schoolSubject.name}}
         </div>
 
@@ -23,20 +23,20 @@
             Level
         </div>
 
-        <div class="data_holder__content">
-            {{schoolSubject.levelId}}
+        <div *ngIf="schoolSubject" class="data_holder__content">
+            {{schoolSubject.levelName}}
         </div>
 
         <div class="data_holder__title">
             Description
         </div>
-        <div class="data_holder__content">
+        <div *ngIf="schoolSubject" class="data_holder__content">
             {{schoolSubject.description}}
         </div>
         <div class="data_holder__title">
             Type
         </div>
-        <div class="data_holder__content">
+        <div *ngIf="schoolSubject" class="data_holder__content">
             {{  schoolSubject.subjectType  }}
         </div>
     </div>

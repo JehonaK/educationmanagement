@@ -11,13 +11,12 @@
         <input type="name" name="city" class="form-control" formControlName="city" id="city" required>
     </div>
     <div class="form-group">
-        <label for="address">Address</label>    
-        <input type="text" name="address" class="form-control" id="address" formControlName="address"
-            required>
+        <label for="address">Address</label>
+        <input type="text" name="address" class="form-control" id="address" formControlName="address" required>
     </div>
     <div class="form-group">
         <label for="type">Type</label>
-        <select formControlName="type" name="type" class="form-control" id="type" formControlName="type" required>
+        <select formControlName="type" name="type" class="form-control" id="type" required>
             <option *ngFor="let type of getSchoolTypes()" [value]="type">{{type}}</option>
         </select>
     </div>

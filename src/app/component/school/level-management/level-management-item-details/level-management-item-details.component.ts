@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { LevelService } from 'src/app/shared/services/school/level.service';
 import { MatDialog } from '@angular/material/dialog';
 import { LevelConfigurationModalComponent } from '../level-configuration-modal/level-configuration-modal.component';
@@ -22,7 +22,10 @@ export class LevelManagementItemDetailsComponent implements OnInit {
     private levelService: LevelService,
     private dialog: MatDialog,
     private schoolClassService: SchoolClassService,
-    private schoolSubjectService: SchoolSubjectService) { }
+    private schoolSubjectService: SchoolSubjectService,
+    private router: Router) {
+      this.ngOnInit();
+     }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
@@ -53,20 +56,22 @@ export class LevelManagementItemDetailsComponent implements OnInit {
 
   openSubjectModal() {
     this.dialog.open(SchoolSubjectConfigurationModalComponent, {
-      width: "50%"
+      width: "50%",
+      data: { level: this.level }
     })
   }
 
   openClassModal() {
     this.dialog.open(SchoolClassConfigurationModalComponent, {
       width: "50%",
+      data: { level: this.level }
     });
   }
 
   editLevel() {
     this.dialog.open(LevelConfigurationModalComponent, {
       width: "50%",
-      data: this.level
+      data: { level: this.level }
     });
   }
 
@@ -74,6 +79,8 @@ export class LevelManagementItemDetailsComponent implements OnInit {
     if (confirm("Are you sure you want to delete " + this.level.name + "?")) {
       this.levelService.deleteLevelById(this.level.id).subscribe(res => {
         alert("Level " + this.level.name + " has been deleted");
+        delete(this.level);
+        this.router.navigate(['../'], { relativeTo: this.route })
       });
     }
 

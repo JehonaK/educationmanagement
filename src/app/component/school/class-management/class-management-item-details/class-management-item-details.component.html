@@ -16,28 +16,30 @@
         <div class="data_holder__title">
             Class name
         </div>
-        <div class="title">
+        <div *ngIf="schoolClass" class="title">
             {{ schoolClass.name }}
         </div>
 
         <div class="data_holder__title">
             Level
         </div>
-        <div class="data_holder__content">
-            {{ schoolClass.levelId }}
+        <div *ngIf="schoolClass" class="data_holder__content">
+            {{ schoolClass.levelName }}
         </div>
         <div class="data_holder__title">
             Status
         </div>
-        <div class="data_holder__content">
-            {{ schoolClass.status }}
+        <div *ngIf="schoolClass" class="data_holder__content">
+            {{ schoolClass.classStatus }}
         </div>
         <div class="data_holder__title">
             Students
         </div>
-        <div class="data_holder__content" *ngFor="let student of schoolClass.students">
-            {{ student.firstName + " " + student.lastName }}
-        </div>
+        <ng-template [ngIf]="schoolClass">
+            <div class="data_holder__content" *ngFor="let student of schoolClass.students">
+                {{ student.firstName + " " + student.lastName }}
+            </div>
+        </ng-template>
         <div class="insert_student_button">
             <button (click)="openStudentInsertionModal()" class="button is-small is-dark">Add Student</button>
         </div>
