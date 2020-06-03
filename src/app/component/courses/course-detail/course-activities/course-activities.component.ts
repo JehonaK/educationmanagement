@@ -12,5 +12,4 @@ export class CourseActivitiesComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

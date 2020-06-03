@@ -27,13 +27,13 @@ export class SchoolClassStudentInsertionModalComponent implements OnInit {
   }
 
   insertStudent() {
-    this.route.paramMap.subscribe(params => {
-      this.schoolClassService.addStudentToClass(this.studentInsertionForm.get('email').value,/*this.data.id*/).subscribe(resBody => {
+    this.schoolClassService.addStudentToClass(
+      this.studentInsertionForm.get('email').value, this.data.id)
+      .subscribe(resBody => {
         alert("Student added successfully");
+        this.data.students.push(resBody);
         this.dialogRef.close();
       })
-    }
-    )
   }
 
 }

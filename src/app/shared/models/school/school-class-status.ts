@@ -1,4 +1,4 @@
 export enum SchoolClassStatus {
-    FINISHED = 'Finished',
-    ACTIVE = 'Active'
+    FINISHED = 'FINISHED',
+    ACTIVE = 'ACTIVE'
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { SchoolClassModel, SCHOOL_CLASSES } from 'src/app/shared/models/school/school-class.model';
 import { SchoolClassService } from 'src/app/shared/services/school/school-class.service';
 import { MatDialog } from '@angular/material/dialog';
@@ -13,10 +13,11 @@ import { SchoolClassStudentInsertionModalComponent } from '../school-class-stude
 })
 export class ClassManagementItemDetailsComponent implements OnInit {
 
-  schoolClass: SchoolClassModel;
+  schoolClass: any;
 
   constructor(private route: ActivatedRoute,
     private schoolClassService: SchoolClassService,
+    private router: Router,
     private dialog: MatDialog) { }
 
   ngOnInit(): void {
@@ -24,7 +25,7 @@ export class ClassManagementItemDetailsComponent implements OnInit {
       // this.schoolManagementService.getClassById(params.get('id')).subscribe(res =>
       //   this.schoolClass = res
       // )
-      this.schoolClassService.getSchoolClassById(params.get('id')).subscribe(resBody => {
+      this.schoolClassService.getSchoolClassById(params.get('classId')).subscribe(resBody => {
         this.schoolClass = resBody;
       })
       // this.schoolClass = SCHOOL_CLASSES.filter(schoolClass => schoolClass.id == params.get('classId'))[0];
@@ -35,7 +36,7 @@ export class ClassManagementItemDetailsComponent implements OnInit {
   editClass() {
     this.dialog.open(SchoolClassConfigurationModalComponent, {
       width: "50%",
-      data: this.schoolClass
+      data: { schoolClass: this.schoolClass }
     });
   }
 
@@ -51,6 +52,7 @@ export class ClassManagementItemDetailsComponent implements OnInit {
       this.schoolClassService.deleteSchoolClassById(this.schoolClass.id).subscribe(
         res => {
           alert("Class " + this.schoolClass.name + " has been deleted.")
+          this.router.navigate(['../../'], { relativeTo: this.route });
         })
   }
 }

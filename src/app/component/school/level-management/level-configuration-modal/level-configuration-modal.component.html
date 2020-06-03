@@ -1,5 +1,5 @@
 <div class="title">
-    {{this.data ? 'Edit' : 'New' }} Level
+    {{this.data.level ? 'Edit' : 'New' }} Level
 </div>
 
 <form [formGroup]="levelCreationForm">
@@ -7,8 +7,25 @@
         <label for="name">
             Name
         </label>
-        <input class="form-control" type="text" formControlName="name" name="name" id="name" />
+        <input class="form-control" type="text" formControlName="name" name="name" id="name" required/>
     </div>
-
-    <button (submit)="submitForm()" class="btn btn-success">Create</button>
+    <div *ngIf="!data.level" class="class-details-container">
+        <div class="form-group form-group--smaller">
+            <label for="classes-number">
+                Number of classes
+            </label>
+            <input class="form-control" formControlName="classesNumber" type="number" name="classes-number" min="0"
+                max="20" id="classes-number" />
+        </div>
+        <div class="form-group form-group--smaller">
+            <label for="class-naming">
+                Class naming
+            </label>
+            <select formControlName="classNaming" name="class-naming" class="form-control" id="class-naming">
+                <option value="NUMERIC">Numeric</option>
+                <option value="ALPHABETIC" selected>Alphabetic</option>
+            </select>
+        </div>
+    </div>
+    <button (click)="submitForm()" [disabled]="!levelCreationForm.valid" class="button is-primary"> {{ data.level ? 'Save' : 'Create' }}</button>
 </form>

@@ -114,3 +114,28 @@ body {
 .btn_edit {
     margin-right: 10px;
 }
+
+.event_detail__holder {
+    padding-left: 10px;
+    margin-left: 5px;
+    margin-top: 10px;
+    // border: 1px solid grey;
+}
+
+.event_detail__title {
+    font-weight: 700;
+    max-width: 100%;
+    margin-bottom: 5px;
+}
+
+.event_detail__title {
+    padding-left: 5px;
+}
+
+.event_detail__content {
+    padding-left: 10px;
+}
+
+.cdk-overlay-pane {
+    overflow: auto;
+}

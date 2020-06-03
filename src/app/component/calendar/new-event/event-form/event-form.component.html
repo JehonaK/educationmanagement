@@ -1,0 +1,52 @@
+<form [formGroup]="eventForm">
+    <div class="form-group">
+        <label for="title">Title</label>
+        <input type="name" name="title" class="form-control" formControlName="title" id="title" required>
+
+    </div>
+    <div class="form-group">
+        <label for="type">Type</label>
+        <select formControlName="type" name="type" class="form-control" id="type" formControlName="type" required>
+            <option *ngFor="let type of getEventTypes()" [value]="type">{{type}}</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="description">Description</label>
+        <input type="text" name="description" class="form-control" id="description" formControlName="description"
+            required>
+    </div>
+    <div class="form-group">
+        <label for="date">Date</label>
+        <input type="date" formControlName="date" name="date" class=" form-control" id="date" required>
+    </div>
+    <div formGroupName="eventTime">
+        <label for="starting-time" class="time_input__label">Starting time</label>
+        <div class="form-group time_input__group">
+            <div class="time_input__container">
+                <label for="starting-time-hours">Hours</label>
+                <input type="number" name="starting-time-hours" class="form-control" id="starting-time-hours" min="0" max="23"
+                    formControlName="startingTimeHours" required>
+            </div>
+            <div class="time_input__container">
+                <label for="starting-time-minutes">Minutes</label>
+                <input type="number" name="starting-time-minutes" class="form-control" id="starting-time-minutes" min="0" max="59"
+                    formControlName="startingTimeMinutes" required>
+            </div>
+        </div>
+        <label for="starting-time" class="time_input__label">Ending time</label>
+        <div class="form-group time_input__group">
+            <div class="time_input__container">
+                <label for="ending-time-hours">Hours</label>
+                <input type="number" name="ending-time-hours" class="form-control time" id="ending-time-hours" min="0" max="23"
+                    formControlName="endingTimeHours" required>
+            </div>
+            <div class="time_input__container">
+                <label for="ending-time-minutes">Minutes</label>
+                <input type="number" name="ending-time-minutes" class="form-control time" id="ending-time-minutes" min="0" max="59"
+                    formControlName="endingTimeMinutes" required>
+            </div>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-success" (click)="submitForm()" [disabled]="!eventForm.valid">Submit</button>
+</form>

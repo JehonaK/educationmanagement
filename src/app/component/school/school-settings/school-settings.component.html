@@ -10,7 +10,7 @@
                 Name
             </div>
 
-            <div class="data_holder__content">
+            <div *ngIf="school" class="data_holder__content">
                 {{  school.name }}
             </div>
         </div>
@@ -20,7 +20,7 @@
                 City
             </div>
 
-            <div class="data_holder__content">
+            <div *ngIf="school" class="data_holder__content">
                 {{  school.city }}
             </div>
         </div>
@@ -30,7 +30,7 @@
                 Address
             </div>
 
-            <div class="data_holder__content">
+            <div *ngIf="school" class="data_holder__content">
                 {{  school.address }}
             </div>
         </div>
@@ -40,7 +40,7 @@
                 School type
             </div>
 
-            <div class="data_holder__content">
+            <div *ngIf="school" class="data_holder__content">
                 {{  school.schoolType }}
             </div>
         </div>
@@ -50,7 +50,7 @@
                 School creation date
             </div>
 
-            <div class="data_holder__content">
+            <div *ngIf="school" class="data_holder__content">
                 {{  school.schoolCreationDate.toLocaleString("en-GB", {month:'short', day:'numeric', year:'numeric'}) }}
             </div>
         </div>

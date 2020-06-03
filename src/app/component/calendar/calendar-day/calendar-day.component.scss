@@ -1,0 +1,62 @@
+.calendar__day_number {
+  text-align: right;
+  line-height: 2em;
+  opacity: 0.6;
+  height: 60px;
+  width: 90%;
+  font-size: 1.25em;
+  font-weight: 400;
+}
+
+
+
+.calendar__day_container {
+  height: 100%;
+}
+
+.calendar__day_event {
+  padding-right: 2px;
+}
+
+.calendar__day_events {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 70%;
+  height: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.circle {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+
+  &--special-event {
+    background-color: #00fff0;
+  }
+  &--user-event {
+    background-color: #00d1ff;
+  }
+  &--schedule-event {
+    background-color: #3d6cb9;
+  }
+  &--meeting-event {
+    background-color: #ffb961;
+  }
+  &--system-event {
+    background-color: darkgrey;
+  }
+}
+@media screen and (min-width: 360px) and (max-width: 528px) {
+  .circle {
+    border-radius: 50%;
+    height: 8px;
+    width: 8px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+  }
+}
