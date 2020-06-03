@@ -1,9 +1,12 @@
-<div *ngFor="activity">
+<div *ngIf="activity">
   <div class="page-section">
     <div class="media v-middle">
       <div class="media-body">
         <h1 class="text-headline margin-none">{{activity.name}}</h1>
         <p class="text-subhead">{{activity.description}}</p>
+        <div *ngFor="let fileUpload of activity.fileUploads">
+          <p>{{fileUpload.id}}</p>
+        </div>
       </div>
       <div class="media-right" *ngIf="getRole() === 'TEACHER'">
         <button (click)="openModalEditActivity()" class="button is-info is-light is-outlined" data-z="0.5" data-hover-z="1" data-animated>Edit Activity</button>
@@ -16,11 +19,11 @@
       <tbody>
       <tr>
         <th class="is-primary-light">Due date</th>
-        <td>{{activity.deadline}}</td>
+        <td>{{activity.deadline.toLocaleString("en-GB",{day:'numeric',year:'numeric',month:'short',timeZone:'utc',hour:'numeric',minute:'numeric',second:'numeric'})}}</td>
       </tr>
       <tr>
         <th class="is-primary-light">Time remaining</th>
-        <td>{{activity.deadline}}</td>
+        <td>{{timeRemaining}}</td>
       </tr>
       <tr>
         <th class="is-primary-light">Grade System</th>
@@ -28,11 +31,11 @@
       </tr>
       </tbody>
     </table>
-    <div class="add-submission">
+    <div class="add-submission" *ngIf="activity.hasFileUpload">
       <button (click)="openModalAddSubmission()" class="button is-success is-light is-outlined">Add submission</button >
     </div>
   </div>
-  <div class="teacher-table" *ngIf="getRole() === 'TEACHER'">
+  <div class="teacher-table">
     <table class="table is-bordered is-fullwidth">
       <thead>
       <tr class="is-primary-light">

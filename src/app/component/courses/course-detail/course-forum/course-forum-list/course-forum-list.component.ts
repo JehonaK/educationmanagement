@@ -14,23 +14,37 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class CourseForumListComponent implements OnInit {
   forumPosts: ForumModel[];
+  courseId: string;
   constructor(private dialog: MatDialog,
               private activatedRoute: ActivatedRoute,
-              private forumPostService: ForumPostService) { }
+              private forumPostService: ForumPostService) {
+    this.dialog._afterAllClosed.subscribe(result => {
+      this.getForumPostByCourseId();
+      console.log('constructor', this.forumPosts);
+    });
+  }
 
   ngOnInit(): void {
+    this.getCourseId();
     this.getForumPostByCourseId();
   }
   openModal() {
     this.dialog.open(NewForumPostModalComponent, {
       width: '50%',
+      data: {
+        courseId: this.courseId,
+      }
+    });
+  }
+  getCourseId(){
+    this.activatedRoute.paramMap.subscribe(params => {
+      this.courseId = params.get('id');
     });
   }
   getForumPostByCourseId(){
     this.activatedRoute.paramMap.subscribe(params => {
-      this.forumPostService.getForumPostsByCourseId('858e7eac-e125-4f27-97be-17eeb9d1efa5').subscribe(res => {
+      this.forumPostService.getForumPostsByCourseId(this.courseId).subscribe(res => {
         this.forumPosts = res;
-        console.log(res);
       });
     });
   }

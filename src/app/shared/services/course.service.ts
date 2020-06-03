@@ -33,7 +33,7 @@ export class CourseService {
   }
 
   createLesson(lesson: any) {
-    return this.http.put<any>(ENDPOINTS.course.updateLesson, lesson);
+    return this.http.post<any>(ENDPOINTS.course.createLesson, lesson);
   }
 
   updateLesson(lesson: LessonModel, id: string) {

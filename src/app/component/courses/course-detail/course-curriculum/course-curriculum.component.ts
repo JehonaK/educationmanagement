@@ -28,6 +28,9 @@ export class CourseCurriculumComponent implements OnInit {
   ngOnInit(): void {
     this.getCourseById();
     this.getLessons();
+    this.dialog.afterAllClosed.subscribe(res => {
+      this.getLessons();
+    });
   }
   getRole(){
     return localStorage.getItem('role');
@@ -35,7 +38,6 @@ export class CourseCurriculumComponent implements OnInit {
   getCourseById(){
     this.activatedRoute.paramMap.subscribe(params => {
       this.courseId = params.get('id');
-      console.log(this.courseId);
       this.courseService.getCourseById(this.courseId).subscribe(res => {
         this.course = res;
       });
@@ -49,6 +51,9 @@ export class CourseCurriculumComponent implements OnInit {
   openModalAddLesson() {
     this.dialog.open(AddLessonModalComponent, {
       width: '50%',
+      data: {
+        courseId: this.courseId,
+      }
     });
   }
   getLessons() {
@@ -59,7 +64,8 @@ export class CourseCurriculumComponent implements OnInit {
   getFileUploadByLessonId(id: string): FileUploadModel[]{
     let fileUploads: FileUploadModel[];
     this.fileUploadService.getFileUploadsByLessonId(id).subscribe(res => {
-      fileUploads = res;
+      console.log('resss', res);
+      return fileUploads = res;
     });
     return fileUploads;
   }

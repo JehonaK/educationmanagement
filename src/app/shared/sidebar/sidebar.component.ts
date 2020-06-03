@@ -18,15 +18,15 @@ export class SidebarComponent implements OnInit {
   canView(component: string) {
     switch (component) {
       case 'chat':
-        return this.getRole() === ('PARENT' || 'TEACHER');
+        return this.getRole() === ('TEACHER') || this.getRole() === ('PARENT');
       case 'meetings':
-        return this.getRole() === ('PARENT' || 'TEACHER');
+        return this.getRole() === ('TEACHER') || this.getRole() === ('PARENT');
       case 'course':
-        return this.getRole() === ('TEACHER' || 'STUDENT');
+        return this.getRole() === ('TEACHER') || this.getRole() === ('STUDENT');
       case 'school':
         return this.getRole() === 'SCHOOL_ADMIN';
       case 'gradebook':
-        return this.getRole() === ('STUDENT' || 'PARENT');
+        return this.getRole() === ('TEACHER') || this.getRole() === ('PARENT');
       case 'associateStudent':
         return this.getRole() === 'PARENT';
     }

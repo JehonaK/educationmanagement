@@ -38,20 +38,17 @@ export class CourseForumPostComponent implements OnInit {
       });
     });
   }
-
-  getCommentsByForumPostId(){
-    this.comments = this.forumPost.comments;
-  }
   get getControls() {
     return this.postComment.controls;
   }
   onPostComment() {
     if (this.postComment.valid) {
       const payload = {
-        content: this.getControls,
-        postId: this.forumPost.id,
+        content: this.getControls.content.value,
       };
-      this.commentService.createComment(payload).subscribe(response => {
+      this.commentService.createComment(payload, this.forumPost.id).subscribe(response => {
+        this.getControls.content.reset();
+        this.getForumPost();
       },
       (err) => {
         console.error(err);

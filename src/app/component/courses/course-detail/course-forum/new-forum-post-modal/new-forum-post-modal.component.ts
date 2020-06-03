@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {MatDialogRef} from '@angular/material/dialog';
+import {Component, Inject, OnInit} from '@angular/core';
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute} from '@angular/router';
 import {ForumPostService} from '../../../../../shared/services/forum-post.service';
@@ -12,11 +12,13 @@ import {CommentService} from '../../../../../shared/services/comment.service';
 })
 export class NewForumPostModalComponent implements OnInit {
   forumPost: FormGroup;
+  courseId: string;
 
   constructor(public dialogRef: MatDialogRef<NewForumPostModalComponent>,
               private activatedRoute: ActivatedRoute,
               private forumPostService: ForumPostService,
-              private formBuilder: FormBuilder) { }
+              private formBuilder: FormBuilder,
+              @Inject(MAT_DIALOG_DATA) private data: any) { }
 
   ngOnInit(): void {
     this.forumPost = this.formBuilder.group({
@@ -35,9 +37,11 @@ export class NewForumPostModalComponent implements OnInit {
       const payload = {
         title: this.getControls.title.value,
         content: this.getControls.content.value,
+        courseId: {
+          id: this.data.courseId,
+        }
       };
       this.forumPostService.createForumPost(payload).subscribe(response => {
-        this.closeDialog();
         },
         (err) => {
           console.error(err);
@@ -45,6 +49,7 @@ export class NewForumPostModalComponent implements OnInit {
     } else {
       alert('form not valid');
     }
+    this.closeDialog();
   }
 
 }

@@ -1,9 +1,9 @@
 <h4 class="modal-title">Add submission</h4>
-<form [formGroup]="addSubmission" (ngSubmit)="onAddSubmission()">
+<form (ngSubmit)="onSubmit()">
   <div class="form-group">
     <div class="file has-name">
       <label class="file-label">
-        <input class="file-input" type="file" name="resume">
+        <input class="file-input" type="file" name="resume" (change)="handleFileInput($event.target.files)">
         <span class="file-cta">
       <span class="file-icon">
         <i class="fas fa-upload"></i>

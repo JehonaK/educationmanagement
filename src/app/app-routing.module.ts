@@ -140,7 +140,12 @@ const routes: Routes = [
                   },
                   {
                     path: 'new-forum-post-modal',
-                    component: NewForumPostModalComponent,
+                    children: [
+                      {
+                        path: ':id',
+                        component: NewForumPostModalComponent,
+                      }
+                    ]
                   },
                 ],
               },

@@ -12,8 +12,24 @@ export class FileUploadService {
   constructor( private http: HttpClient,
                private restService: RestService) { }
 
-  createFileUpload(fileUpload: FileUploadModel) {
-    return this.http.post(ENDPOINTS.course.createFileUpload, fileUpload);
+  createFileUpload(fileUpload: File, activityId: string) {
+    const formData: FormData = new FormData();
+    formData.append('file', fileUpload);
+    return this.http.post('http://localhost:8080/upload/activity', formData, {
+      params: {
+        activityId: activityId,
+      }
+    });
+  }
+
+  createFileUploadForLesson(fileUpload: File, lessonId: string) {
+    const formData: FormData = new FormData();
+    formData.append('file', fileUpload);
+    return this.http.post('http://localhost:8080/upload/lesson', formData, {
+      params: {
+        lessonId: lessonId,
+      }
+    });
   }
 
   getFileUploadById(id: string) {
