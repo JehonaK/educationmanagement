@@ -28,8 +28,9 @@ export class CourseForumListComponent implements OnInit {
   }
   getForumPostByCourseId(){
     this.activatedRoute.paramMap.subscribe(params => {
-      this.forumPostService.getForumPostsByCourseId(params.get('id')).subscribe(res => {
+      this.forumPostService.getForumPostsByCourseId('858e7eac-e125-4f27-97be-17eeb9d1efa5').subscribe(res => {
         this.forumPosts = res;
+        console.log(res);
       });
     });
   }

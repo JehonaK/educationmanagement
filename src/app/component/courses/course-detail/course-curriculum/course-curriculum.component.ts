@@ -35,6 +35,7 @@ export class CourseCurriculumComponent implements OnInit {
   getCourseById(){
     this.activatedRoute.paramMap.subscribe(params => {
       this.courseId = params.get('id');
+      console.log(this.courseId);
       this.courseService.getCourseById(this.courseId).subscribe(res => {
         this.course = res;
       });

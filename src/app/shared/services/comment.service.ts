@@ -12,8 +12,8 @@ export class CommentService {
   constructor( private http: HttpClient,
     private restService: RestService) { }
 
-  createComment(comment: CommentModel) {
-    return this.http.post(ENDPOINTS.course.createComment, comment);
+  createComment(comment: any) {
+    return this.http.post<any>(ENDPOINTS.course.createComment, comment);
   }
 
   updateComment(comment: CommentModel, id: string) {

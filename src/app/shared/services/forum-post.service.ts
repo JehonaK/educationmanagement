@@ -12,8 +12,8 @@ export class ForumPostService {
   constructor( private http: HttpClient,
     private restService: RestService) { }
 
-  createForumPost(forum: ForumModel) {
-    return this.http.post(ENDPOINTS.course.createForumPost, forum);
+  createForumPost(forum: any) {
+    return this.http.post<any>(ENDPOINTS.course.createForumPost, forum);
   }
 
   updateForumPost(forum: ForumModel, id: string) {
@@ -21,7 +21,7 @@ export class ForumPostService {
   }
 
   getForumPostById(id: string) {
-    return this.http.get(ENDPOINTS.course.getForumPostById+ '/${id}');
+    return this.http.get<ForumModel>(ENDPOINTS.course.getForumPostById + '/' + id);
   }
 
   deleteForumPostById(id: string) {
@@ -29,6 +29,10 @@ export class ForumPostService {
   }
 
   getForumPostsByCourseId(courseId: string) {
-    return this.http.get<ForumModel[]>(ENDPOINTS.course.getForumPostsByCourseId + '/' + courseId);
+    return this.http.get<ForumModel[]>(ENDPOINTS.course.getForumPostsByCourseId, {
+      params: {
+        courseId: courseId
+      }
+    });
   }
 }

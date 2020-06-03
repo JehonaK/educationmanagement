@@ -1,4 +1,11 @@
 <div *ngIf="course">
+  <div>
+    <ul>
+      <li><a routerLink="../../forum/list/{{course.id}}">Forum</a></li>
+      <li><a routerLink="../../activity/list/{{course.id}}">Activity</a></li>
+      <li><a routerLink="../../forum/list/{{course.id}}">GradeBook</a></li>
+    </ul>
+  </div>
   <div class="page-section">
     <div class="media v-middle">
       <div class="media-body">
@@ -25,15 +32,15 @@
 
         <p>{{lesson.description}}</p>
 
-        <div *ngFor="let fileUpload of getFileUploadByLessonId(lesson.id)">
-          <div class="lesson-file">
-            <a class="" onclick="" href="assets/img/Claim Application Form Student IN and Student UT.pdf">
-              <img src="assets/img/pdf-icon.png" class="pdf-icon" alt="" role="presentation">
-              <span class="is-black document-name">{{fileUpload.originalName}}</span>
-            </a>
-            <span class="resourcelinkdetails">PDF document Uploaded {{fileUpload.uploadTime}}</span>
-          </div>
-        </div>
+<!--        <div *ngFor="let fileUpload of getFileUploadByLessonId(lesson.id)">-->
+<!--          <div class="lesson-file">-->
+<!--            <a class="" onclick="" href="assets/img/Claim Application Form Student IN and Student UT.pdf">-->
+<!--              <img src="assets/img/pdf-icon.png" class="pdf-icon" alt="" role="presentation">-->
+<!--              <span class="is-black document-name">{{fileUpload.originalName}}</span>-->
+<!--            </a>-->
+<!--            <span class="resourcelinkdetails">PDF document Uploaded {{fileUpload.uploadTime}}</span>-->
+<!--          </div>-->
+<!--        </div>-->
       </div>
     </div>
   </div>

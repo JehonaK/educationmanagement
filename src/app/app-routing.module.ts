@@ -40,6 +40,7 @@ import { ChatConversationBoxComponent } from './component/chat/chat-conversation
 import { NewForumPostModalComponent } from './component/courses/course-detail/course-forum/new-forum-post-modal/new-forum-post-modal.component';
 import { NewActivityModalComponent } from './component/courses/course-detail/course-activities/new-activity-modal/new-activity-modal.component';
 import { EditCourseCurriculumModalComponent } from './component/courses/course-detail/edit-course-curriculum-modal/edit-course-curriculum-modal.component';
+import {pathToFileURL} from 'url';
 
 const routes: Routes = [
   {
@@ -121,11 +122,21 @@ const routes: Routes = [
                 children: [
                   {
                     path: 'list',
-                    component: CourseForumListComponent
+                    children: [
+                      {
+                        path: ':id',
+                        component: CourseForumListComponent,
+                      },
+                    ]
                   },
                   {
                     path: 'post',
-                    component: CourseForumPostComponent,
+                    children: [
+                      {
+                        path: ':id',
+                        component: CourseForumPostComponent,
+                      }
+                    ]
                   },
                   {
                     path: 'new-forum-post-modal',
@@ -139,11 +150,21 @@ const routes: Routes = [
                 children: [
                   {
                     path: 'list',
-                    component: CourseActivityListComponent
+                    children: [
+                      {
+                        path: ':id',
+                        component: CourseActivityListComponent,
+                      },
+                    ]
                   },
                   {
                     path: 'details',
-                    component: CourseActivityDetailsComponent,
+                    children: [
+                      {
+                        path: ':id',
+                        component: CourseActivityDetailsComponent,
+                      }
+                    ]
                   },
                   {
                     path: 'new-activity',

@@ -1,6 +1,7 @@
 import { CommentModel } from './comment.model';
 import {UserRegisterModel} from './user-register.model';
 import {CourseModel} from './course.model';
+import {Timestamp} from 'rxjs';
 
 export class ForumModel {
     id: string;
@@ -9,5 +10,5 @@ export class ForumModel {
     courseId: CourseModel;
     authorId: UserRegisterModel;
     comments: Array<CommentModel>;
-    createDateTime: Date;
+    createDateTime: Timestamp<Date>;
 }

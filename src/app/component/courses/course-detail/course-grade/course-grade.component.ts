@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-course-grade',
@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./course-grade.component.scss']
 })
 export class CourseGradeComponent implements OnInit {
-
+  @Input()
+  courseId: string;
   constructor() { }
 
   ngOnInit(): void {

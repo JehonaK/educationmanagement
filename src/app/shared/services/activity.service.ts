@@ -10,10 +10,10 @@ import { ActivityModel } from '../models/activity.model';
 export class ActivityService {
 
   constructor( private http: HttpClient,
-    private restService: RestService) { }
+              private restService: RestService) { }
 
-  createActivity(activity: ActivityModel) {
-    return this.http.post(ENDPOINTS.course.createActivity, activity);
+  createActivity(activity: any) {
+    return this.http.post<any>(ENDPOINTS.course.createActivity, activity);
   }
 
   updateActivity(activity: ActivityModel, id: string) {
@@ -21,7 +21,7 @@ export class ActivityService {
   }
 
   getActivityById(id: string) {
-    return this.http.get(ENDPOINTS.course.getActivityById + '/${id}');
+    return this.http.get<ActivityModel>(ENDPOINTS.course.getActivityById + '/' + id);
   }
 
   deleteActivityById(id: string) {
