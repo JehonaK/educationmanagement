@@ -4,6 +4,8 @@ import {CommentModel} from '../../../../../shared/models/comment.model';
 import {MatDialog} from '@angular/material/dialog';
 import {NewActivityModalComponent} from '../../course-activities/new-activity-modal/new-activity-modal.component';
 import {NewForumPostModalComponent} from '../new-forum-post-modal/new-forum-post-modal.component';
+import {ForumPostService} from '../../../../../shared/services/forum-post.service';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-course-forum-list',
@@ -12,50 +14,38 @@ import {NewForumPostModalComponent} from '../new-forum-post-modal/new-forum-post
 })
 export class CourseForumListComponent implements OnInit {
   forumPosts: ForumModel[];
-  constructor(private dialog: MatDialog) { }
+  courseId: string;
+  constructor(private dialog: MatDialog,
+              private activatedRoute: ActivatedRoute,
+              private forumPostService: ForumPostService) {
+    this.dialog._afterAllClosed.subscribe(result => {
+      this.getForumPostByCourseId();
+      console.log('constructor', this.forumPosts);
+    });
+  }
 
   ngOnInit(): void {
+    this.getCourseId();
     this.getForumPostByCourseId();
   }
   openModal() {
     this.dialog.open(NewForumPostModalComponent, {
       width: '50%',
+      data: {
+        courseId: this.courseId,
+      }
+    });
+  }
+  getCourseId(){
+    this.activatedRoute.paramMap.subscribe(params => {
+      this.courseId = params.get('id');
     });
   }
   getForumPostByCourseId(){
-    this.forumPosts = [
-      {
-        id: 'dsf',
-        title: 'forum title',
-        content: 'am i doing it the right way?',
-        courseId: '244d',
-        authorId: 'fdf',
-        comments: null,
-      },
-      {
-        id: 'dsf',
-        title: 'forum title',
-        content: 'am i doing it the right way?',
-        courseId: '244d',
-        authorId: 'fdf',
-        comments: null,
-      },
-      {
-        id: 'dsf',
-        title: 'forum title',
-        content: 'am i doing it the right way?',
-        courseId: '244d',
-        authorId: 'fdf',
-        comments: null,
-      },
-      {
-        id: 'dsf',
-        title: 'forum title',
-        content: 'am i doing it the right way?',
-        courseId: '244d',
-        authorId: 'fdf',
-        comments: null,
-      },
-    ];
+    this.activatedRoute.paramMap.subscribe(params => {
+      this.forumPostService.getForumPostsByCourseId(this.courseId).subscribe(res => {
+        this.forumPosts = res;
+      });
+    });
   }
 }

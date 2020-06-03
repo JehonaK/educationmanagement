@@ -12,23 +12,27 @@ export class ForumPostService {
   constructor( private http: HttpClient,
     private restService: RestService) { }
 
-  createForumPost(forum: ForumModel) {
-    return this.http.post(ENDPOINTS.course.createForumPost, forum);
-  } 
-    
+  createForumPost(forum: any) {
+    return this.http.post<any>(ENDPOINTS.course.createForumPost, forum);
+  }
+
   updateForumPost(forum: ForumModel, id: string) {
     return this.http.put(ENDPOINTS.course.updateForumPost + '/${id}', forum);
   }
 
   getForumPostById(id: string) {
-    return this.http.get(ENDPOINTS.course.getForumPostById+ '/${id}');
+    return this.http.get<ForumModel>(ENDPOINTS.course.getForumPostById + '/' + id);
   }
 
   deleteForumPostById(id: string) {
     return this.http.delete(ENDPOINTS.course.deleteForumPostById + '/${id}');
   }
 
-  getForumPostsByStudentId(studentId: string) {
-    return this.http.get(ENDPOINTS.course.getForumPostsByStudentId + '/${studentId}');
+  getForumPostsByCourseId(courseId: string) {
+    return this.http.get<ForumModel[]>(ENDPOINTS.course.getForumPostsByCourseId, {
+      params: {
+        courseId: courseId
+      }
+    });
   }
 }

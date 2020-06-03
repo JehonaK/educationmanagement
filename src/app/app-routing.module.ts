@@ -37,10 +37,11 @@ import { ChatComponent } from './component/chat/chat.component';
 import { AuthGuard } from './component/auth/auth.guard';
 import { StudentParentAssociationComponent } from './component/student-parent-association/student-parent-association.component';
 import { ChatConversationBoxComponent } from './component/chat/chat-conversation-box/chat-conversation-box.component';
-import {NewForumPostModalComponent} from './component/courses/course-detail/course-forum/new-forum-post-modal/new-forum-post-modal.component';
-import {NewActivityModalComponent} from './component/courses/course-detail/course-activities/new-activity-modal/new-activity-modal.component';
-import {EditCourseCurriculumModalComponent} from './component/courses/course-detail/edit-course-curriculum-modal/edit-course-curriculum-modal.component';
+import { NewForumPostModalComponent } from './component/courses/course-detail/course-forum/new-forum-post-modal/new-forum-post-modal.component';
+import { NewActivityModalComponent } from './component/courses/course-detail/course-activities/new-activity-modal/new-activity-modal.component';
+import { EditCourseCurriculumModalComponent } from './component/courses/course-detail/edit-course-curriculum-modal/edit-course-curriculum-modal.component';
 import {CourseActivitiesComponent} from './component/courses/course-detail/course-activities/course-activities.component';
+import {pathToFileURL} from 'url';
 import { CalendarComponent } from './component/calendar/calendar.component';
 
 const routes: Routes = [
@@ -96,7 +97,7 @@ const routes: Routes = [
         path: 'chat',
         component: ChatComponent,
         children: [{
-          path: ":id",
+          path: ':id',
           component: ChatConversationBoxComponent
         }
         ]
@@ -123,15 +124,30 @@ const routes: Routes = [
                 children: [
                   {
                     path: 'list',
-                    component: CourseForumListComponent
+                    children: [
+                      {
+                        path: ':id',
+                        component: CourseForumListComponent,
+                      },
+                    ]
                   },
                   {
                     path: 'post',
-                    component: CourseForumPostComponent,
+                    children: [
+                      {
+                        path: ':id',
+                        component: CourseForumPostComponent,
+                      }
+                    ]
                   },
                   {
                     path: 'new-forum-post-modal',
-                    component: NewForumPostModalComponent,
+                    children: [
+                      {
+                        path: ':id',
+                        component: NewForumPostModalComponent,
+                      }
+                    ]
                   },
                 ],
               },
@@ -140,22 +156,26 @@ const routes: Routes = [
                 component: CourseForumComponent,
                 children: [
                   {
-                    path: ':id',
-                    component: CourseActivitiesComponent,
+                    path: 'list',
                     children: [
                       {
-                        path: 'list',
-                        component: CourseActivityListComponent
-                      },
-                      {
-                        path: 'details',
-                        component: CourseActivityDetailsComponent,
-                      },
-                      {
-                        path: 'new-activity',
-                        component: NewActivityModalComponent,
+                        path: ':id',
+                        component: CourseActivityListComponent,
                       },
                     ]
+                  },
+                  {
+                    path: 'details',
+                    children: [
+                      {
+                        path: ':id',
+                        component: CourseActivityDetailsComponent,
+                      }
+                    ]
+                  },
+                  {
+                    path: 'new-activity',
+                    component: NewActivityModalComponent,
                   },
                 ],
               },
@@ -225,16 +245,16 @@ const routes: Routes = [
         ],
       },
       {
-        path:'school',
+        path: 'school',
         loadChildren: () => import('./component/school/school-routing.module')
           .then(m => m.SchoolRoutingModule)
       },
       {
-        path: "students/associate",
+        path: 'students/associate',
         component: StudentParentAssociationComponent
       },
       {
-        path:'calendar',
+        path: 'calendar',
         loadChildren: () => import('./component/calendar/calendar-routing.module')
         .then(m => m.CalendarRoutingModule)
       }

@@ -97,4 +97,24 @@
   margin-bottom: 10px;
 }
 
+.course-header{
+  background-color: antiquewhite;
+  padding: 10px;
+  margin-right: -63px;
+  margin-left: -20px;
+
+  ul{
+    display: flex;
+
+    li{
+      padding: 5px;
+      margin-right: 5px;
+
+      a{
+        color: black;
+      }
+    }
+  }
+}
+
 

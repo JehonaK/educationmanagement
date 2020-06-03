@@ -1,5 +1,5 @@
 <h4 class="modal-title">New lesson</h4>
-<form [formGroup]="">
+<form [formGroup]="addLesson" (ngSubmit)="onAddLesson()">
   <div class="form-group">
     <label for="name">
       Lesson name
@@ -17,7 +17,7 @@
   <div class="form-group">
     <div class="file has-name">
       <label class="file-label">
-        <input class="file-input" type="file" name="resume">
+        <input class="file-input" type="file" name="resume" (change)="handleFileInput($event.target.files)">
         <span class="file-cta">
       <span class="file-icon">
         <i class="fas fa-upload"></i>
@@ -34,7 +34,7 @@
   </div>
 
   <div class="modal-footer">
-    <button class="button is-success">Save</button>
+    <button type="submit" class="button is-success">Save</button>
     <button (click)="closeDialog()" class="button is-light">Cancel</button>
   </div>
 </form>

@@ -10,7 +10,7 @@
     <form [formGroup]="registerForm" (submit)="onRegisterSubmit()" class="form-signin">
       <span id="reauth-email" class="reauth-email"></span>
       <input
-        formControlName="firstName" 
+        formControlName="firstName"
         type="text"
         id="registerFirstName"
         class="form-control"
@@ -19,7 +19,7 @@
         autofocus
       />
       <input
-        formControlName="lastName" 
+        formControlName="lastName"
         type="text"
         id="registerLastName"
         class="form-control"
@@ -30,9 +30,10 @@
         <option value="STUDENT">Student</option>
         <option value="PARENT">Parent</option>
         <option value="TEACHER">Teacher</option>
+        <option value="SCHOOL_ADMIN">School Admin</option>
       </select>
       <input
-        formControlName="birthDate" 
+        formControlName="birthDate"
         type="date"
         id="registerBirthDate"
         class="form-control register-fields"
@@ -44,7 +45,7 @@
         <option value="FEMALE">Female</option>
       </select>
       <input
-        formControlName="email" 
+        formControlName="email"
         type="email"
         id="registerEmail"
         class="form-control"
@@ -52,7 +53,7 @@
         required
       />
       <input
-        formControlName="password" 
+        formControlName="password"
         type="password"
         id="registerPassword"
         class="form-control"

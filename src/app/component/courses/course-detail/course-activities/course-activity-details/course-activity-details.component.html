@@ -1,95 +1,74 @@
-<div class="page-section">
-  <div class="media v-middle">
-    <div class="media-body">
-      <h1 class="text-headline margin-none">Activity name</h1>
-      <p class="text-subhead">Activity description..</p>
-    </div>
-    <div class="media-right">
-      <button (click)="openModalEditActivity()" class="button is-info is-light is-outlined" data-z="0.5" data-hover-z="1" data-animated>Edit Activity</button>
+<div *ngIf="activity">
+  <div class="page-section">
+    <div class="media v-middle">
+      <div class="media-body">
+        <h1 class="text-headline margin-none">{{activity.name}}</h1>
+        <p class="text-subhead">{{activity.description}}</p>
+        <div *ngFor="let fileUpload of activity.fileUploads">
+          <p>{{fileUpload.id}}</p>
+        </div>
+      </div>
+      <div class="media-right" *ngIf="getRole() === 'TEACHER'">
+        <button (click)="openModalEditActivity()" class="button is-info is-light is-outlined" data-z="0.5" data-hover-z="1" data-animated>Edit Activity</button>
+      </div>
     </div>
   </div>
-</div>
-<div class="student-table">
-  <h3>Submission status</h3>
-  <table class="table is-bordered is-fullwidth">
-    <tbody>
-    <tr>
-      <th class="is-primary-light">Due date</th>
-      <td>Qualification f</td>
-     </tr>
-    <tr>
-      <th class="is-primary-light">Time remaining</th>
-      <td>Qualification for the Champions League group stage</td>
-    </tr>
-    <tr>
-      <th class="is-primary-light">Last modified</th>
-      <td>22.02.2020, 22:12</td>
-    </tr>
-    <tr>
-      <th class="is-primary-light">Grade System</th>
-      <td>Qualification f</td>
-    </tr>
-    <tr>
-      <th class="is-primary-light">Grade</th>
-      <td>Qualification f</td>
-    </tr>
-    <tr>
-      <th class="is-primary-light">Feedback</th>
-      <td>Qualification f</td>
-    </tr>
-    </tbody>
-  </table>
-  <div class="add-submission">
-    <button (click)="openModalAddSubmission()" class="button is-success is-light is-outlined">Add submission</button>
+  <div class="student-table">
+    <h3>Submission status</h3>
+    <table class="table is-bordered is-fullwidth">
+      <tbody>
+      <tr>
+        <th class="is-primary-light">Due date</th>
+        <td>{{activity.deadline.toLocaleString("en-GB",{day:'numeric',year:'numeric',month:'short',timeZone:'utc',hour:'numeric',minute:'numeric',second:'numeric'})}}</td>
+      </tr>
+      <tr>
+        <th class="is-primary-light">Time remaining</th>
+        <td>{{timeRemaining}}</td>
+      </tr>
+      <tr>
+        <th class="is-primary-light">Grade System</th>
+        <td>{{activity.gradeSystem}}</td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="add-submission" *ngIf="activity.hasFileUpload">
+      <button (click)="openModalAddSubmission()" class="button is-success is-light is-outlined">Add submission</button >
+    </div>
   </div>
-</div>
-<div class="teacher-table">
-  <table class="table is-bordered is-fullwidth">
-    <thead>
-    <tr class="is-primary-light">
-      <th>Student Name</th>
-      <th>Submission time</th>
-      <th>Uploaded file</th>
-      <th>Grade</th>
-      <th>Feedback</th>
-    </tr>
-    </thead>
-    <tfoot>
-    <tr class="is-success-light">
-      <th colspan="3">Total:100 students</th>
-      <th colspan="2">Average grade: 3.5</th>
-    </tr>
-    </tfoot>
-    <tbody>
-    <tr>
-      <td>Leicester City</td>
-      <td>38</td>
-      <td>23</td>
-      <td>12</td>
-      <td>Qualification for theChampions League group stage</td>
-    </tr>
-    <tr class="is-danger-light">
-      <td>Leicester City</td>
-      <td>38</td>
-      <td>23</td>
-      <td>12</td>
-      <td>Qualification for theChampions League group stage</td>
-    </tr>
-    <tr>
-      <td>Leicester City</td>
-      <td>38</td>
-      <td>23</td>
-      <td>12</td>
-      <td>Qualification for theChampions League group stage</td>
-    </tr>
-    <tr>
-      <td>Leicester City</td>
-      <td>38</td>
-      <td>23</td>
-      <td>12</td>
-      <td>Qualification for theChampions League group stage</td>
-    </tr>
-    </tbody>
-  </table>
+  <div class="teacher-table">
+    <table class="table is-bordered is-fullwidth">
+      <thead>
+      <tr class="is-primary-light">
+        <th>Student Name</th>
+        <th>Submission time</th>
+        <th>Uploaded file</th>
+        <th>Grade</th>
+        <th>Feedback</th>
+      </tr>
+      </thead>
+      <tfoot>
+      <tr class="is-success-light">
+        <th colspan="3">Total:100 students</th>
+        <th colspan="2">Average grade: 3.5</th>
+      </tr>
+      </tfoot>
+      <tbody>
+      <tr>
+        <td>Leicester City</td>
+        <td>38</td>
+        <td>23</td>
+        <td>12</td>
+        <td>Qualification for theChampions League group stage</td>
+      </tr>
+      <tr class="is-danger-light">
+        <td>Leicester City</td>
+        <td>38</td>
+        <td>23</td>
+        <td>12</td>
+        <td>Qualification for theChampions League group stage</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 

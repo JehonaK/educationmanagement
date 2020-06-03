@@ -8,6 +8,11 @@
              src="assets/img/learning-logo.png">
       </div>
     </a>
+
+    <div>
+
+    </div>
+
     <div *ngIf="this.isLoggedIn()"  class="columns right-buttons is-hidden-tablet-only">
       <div class="column is-4-desktop is-6-mobile dropdown dropdown-cart is-right is-large" (click)="toggleClass()"
            [ngClass]="opened ? 'is-active' : ''">
@@ -49,7 +54,7 @@
             <div *ngIf="this.isLoggedIn()">
               <a class="dropdown-item sign-up-button" routerLink="/auth/register">Profile</a>
               <a class="dropdown-item sign-up-button" routerLink="/auth/login">School Settings</a>
-              <a class="dropdown-item sign-up-button" routerLink="/auth/login">Log out</a>
+              <a (click)="onLogOut()" class="dropdown-item sign-up-button">Log out</a>
             </div>
           </div>
         </div>
@@ -60,7 +65,7 @@
         <a class="button is-dark is-fullwidth" routerLink="/auth/login">Sign in</a>
       </div>
       <div class="column">
-        <a class="button is-dark is-fullwidth" routerLink="/cart">Sign up</a>
+        <a class="button is-dark is-fullwidth" routerLink="/auth/register">Sign up</a>
       </div>
     </div>
     <!-- End of header right buttons   -->

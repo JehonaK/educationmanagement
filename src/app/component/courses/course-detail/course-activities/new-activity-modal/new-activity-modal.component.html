@@ -1,5 +1,5 @@
 <h4 class="modal-title">New activity</h4>
-<form [formGroup]="">
+<form [formGroup]="activityForm" (ngSubmit)="onNewActivity()">
   <div class="form-group">
     <label for="name">
       Activity name
@@ -16,15 +16,15 @@
 
   <div class="form-group">
     <label for="sel1">Grading system</label>
-    <select class="form-control" id="sel1">
-      <option value="A-F">A-F</option>
-      <option value="1-100">1-100</option>
+    <select class="form-control" formControlName="gradeSystem" id="sel1">
+      <option value="A_F">A-F</option>
+      <option value="ONE_ONEHUNDRED">1-100</option>
     </select>
   </div>
 
   <div class="form-group">
     <label class="checkbox">
-      <input type="checkbox">
+      <input type="checkbox" formControlName="hasFileUpload">
       Has submissions
     </label>
   </div>
@@ -33,13 +33,13 @@
     <label for="deadline">
       Deadline
     </label>
-    <input type="text" formControlName="deadline" name="deadline" id="deadline" class="form-control"/>
+    <input type="datetime-local" formControlName="deadline" name="deadline" id="deadline" class="form-control"/>
   </div>
 
   <div class="form-group">
     <div class="file has-name">
       <label class="file-label">
-        <input class="file-input" type="file" name="resume">
+        <input class="file-input" type="file" name="resume" (change)="handleFileInput($event.target.files)">
         <span class="file-cta">
       <span class="file-icon">
         <i class="fas fa-upload"></i>
@@ -56,7 +56,7 @@
   </div>
 
   <div class="modal-footer">
-    <button class="button is-success">Save</button>
+    <button type="submit" class="button is-success">Save</button>
     <button (click)="closeDialog()" class="button is-light">Cancel</button>
   </div>
 </form>

@@ -1,4 +1,4 @@
-const ENVIRONMENT = 'http://192.168.0.138:8662';
+const ENVIRONMENT = 'http://192.168.0.138:8662'; // also change file-upload.service
 
 const AUTH = {
   login: ENVIRONMENT + '/auth/login', // post
@@ -9,6 +9,7 @@ const USER = {
   requestPasswordRecovery: ENVIRONMENT + '/user/password-recoveries', // post
   validatePasswordRecoveryLink: ENVIRONMENT + '/user/password-recoveries/', // get and add a pathVariable {passwordRecoveryId}
   changePassword: ENVIRONMENT + '/user/password-recoveries/', // put
+  getUserById: ENVIRONMENT + '/user/users',
 };
 
 const SCHOOL = {
@@ -39,19 +40,19 @@ const SCHOOL = {
 
 const COURSE = {
   updateCourse: ENVIRONMENT + '/course/course',
-  getCourseById: ENVIRONMENT + '/course',
+  getCourseById: ENVIRONMENT + '/course/course',
   deleteCourseById: ENVIRONMENT + '/course/course',
-  getCoursesByTeacherId: ENVIRONMENT + '/course/teacher',
+  getCoursesByTeacherId: ENVIRONMENT + '/course/course/teacher',
   getCoursesByStudentId: ENVIRONMENT + '/course/course/student',
   createActivity: ENVIRONMENT + '/course/activity',
   updateActivity: ENVIRONMENT + '/course/activity',
   getActivityById: ENVIRONMENT + '/course/activity',
   deleteActivityById: ENVIRONMENT + '/course/activity',
   getActivitiesByCourseId: ENVIRONMENT + '/course/activity',
-  createComment: ENVIRONMENT + '/course/comment',
-  updateComment: ENVIRONMENT + '/course/comment',
-  getCommentById: ENVIRONMENT + '/post-comment',
-  deleteCommentById: ENVIRONMENT + '/course/comment',
+  createComment: ENVIRONMENT + '/course/post-comment',
+  updateComment: ENVIRONMENT + '/course/post-comment',
+  getCommentById: ENVIRONMENT + '/course/post-comment',
+  deleteCommentById: ENVIRONMENT + '/course/post-comment',
   createCustomActivity: ENVIRONMENT + '/course/custom-activity',
   updateCustomActivity: ENVIRONMENT + '/course/custom-activity',
   getCustomActivityById: ENVIRONMENT + '/course/custom-activity',
@@ -65,17 +66,18 @@ const COURSE = {
   getFileUploadById: ENVIRONMENT + '/course/upload',
   deleteFileUploadById: ENVIRONMENT + '/course/upload',
   downloadFileByFileUploadId : ENVIRONMENT + '/course/upload/download',
-  getFileUploadsByActivityId: ENVIRONMENT + '/course/upload', // request param
+  getFileUploadsByActivityId: ENVIRONMENT + '/course/upload/activity',
+  getFileUploadsByLessonId: ENVIRONMENT + '/course/upload/lesson',
   createForumPost: ENVIRONMENT + '/course/forum-post',
   updateForumPost: ENVIRONMENT + '/course/forum-post',
   getForumPostById: ENVIRONMENT + '/course/forum-post',
   deleteForumPostById: ENVIRONMENT + '/course/forum-post',
-  getForumPostsByStudentId: ENVIRONMENT + '/course/forum-post',
+  getForumPostsByCourseId: ENVIRONMENT + '/course/forum-post',
   createLesson: ENVIRONMENT + '/course/lesson',
   updateLesson: ENVIRONMENT + '/course/lesson',
   getLessonById: ENVIRONMENT + '/course/lesson',
   deleteLessonById: ENVIRONMENT + '/course/lesson',
-  getLessonsByCourseId: ENVIRONMENT + '/course/lesson',
+  getLessonsByCourseId: ENVIRONMENT + '/course/lesson/course',
 };
 
 const SCHEDULE = {
@@ -96,8 +98,8 @@ const SCHEDULE = {
 };
 const CALENDAR = {
   createCalendarEvent: ENVIRONMENT + '/calendar/events',
-  getEventsByMonthAndYear: ENVIRONMENT + '/calendar/events', 
-  downloadCalendar: ENVIRONMENT + '/calendar/download', 
+  getEventsByMonthAndYear: ENVIRONMENT + '/calendar/events',
+  downloadCalendar: ENVIRONMENT + '/calendar/download',
   deleteCalendarEvent: ENVIRONMENT + '/calendar/events',
   updateCalendarEvent: ENVIRONMENT + '/calendar/events',
   uploadCalendarEvents: ENVIRONMENT + '/calendar/upload',

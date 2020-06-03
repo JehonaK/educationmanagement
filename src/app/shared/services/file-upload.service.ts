@@ -10,11 +10,27 @@ import { FileUploadModel } from '../models/file-upload.model';
 export class FileUploadService {
 
   constructor( private http: HttpClient,
-    private restService: RestService) { }
+               private restService: RestService) { }
 
-  createFileUpload(fileUpload: FileUploadModel) {
-    return this.http.post(ENDPOINTS.course.createFileUpload, fileUpload);
-  } 
+  createFileUpload(fileUpload: File, activityId: string) {
+    const formData: FormData = new FormData();
+    formData.append('file', fileUpload);
+    return this.http.post('http://localhost:8080/upload/activity', formData, {
+      params: {
+        activityId: activityId,
+      }
+    });
+  }
+
+  createFileUploadForLesson(fileUpload: File, lessonId: string) {
+    const formData: FormData = new FormData();
+    formData.append('file', fileUpload);
+    return this.http.post('http://localhost:8080/upload/lesson', formData, {
+      params: {
+        lessonId: lessonId,
+      }
+    });
+  }
 
   getFileUploadById(id: string) {
     return this.http.get(ENDPOINTS.course.getFileUploadById+ '/{id}');
@@ -24,8 +40,19 @@ export class FileUploadService {
     return this.http.delete(ENDPOINTS.course.deleteFileUploadById + '/{id}');
   }
 
-  // Cila eshte metoda per DOWNLOAD?
-  // downloadFileByFileUploadId(fileUploadId: string) {
-  //   return this.http.get(ENDPOINTS.course.downloadFileByFileUploadId + '/${fileUploadId}');
-  // }
+  getFileUploadsByActivityId(id: string) {
+    return this.http.get<any>(ENDPOINTS.course.getFileUploadsByActivityId, {
+      params: {
+        activityId: id
+      }
+    });
+  }
+
+  getFileUploadsByLessonId(id: string) {
+    return this.http.get<FileUploadModel[]>(ENDPOINTS.course.getFileUploadsByLessonId, {
+      params: {
+        lessonId: id
+      }
+    });
+  }
 }

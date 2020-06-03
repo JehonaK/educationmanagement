@@ -10,10 +10,14 @@ import { CommentModel } from '../models/comment.model';
 export class CommentService {
 
   constructor( private http: HttpClient,
-    private restService: RestService) { }
+               private restService: RestService) { }
 
-  createComment(comment: CommentModel) {
-    return this.http.post(ENDPOINTS.course.createComment, comment);
+  createComment(comment: any, postId: string) {
+    return this.http.post<any>(ENDPOINTS.course.createComment, comment, {
+      params: {
+        postId: postId
+      }
+    });
   }
 
   updateComment(comment: CommentModel, id: string) {
