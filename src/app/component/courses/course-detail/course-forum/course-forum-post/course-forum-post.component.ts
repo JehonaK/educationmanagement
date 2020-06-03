@@ -25,7 +25,6 @@ export class CourseForumPostComponent implements OnInit {
 
   ngOnInit(): void {
     this.getForumPost();
-    this.getCommentsByForumPostId();
     this.postComment = this.formBuilder.group({
       content: new FormControl('', Validators.required),
     });
@@ -34,6 +33,8 @@ export class CourseForumPostComponent implements OnInit {
     this.activatedRoute.paramMap.subscribe(params => {
       this.forumPostService.getForumPostById(params.get('id')).subscribe(res => {
         this.forumPost = res;
+        console.log(res);
+        this.comments = res.comments;
       });
     });
   }

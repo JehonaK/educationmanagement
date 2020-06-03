@@ -1,4 +1,4 @@
-<div class="page-section">
+<div class="page-section" *ngIf="forumPost">
   <div class="media v-middle">
     <div class="media-body">
       <h1 class="text-headline margin-none">{{forumPost.title}}</h1>
@@ -11,13 +11,10 @@
     </div>
   </div>
 </div>
-<div class="row" data-toggle="isotope">
-
-  <div *ngFor="let comment of comments">
-    <div class="panel-body">
-      <div class="text-subhead-2">{{comment.authorId.firstName}} {{comment.authorId.lastName}}<span class="text-caption text-light">-{{comment.createDateTime}}</span></div>
-      <p>{{comment.content}}</p>
-    </div>
+<div class="row" data-toggle="isotope" *ngFor="let comment of comments">
+  <div class="panel-body">
+    <div class="text-subhead-2">{{comment.authorId.firstName}} {{comment.authorId.lastName}}<span class="text-caption text-light">-{{comment.createDateTime}}</span></div>
+    <p>{{comment.content}}</p>
   </div>
 </div>
 
