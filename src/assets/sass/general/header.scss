@@ -25,7 +25,6 @@
   background: rgb(0, 0, 0);
 
   .header-top {
-
     .hamburger-menu {
       color: white;
     }
@@ -69,7 +68,8 @@
         }
       }
 
-      .user-button, .cart-button {
+      .user-button,
+      .cart-button {
         border: none;
         background-color: transparent;
 
@@ -158,19 +158,21 @@
         display: block;
         background: #000000; /* fallback for old browsers */
         background: -webkit-linear-gradient(to bottom, #434343, #000000); /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to bottom, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        background: linear-gradient(
+          to bottom,
+          #434343,
+          #000000
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         border-bottom: 2px solid ghostwhite;
       }
 
-
-      .active{
+      .active {
         //border-bottom: 2px solid white;
         transform: scale(1.1);
         color: map-get($ucx-colors, light-orange);
-        &:focus-within{
+        &:focus-within {
           background-color: transparent;
         }
-
       }
 
       .customer-options {
@@ -198,7 +200,8 @@
         }
       }
 
-      a.sign-up-button, .wishlist {
+      a.sign-up-button,
+      .wishlist {
         @include mobile {
           font-size: 16px;
           padding: 8px 8px 8px 12px;
@@ -241,7 +244,6 @@
     }
 
     .more-navbar {
-
       a:nth-child(8) {
         padding-right: 0;
         margin-right: 0;
@@ -335,13 +337,16 @@
   right: 3.7em;
 }
 
-.main-container{
-  .container{
+.main-container {
+  .container {
     margin: 0;
   }
 }
+.container {
+  max-width: 100%;
+}
 
-.column{
+.column {
   padding-right: 0;
   padding-left: 0;
 }

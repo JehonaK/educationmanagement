@@ -1,0 +1,8 @@
+<ng-template [ngIf]="event">
+    <div [ngClass]="getCssClassBasedOnEventType()" (click)="event.type.toUpperCase()=='USER' ? openModal($event) : false">
+        <title-details [content]='event.title'> </title-details>
+        <description-details [content]="event.description"></description-details>
+        <time-details [start]="event.startingTime" [end]="event.endingTime"></time-details>
+        <button class="button is-danger is-small delete_button" (click)="deleteEvent()" *ngIf="event.type.toUpperCase()=='USER'">Delete</button>
+    </div>
+</ng-template>

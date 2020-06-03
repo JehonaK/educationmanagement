@@ -1,0 +1,31 @@
+.event {
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border-width: 2px;
+  border-style: solid;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.delete_button {
+  width: 60px;
+  align-self: flex-end;
+  margin-right: 20px;
+}
+.event--user {
+  border-color: #00d1ff;
+  cursor: pointer;
+}
+.event--custom {
+  border-color: #00fff0;
+}
+.event--system {
+  border-color: grey;
+}
+.event--schedule {
+  border-color: #3d6cb9;
+}
+.event-color--meeting {
+  border-color: #ffb961;
+}

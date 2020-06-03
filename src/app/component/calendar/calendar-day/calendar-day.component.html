@@ -1,0 +1,21 @@
+<div class="calendar__day_container" *ngIf="!date">
+
+</div>
+
+<div class="calendar__day_container" *ngIf="date" (click)="openModal()">
+    <div class="calendar__day_number">
+        {{  date.getDate()  }}
+    </div>
+    <ng-template [ngIf]="events">
+        <div class="calendar__day_events">
+            <div class="calendar__day_event" *ngFor="let event of events" [ngSwitch]="event.type.toUpperCase()">
+                <div class="circle circle--user-event" *ngSwitchCase="'USER'"></div>
+                <div class="circle circle--custom-event" *ngSwitchCase="'CUSTOM'"></div>
+                <div class="circle circle--system-event" *ngSwitchCase="'SYSTEM'"></div>
+                <div class="circle circle--schedule-event" *ngSwitchCase="'SCHEDULE'"></div>
+                <div class="circle circle--meeting-event" *ngSwitchCase="'MEETING'"></div>
+            </div>
+        </div>
+    </ng-template>
+</div>
+<router-outlet></router-outlet>

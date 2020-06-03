@@ -58,6 +58,7 @@ import { AddLessonModalComponent } from './component/courses/course-detail/add-l
 import { AddSubmissionModalComponent } from './component/courses/course-detail/course-activities/add-submission-modal/add-submission-modal.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CalendarModule } from './component/calendar/calendar.module';
 
 @NgModule({
   declarations: [
@@ -123,7 +124,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
     SchoolModule,
-    NoopAnimationsModule
+    NoopAnimationsModule,
+    CalendarModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS, useClass: AuthenticationInterceptor, multi: true

@@ -1,4 +1,4 @@
-const ENVIRONMENT = 'http://192.168.0.105:8080';
+const ENVIRONMENT = 'http://192.168.0.138:8662';
 
 const AUTH = {
   login: ENVIRONMENT + '/auth/login', // post
@@ -94,7 +94,15 @@ const SCHEDULE = {
   updateSchoolSchedule: ENVIRONMENT + '/schedule-presence/school-schedule',
   deleteSchoolScheduleBySchoolId: ENVIRONMENT + '/schedule-presence/school-schedule',
 };
-
+const CALENDAR = {
+  createCalendarEvent: ENVIRONMENT + '/calendar/events',
+  getEventsByMonthAndYear: ENVIRONMENT + '/calendar/events', 
+  downloadCalendar: ENVIRONMENT + '/calendar/download', 
+  deleteCalendarEvent: ENVIRONMENT + '/calendar/events',
+  updateCalendarEvent: ENVIRONMENT + '/calendar/events',
+  uploadCalendarEvents: ENVIRONMENT + '/calendar/upload',
+  getEventCount: ENVIRONMENT + '/calendar/events/empty'
+};
 const CHAT = {
   getConversationsByUserId: ENVIRONMENT + 'chat/chat-users/conversations',
   getUsersByConversationId: ENVIRONMENT + 'chat/chat/conversations/', // {conversationId} + '/participants'
@@ -125,6 +133,7 @@ export const ENDPOINTS = {
   school: SCHOOL,
   course: COURSE,
   schedule: SCHEDULE,
+  calendar: CALENDAR,
   chat: CHAT,
   meetings: MEETINGS,
   notification: NOTIFICATION,
