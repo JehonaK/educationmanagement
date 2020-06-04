@@ -1,5 +1,14 @@
-.student_association_form{
-    width:50%;
-    margin-left: auto;
-    margin-right: auto;
+.student_association_form {
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+
+  &__container {
+    display: flex;
+  }
+}
+
+.column.is-9-desktop {
+  flex: none;
+  width: 90%;
 }

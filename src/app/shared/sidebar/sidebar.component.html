@@ -1,7 +1,7 @@
 <aside class="menu sidebar">
   <ul class="menu-list">
     <li><a routerLink="/dashboard">Dashboard</a></li>
-    <li>
+    <li *ngIf="canView('course')">
       <a class="">Courses</a>
       <ul>
         <li><a routerLink="/courses/grid">Course list</a></li>
@@ -27,7 +27,6 @@
         <li><a routerLink="/school/levels">Level Management</a></li>
       </ul>
     </li>
-    <li><a routerLink="/students/associate">Associate Student</a></li>
     <li><a routerLink="/calendar">Calendar</a></li>
     <li *ngIf="canView('associateStudent')"><a routerLink="/students/associate">Associate Student</a></li>
     <li *ngIf="canView('chat')"><a routerLink="/chat">Chat</a></li>

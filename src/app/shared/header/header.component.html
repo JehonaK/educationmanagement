@@ -19,13 +19,13 @@
         <div class="dropdown-trigger">
           <button aria-controls="dropdown-menu" aria-haspopup="true" class="button cart-button">
             <span><i class="fa fa-bell-o"></i></span>
-            <span *ngIf="cartQty != null" class="is-medium cart-nr">{{cartQty}}</span>
+            <span *ngIf="cartQty != null" class="is-medium cart-nr">1</span>
           </button>
         </div>
         <div class="dropdown-menu" id="dropdown-menu-2" role="menu">
           <div class="dropdown-content">
             <div>
-              <a [routerLink]="'/wish-list'" class="dropdown-item">Notification from Jehona</a>
+              <a [routerLink]="'/wish-list'" class="dropdown-item">Notification from John Doe</a>
             </div>
             <hr class="dropdown-divider">
             <div class="dropdown-item proceed-checkout">
@@ -39,7 +39,7 @@
         <div class="dropdown-trigger">
           <button aria-controls="dropdown-menu" aria-haspopup="true" class="button user-button">
             <span><a *ngIf="this.isLoggedIn()" class="customer-name"
-            >Username</a></span>
+            >{{getUserName()}}</a></span>
             <span class="icon is-medium">
               <i aria-hidden="true" class="fas fa-angle-down"></i>
             </span>
@@ -52,8 +52,8 @@
               <a class="dropdown-item sign-up-button" routerLink="/auth/login">Login</a>
             </div>
             <div *ngIf="this.isLoggedIn()">
-              <a class="dropdown-item sign-up-button" routerLink="/auth/register">Profile</a>
-              <a class="dropdown-item sign-up-button" routerLink="/auth/login">School Settings</a>
+              <a class="dropdown-item sign-up-button" routerLink="/profile">Profile</a>
+              <a *ngIf="this.isLoggedIn() && this.getRole() === 'SCHOOL_ADMIN'" class="dropdown-item sign-up-button" routerLink="/school/details">School Details</a>
               <a (click)="onLogOut()" class="dropdown-item sign-up-button">Log out</a>
             </div>
           </div>
@@ -82,8 +82,8 @@
           <a [routerLink]="'/account/edit-profile'"
              class="dropdown-item is-dark is-active customer-name"><i class="far fa-user"></i>Profile</a>
         </div>
-        <div *ngIf="this.isLoggedIn()">
-          <a [routerLink]="'/account/edit-profile'"
+        <div *ngIf="this.isLoggedIn() && this.getRole() === 'SCHOOL_ADMIN'">
+          <a [routerLink]="'/school/details'"
              class="dropdown-item is-dark is-active customer-name"><i class="far fa-user"></i>School Settings</a>
         </div>
         <div *ngIf="this.isLoggedIn()">

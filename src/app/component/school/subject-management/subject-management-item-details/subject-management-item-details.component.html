@@ -1,46 +1,67 @@
-<div class="list_item_details__container">
-    <div class="back_navigation_holder" routerLink="../../">
-        <i class="fas fa-arrow-alt-circle-left fa-lg"></i> Back to Levels
+<section class="section main-container calendar-main-container">
+  <app-header></app-header>
+
+  <div class="container">
+    <div class="columns">
+      <div class="column is-3-desktop">
+        <app-sidebar></app-sidebar>
+      </div>
+      <div class="column is-9-desktop st-pusher" id="content">
+        <div class="st-content" style="overflow: scroll">
+
+          <!-- extra div for emulating position:fixed of the menu -->
+          <div class="st-content-inner padding-none">
+
+            <div class="container-fluid">
+              <div class="list_item_details__container">
+                <div class="back_navigation_holder" routerLink="../../">
+                  <i class="fas fa-arrow-alt-circle-left fa-lg"></i> Back to Levels
+                </div>
+                <div class="list_item_details__container--inner">
+                  <div class="btns_holder">
+                    <button class="button is-light btn_edit" (click)="openModal()">Create course</button>
+                    <button (click)="editSubject()" class="button is-success btn_edit">
+                      Edit
+                    </button>
+                    <button (click)="deleteSubject()" class="button is-danger">
+                      Delete
+                    </button>
+                  </div>
+
+                  <div class="data_holder__title">
+                    Subject name
+                  </div>
+                  <div *ngIf="schoolSubject" class="title">
+                    {{schoolSubject.name}}
+                  </div>
+
+                  <div class="data_holder__title">
+                    Level
+                  </div>
+
+                  <div *ngIf="schoolSubject" class="data_holder__content">
+                    {{schoolSubject.levelName}}
+                  </div>
+
+                  <div class="data_holder__title">
+                    Description
+                  </div>
+                  <div *ngIf="schoolSubject" class="data_holder__content">
+                    {{schoolSubject.description}}
+                  </div>
+                  <div class="data_holder__title">
+                    Type
+                  </div>
+                  <div *ngIf="schoolSubject" class="data_holder__content">
+                    {{  schoolSubject.subjectType  }}
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="list_item_details__container--inner">
-        <div class="btns_holder">
-            <button (click)="editSubject()" class="button is-info is-small btn_edit">
-                Edit
-            </button>
-            <button (click)="deleteSubject()" class="button is-danger is-small">
-                Delete
-            </button>
-        </div>
-
-        <div class="data_holder__title">
-            Subject name
-        </div>
-        <div *ngIf="schoolSubject" class="title">
-            {{schoolSubject.name}}
-        </div>
-
-        <div class="data_holder__title">
-            Level
-        </div>
-
-        <div *ngIf="schoolSubject" class="data_holder__content">
-            {{schoolSubject.levelName}}
-        </div>
-
-        <div class="data_holder__title">
-            Description
-        </div>
-        <div *ngIf="schoolSubject" class="data_holder__content">
-            {{schoolSubject.description}}
-        </div>
-        <div class="data_holder__title">
-            Type
-        </div>
-        <div *ngIf="schoolSubject" class="data_holder__content">
-            {{  schoolSubject.subjectType  }}
-        </div>
-    </div>
-
-
-    <button class="button is-dark is-small btn-create" (click)="openModal()">Create course</button>
-</div>
+  </div>
+</section>

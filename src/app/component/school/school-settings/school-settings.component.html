@@ -1,68 +1,96 @@
-<div class="list_item_details__container">
+<section class="section main-container calendar-main-container">
+  <app-header></app-header>
 
-    <div class="title">
-        School Details
+  <div class="container">
+    <div class="columns">
+      <div class="column is-3-desktop">
+        <app-sidebar></app-sidebar>
+      </div>
+      <div class="column is-9-desktop st-pusher" id="content">
+        <div class="st-content" style="overflow: scroll">
+
+          <!-- extra div for emulating position:fixed of the menu -->
+          <div class="st-content-inner padding-none">
+
+            <div class="container-fluid">
+
+              <div class="list_item_details__container">
+
+                <div class="title">
+                  School Details
+                </div>
+
+                <div class="school_content">
+                  <div class="data_holder">
+                    <div class="data_holder__title">
+                      Name
+                    </div>
+
+                    <div *ngIf="school" class="data_holder__content">
+                      {{  school.name }}
+                    </div>
+                  </div>
+
+                  <div class="data_holder">
+                    <div class="data_holder__title">
+                      City
+                    </div>
+
+                    <div *ngIf="school" class="data_holder__content">
+                      {{  school.city }}
+                    </div>
+                  </div>
+
+                  <div class="data_holder">
+                    <div class="data_holder__title">
+                      Address
+                    </div>
+
+                    <div *ngIf="school" class="data_holder__content">
+                      {{  school.address }}
+                    </div>
+                  </div>
+
+                  <div class="data_holder">
+                    <div class="data_holder__title">
+                      School type
+                    </div>
+
+                    <div *ngIf="school" class="data_holder__content">
+                      {{  school.schoolType }}
+                    </div>
+                  </div>
+
+                  <div class="data_holder">
+                    <div class="data_holder__title">
+                      School creation date
+                    </div>
+
+                    <div *ngIf="school" class="data_holder__content">
+                      {{  school.schoolCreationDate.toLocaleString("en-GB", {
+                      month: 'short',
+                      day: 'numeric',
+                      year: 'numeric'
+                    }) }}
+                    </div>
+                  </div>
+
+                  <div class="btns_holder">
+                    <button class="button is-success btn_edit" (click)="edit()">
+                      Edit
+                    </button>
+                    <button class="button is-danger" (click)="delete()">
+                      Delete
+                    </button>
+                  </div>
+                  <router-outlet></router-outlet>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
-
-    <div class="school_content">
-        <div class="data_holder">
-            <div class="data_holder__title">
-                Name
-            </div>
-
-            <div *ngIf="school" class="data_holder__content">
-                {{  school.name }}
-            </div>
-        </div>
-
-        <div class="data_holder">
-            <div class="data_holder__title">
-                City
-            </div>
-
-            <div *ngIf="school" class="data_holder__content">
-                {{  school.city }}
-            </div>
-        </div>
-
-        <div class="data_holder">
-            <div class="data_holder__title">
-                Address
-            </div>
-
-            <div *ngIf="school" class="data_holder__content">
-                {{  school.address }}
-            </div>
-        </div>
-
-        <div class="data_holder">
-            <div class="data_holder__title">
-                School type
-            </div>
-
-            <div *ngIf="school" class="data_holder__content">
-                {{  school.schoolType }}
-            </div>
-        </div>
-
-        <div class="data_holder">
-            <div class="data_holder__title">
-                School creation date
-            </div>
-
-            <div *ngIf="school" class="data_holder__content">
-                {{  school.schoolCreationDate.toLocaleString("en-GB", {month:'short', day:'numeric', year:'numeric'}) }}
-            </div>
-        </div>
-
-        <div class="btns_holder">
-            <button class="button is-info btn_edit" (click)="edit()">
-                Edit
-            </button>
-            <button class="button is-danger" (click)="delete()"> 
-                Delete
-            </button>
-        </div>
-        <router-outlet></router-outlet>
-    </div>
-</div>
+  </div>
+</section>

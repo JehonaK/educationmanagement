@@ -10,7 +10,7 @@ import { CalendarMonthService } from '../calendar-month/calendar-month.service';
     <form [formGroup]="calendarUploadForm" enctype="multipart/form-data">
     <label for='file'>Upload calendar file</label>
     <input (change)="fileChange($event)"formControlName="file" name="file" type="file" accept='.csv, text/csv' name="file"/>
-    <button (click)="submitForm()" type="submit">Upload</button>
+    <button class="button is-info-light" (click)="submitForm()" type="submit">Upload</button>
     </form>`
 
 })

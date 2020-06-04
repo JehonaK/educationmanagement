@@ -17,34 +17,34 @@ import { RouterModule } from '@angular/router';
 import { MatDialogModule } from '@angular/material/dialog';
 
 
-@NgModule({
-    imports: [
-        CommonModule, FormsModule, EventDetailsModule, ReactiveFormsModule, RouterModule, MatDialogModule          
-    ],
-    declarations: [
-        CalendarComponent,
-        CalendarDayComponent,
-        CalendarMonthComponent,
-        NewEventComponent,
-        EventFormComponent,
-        CalendarDayModalComponent,
-        CalendarDayModalEventComponent,
-        CalendarUploadComponent,
-        CalendarDownloadComponent
-    ],
-    exports: [
-        CalendarComponent,
-        CalendarDayComponent,
-        CalendarMonthComponent,
-        NewEventComponent,
-        EventFormComponent,
-        CalendarDayModalComponent,
-        CalendarDayModalEventComponent,
-        FormsModule,
-        EventDetailsModule,
-        CalendarUploadComponent,
-        CalendarDownloadComponent
-    ],
-    providers: [CalendarService]
-})
+// @NgModule({
+//     imports: [
+//         CommonModule, FormsModule, EventDetailsModule, ReactiveFormsModule, RouterModule, MatDialogModule
+//     ],
+//     declarations: [
+//         CalendarComponent,
+//         CalendarDayComponent,
+//         CalendarMonthComponent,
+//         NewEventComponent,
+//         EventFormComponent,
+//         CalendarDayModalComponent,
+//         CalendarDayModalEventComponent,
+//         CalendarUploadComponent,
+//         CalendarDownloadComponent
+//     ],
+//     exports: [
+//         CalendarComponent,
+//         CalendarDayComponent,
+//         CalendarMonthComponent,
+//         NewEventComponent,
+//         EventFormComponent,
+//         CalendarDayModalComponent,
+//         CalendarDayModalEventComponent,
+//         FormsModule,
+//         EventDetailsModule,
+//         CalendarUploadComponent,
+//         CalendarDownloadComponent
+//     ],
+//     providers: [CalendarService]
+// })
 export class CalendarModule { }
