@@ -5,10 +5,8 @@
       <a class="">Courses</a>
       <ul>
         <li><a routerLink="/courses/grid">Course list</a></li>
-        <li><a routerLink="/courses/course-detail/forum/list">Course Forum</a></li>
         <li><a routerLink="/courses/course-detail/activity/list">Course Activities</a></li>
         <li><a routerLink="/courses/course-detail/grade-list">Course grades</a></li>
-        <li><a routerLink="/courses/course-detail/curriculum">Course curriculum</a></li>
       </ul>
     </li>
     <li *ngIf="canView('gradebook')"><a routerLink="/grade-book">Grade Book</a></li>

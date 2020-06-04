@@ -17,7 +17,11 @@ export class CourseActivityListComponent implements OnInit {
 
   constructor(private dialog: MatDialog,
               private activatedRoute: ActivatedRoute,
-              private activityService: ActivityService) { }
+              private activityService: ActivityService) {
+    this.dialog._afterAllClosed.subscribe(result => {
+      this.getActivitiesByCourseId();
+    });
+  }
 
   ngOnInit(): void {
     this.getCourseId();

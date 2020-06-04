@@ -25,7 +25,7 @@ export class DashboardComponent implements OnInit {
   }
   getCoursesByStudentId() {
     this.courseService.getCoursesByStudentId().subscribe(res => {
-      for (let i = 0; i < 4; i++){
+      for (let i = 0; i < 6; i++){
         this.courses.push(res[i]);
       }
       console.log(this.courses);
@@ -33,10 +33,14 @@ export class DashboardComponent implements OnInit {
   }
   getCoursesByTeacherId() {
     this.courseService.getCoursesByTeacherId().subscribe(res => {
-      for (let i = 0; i < 4; i++){
+      for (let i = 0; i < 6; i++){
         this.courses.push(res[i]);
       }
       console.log(this.courses);
     });
+  }
+
+  getCurrentDate(){
+    return new Date();
   }
 }

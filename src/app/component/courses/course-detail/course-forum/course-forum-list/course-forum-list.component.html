@@ -15,7 +15,7 @@
       <li class="list-group-item v-middle">
         <div class="media-body">
           <h4 class="text-subhead margin-none">
-            <a href="app-course-forum-thread.html" class="link-text-color">{{forumPost.title}}</a>
+            <a routerLink="../../post/{{forumPost.id}}" class="link-text-color">{{forumPost.title}}</a>
           </h4>
           <div class="text-light text-caption">
             posted by
@@ -23,7 +23,7 @@
           </div>
         </div>
         <div class="media-right">
-          <button routerLink="../../post/{{forumPost.id}}" class="button is-white text-light"><i class="fa fa-comments fa-fw"></i> 3</button>
+          <button routerLink="../../post/{{forumPost.id}}" class="button is-white text-light"><i class="fa fa-comments fa-fw"></i></button>
         </div>
       </li>
     </ul>

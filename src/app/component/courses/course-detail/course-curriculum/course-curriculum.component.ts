@@ -23,7 +23,11 @@ export class CourseCurriculumComponent implements OnInit {
   constructor(private dialog: MatDialog,
               private activatedRoute: ActivatedRoute,
               private courseService: CourseService,
-              private fileUploadService: FileUploadService) { }
+              private fileUploadService: FileUploadService) {
+    this.dialog._afterAllClosed.subscribe(result => {
+      this.getLessons();
+    });
+  }
 
   ngOnInit(): void {
     this.getCourseById();
