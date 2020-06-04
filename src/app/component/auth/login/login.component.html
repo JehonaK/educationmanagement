@@ -9,7 +9,7 @@
     <p id="profile-name" class="profile-name-card"></p>
     <form [formGroup]="loginForm" (submit)="onLoginFormSubmit()" class="form-signin">
       <span id="reauth-email" class="reauth-email"></span>
-      <input 
+      <input
         [formControlName]="'email'"
         type="email"
         id="loginEmail"
@@ -31,7 +31,7 @@
           <input type="checkbox" value="remember-me" /> Remember me
         </label>
       </div>
-      <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">
+      <button class="button btn-lg is-success " type="submit">
         Sign In <i class="fas fa-sign-in-alt"></i>
       </button>
     </form>

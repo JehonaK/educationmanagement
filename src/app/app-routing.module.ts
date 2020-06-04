@@ -70,7 +70,8 @@ const routes: Routes = [
   },
   {
     path: 'homepage',
-    component: HomepageComponent
+    component: HomepageComponent,
+    pathMatch: 'full'
   },
   {
     path: '', canActivate: [AuthGuard], children: [

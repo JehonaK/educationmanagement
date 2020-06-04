@@ -482,3 +482,12 @@ body > .container + .bg-white {
     border:1px solid #efefef;
   }
 }
+
+.media-body{
+  display: flex;
+  justify-content: space-between;
+
+  a{
+    color: #09967f;
+  }
+}

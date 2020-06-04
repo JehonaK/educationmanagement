@@ -3,9 +3,9 @@
     <a>
       <div class="image-container">
         <img [routerLink]="['/']" alt="logo" class="header-logo is-hidden-mobile"
-             src="assets/img/learning-logo.png">
+             src="assets/img/logo.png">
         <img [routerLink]="['/']" alt="logo" class="header-logo is-hidden-desktop"
-             src="assets/img/learning-logo.png">
+             src="assets/img/logo.png">
       </div>
     </a>
 
@@ -61,11 +61,11 @@
       </div>
     </div>
     <div *ngIf="!this.isLoggedIn()" class = "columns right-buttons uses-flex is-hidden-mobile">
-      <div class="column">
-        <a class="button is-dark is-fullwidth" routerLink="/auth/login">Sign in</a>
+      <div class="column logout-button">
+        <a class="button is-light is-fullwidth" routerLink="/auth/login">Sign in</a>
       </div>
       <div class="column">
-        <a class="button is-dark is-fullwidth" routerLink="/auth/register">Sign up</a>
+        <a class="button is-light is-fullwidth" routerLink="/auth/register">Sign up</a>
       </div>
     </div>
     <!-- End of header right buttons   -->

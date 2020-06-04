@@ -38,7 +38,7 @@ export class HeaderComponent implements OnInit {
   }
   onLogOut(){
     localStorage.clear();
-    this.router.navigate(['/auth/login']);
+    this.router.navigate(['/homepage']);
   }
   getRole(){
     return localStorage.getItem('role');

@@ -130,7 +130,6 @@
         height: 50%;
         width: 180px;
         margin-left: 6px;
-        margin-top: 20px;
       }
     }
 
@@ -159,9 +158,9 @@
         background: #000000; /* fallback for old browsers */
         background: -webkit-linear-gradient(to bottom, #434343, #000000); /* Chrome 10-25, Safari 5.1-6 */
         background: linear-gradient(
-          to bottom,
-          #434343,
-          #000000
+            to bottom,
+            #434343,
+            #000000
         ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         border-bottom: 2px solid ghostwhite;
       }
@@ -170,6 +169,7 @@
         //border-bottom: 2px solid white;
         transform: scale(1.1);
         color: map-get($ucx-colors, light-orange);
+
         &:focus-within {
           background-color: transparent;
         }
@@ -342,7 +342,8 @@
     margin: 0;
   }
 }
-.calendar-main-container{
+
+.calendar-main-container {
   .container {
     max-width: 100%;
   }
@@ -351,4 +352,8 @@
 .column {
   padding-right: 0;
   padding-left: 0;
+}
+
+.logout-button {
+  margin-right: 10px;
 }
