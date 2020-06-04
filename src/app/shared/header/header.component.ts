@@ -40,4 +40,7 @@ export class HeaderComponent implements OnInit {
     localStorage.clear();
     this.router.navigate(['/auth/login']);
   }
+  getRole(){
+    return localStorage.getItem('role');
+  }
 }

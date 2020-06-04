@@ -59,6 +59,20 @@ import { AddSubmissionModalComponent } from './component/courses/course-detail/c
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CalendarModule } from './component/calendar/calendar.module';
+import {CalendarComponent} from './component/calendar/calendar.component';
+import {CalendarDayComponent} from './component/calendar/calendar-day/calendar-day.component';
+import {CalendarMonthComponent} from './component/calendar/calendar-month/calendar-month.component';
+import {NewEventComponent} from './component/calendar/new-event/new-event.component';
+import {EventFormComponent} from './component/calendar/new-event/event-form/event-form.component';
+import {CalendarDayModalComponent} from './component/calendar/calendar-modal/calendar-day-modal.component';
+import {CalendarDayModalEventComponent} from './component/calendar/calendar-modal/calendar-day-modal-event/calendar-day-modal-event.component';
+import {EventDetailsModule} from './component/calendar/calendar-modal/event-details/event-details.module';
+import {CalendarUploadComponent} from './component/calendar/calendar-upload/calendar-upload.component';
+import {CalendarDownloadComponent} from './component/calendar/calendar-download/calendar-download.component';
+import {DateDetailsComponent} from './component/calendar/calendar-modal/event-details/date-details/date-details.component';
+import {TitleDetailsComponent} from './component/calendar/calendar-modal/event-details/title-details/title-details.component';
+import {TimeDetailsComponent} from './component/calendar/calendar-modal/event-details/time-details/time-details.component';
+import {DescriptionDetailsComponent} from './component/calendar/calendar-modal/event-details/description-details/description-details.component';
 
 @NgModule({
   declarations: [
@@ -113,7 +127,20 @@ import { CalendarModule } from './component/calendar/calendar.module';
     EditCourseCurriculumModalComponent,
     AddLessonModalComponent,
     AddSubmissionModalComponent,
-    StudentParentAssociationComponent
+    StudentParentAssociationComponent,
+    CalendarComponent,
+    CalendarDayComponent,
+    CalendarMonthComponent,
+    NewEventComponent,
+    EventFormComponent,
+    CalendarDayModalComponent,
+    CalendarDayModalEventComponent,
+    CalendarUploadComponent,
+    CalendarDownloadComponent,
+    DateDetailsComponent,
+    TitleDetailsComponent,
+    TimeDetailsComponent,
+    DescriptionDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -125,7 +152,6 @@ import { CalendarModule } from './component/calendar/calendar.module';
     ReactiveFormsModule,
     SchoolModule,
     NoopAnimationsModule,
-    CalendarModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS, useClass: AuthenticationInterceptor, multi: true

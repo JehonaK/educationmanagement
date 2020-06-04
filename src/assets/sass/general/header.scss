@@ -78,7 +78,7 @@
         }
 
         span.cart-nr {
-          color: map_get($ucx-colors, deep-orange);
+          color: white;
           margin-left: 5px;
         }
       }
@@ -342,8 +342,10 @@
     margin: 0;
   }
 }
-.container {
-  max-width: 100%;
+.calendar-main-container{
+  .container {
+    max-width: 100%;
+  }
 }
 
 .column {

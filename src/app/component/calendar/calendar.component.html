@@ -1,31 +1,56 @@
-<div class="calendar__container">
-    <div class="calendar__current_month_year">
-        <i (click)="changeMonth()" class="arrow arrow--left fas fa-arrow-left"></i>
-        {{ selectedDate ? months[selectedDate.getMonth()] : months[currentDate.getMonth()]  }},
-        {{ selectedDate ? selectedDate.getFullYear() : currentDate.getFullYear() }}
-        <i (click)="changeMonth()" class="arrow arrow--right fas fa-arrow-right"></i>
-    </div>
+<section class="section main-container calendar-main-container">
+  <app-header></app-header>
+
+  <div class="container">
+    <div class="columns">
+      <div class="column is-3-desktop">
+        <app-sidebar></app-sidebar>
+      </div>
+      <div class="column is-9-desktop st-pusher" id="content">
+        <div class="st-content" style="overflow: scroll">
+
+          <!-- extra div for emulating position:fixed of the menu -->
+          <div class="st-content-inner padding-none">
+
+            <div class="container-fluid">
+
+              <div class="calendar__container">
+                <div class="calendar__current_month_year">
+                  <i (click)="changeMonth()" class="arrow arrow--left fas fa-arrow-left"></i>
+                  {{ selectedDate ? months[selectedDate.getMonth()] : months[currentDate.getMonth()]  }},
+                  {{ selectedDate ? selectedDate.getFullYear() : currentDate.getFullYear() }}
+                  <i (click)="changeMonth()" class="arrow arrow--right fas fa-arrow-right"></i>
+                </div>
 
 
 
-    <div class="dayName_holder--long">
-        <div class="dayName" *ngFor="let dayName of days"> {{ dayName }} </div>
+                <div class="dayName_holder--long">
+                  <div class="dayName" *ngFor="let dayName of days"> {{ dayName }} </div>
+                </div>
+                <div class="dayName_holder--short">
+                  <div class="dayName" *ngFor="let dayName of days"> {{ dayName.substring(0,3) }} </div>
+                </div>
+                <calendar-month [currentDate]="currentDate" [selectedDate]="selectedDate">
+                </calendar-month>
+                <calendar-upload *ngIf="isEmpty"></calendar-upload>
+                <calendar-download *ngIf="!isEmpty"></calendar-download>
+                <div class="filter_catalog__title">
+                  Filter Catalog
+                </div>
+                <div class="filter_catalog">
+                  <button (click)="filter($event)" class="button is-primary-light filter_catalog__content filter_catalog__content--user">Hide User Events</button>
+                  <button (click)="filter($event)" class="button is-success-light filter_catalog__content filter_catalog__content--custom">Hide Custom Events</button>
+                  <button (click)="filter($event)" class="button is-primary-light filter_catalog__content filter_catalog__content-system">Hide System Events</button>
+                  <button (click)="filter($event)" class="button is-success-light filter_catalog__content filter_catalog__content--meeting">Hide Meeting Events</button>
+                  <button (click)="filter($event)" class="button is-primary-light filter_catalog__content filter_catalog__content--schedule">Hide Schedule Events</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
-    <div class="dayName_holder--short">
-        <div class="dayName" *ngFor="let dayName of days"> {{ dayName.substring(0,3) }} </div>
-    </div>
-    <calendar-month [currentDate]="currentDate" [selectedDate]="selectedDate">
-    </calendar-month>
-    <calendar-upload *ngIf="isEmpty"></calendar-upload>
-    <calendar-download *ngIf="!isEmpty"></calendar-download>
-    <div class="filter_catalog__title">
-        Filter Catalog
-    </div>
-    <div class="filter_catalog">
-        <button (click)="filter($event)" class="filter_catalog__content filter_catalog__content--user">Hide User Events</button>
-        <button (click)="filter($event)" class="filter_catalog__content filter_catalog__content--custom">Hide Custom Events</button>
-        <button (click)="filter($event)" class="filter_catalog__content filter_catalog__content-system">Hide System Events</button>
-        <button (click)="filter($event)" class="filter_catalog__content filter_catalog__content--meeting">Hide Meeting Events</button>
-        <button (click)="filter($event)" class="filter_catalog__content filter_catalog__content--schedule">Hide Schedule Events</button>
-    </div>
-</div>
+  </div>
+</section>
