@@ -59,6 +59,7 @@ import { AddSubmissionModalComponent } from './component/courses/course-detail/c
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CalendarModule } from './component/calendar/calendar.module';
+import { HomepageComponent } from './component/homepage/homepage.component';
 import {CalendarComponent} from './component/calendar/calendar.component';
 import {CalendarDayComponent} from './component/calendar/calendar-day/calendar-day.component';
 import {CalendarMonthComponent} from './component/calendar/calendar-month/calendar-month.component';
@@ -143,6 +144,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     AddLessonModalComponent,
     AddSubmissionModalComponent,
     StudentParentAssociationComponent,
+    HomepageComponent,
     CalendarComponent,
     CalendarDayComponent,
     CalendarMonthComponent,
