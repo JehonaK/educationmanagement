@@ -59,6 +59,7 @@ import { AddSubmissionModalComponent } from './component/courses/course-detail/c
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CalendarModule } from './component/calendar/calendar.module';
+import { HomepageComponent } from './component/homepage/homepage.component';
 
 @NgModule({
   declarations: [
@@ -113,7 +114,8 @@ import { CalendarModule } from './component/calendar/calendar.module';
     EditCourseCurriculumModalComponent,
     AddLessonModalComponent,
     AddSubmissionModalComponent,
-    StudentParentAssociationComponent
+    StudentParentAssociationComponent,
+    HomepageComponent
   ],
   imports: [
     BrowserModule,

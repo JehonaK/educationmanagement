@@ -43,6 +43,7 @@ import { EditCourseCurriculumModalComponent } from './component/courses/course-d
 import {CourseActivitiesComponent} from './component/courses/course-detail/course-activities/course-activities.component';
 import {pathToFileURL} from 'url';
 import { CalendarComponent } from './component/calendar/calendar.component';
+import { HomepageComponent } from './component/homepage/homepage.component';
 
 const routes: Routes = [
   {
@@ -66,6 +67,10 @@ const routes: Routes = [
         component: ForgotPasswordComponent
       },
     ]
+  },
+  {
+    path: 'homepage',
+    component: HomepageComponent
   },
   {
     path: '', canActivate: [AuthGuard], children: [
