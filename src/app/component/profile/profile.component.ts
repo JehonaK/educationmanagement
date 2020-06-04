@@ -11,5 +11,19 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  getRole(){
+    return localStorage.getItem('role');
+  }
+  getUserName(){
+    return localStorage.getItem('firstName');
+  }
+  getLastName(){
+    return localStorage.getItem('lastName');
+  }
+  getEmail(){
+    return localStorage.getItem('email');
+  }
+  getGender(){
+    return localStorage.getItem('gender');
+  }
 }

@@ -21,11 +21,11 @@
         <label for="type">
             Type
         </label>
-        <select formControlName="type" name="type" class="form-control" id="type" formControlName="type" required>
+        <select formControlName="type" name="type" class="form-control" id="type" required>
             <option *ngFor="let type of getSchoolSubjectTypes()" [value]="type">{{type}}</option>
         </select>
     </div>
-    
 
-    <button type="submit" [disabled]="!schoolSubjectConfigurationForm.valid" (click)="submitForm()" class="button is-primary">{{  this.data.subject ? 'Save' : 'Create' }}</button>
+
+    <button type="submit" [disabled]="!schoolSubjectConfigurationForm.valid" (click)="submitForm()" class="button is-success">{{  this.data.subject ? 'Save' : 'Create' }}</button>
 </form>

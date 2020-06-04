@@ -30,16 +30,16 @@ export class LevelManagementItemDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       const levelId = params.get('id');
-      this.levelService.getLevelById(levelId).subscribe(resBody => {
-        this.level = resBody;
-        this.schoolClassService.getClassByLevelId(levelId).subscribe(resBody => {
-          this.level.schoolClasses = resBody;
-        })
-        this.schoolSubjectService.getSubjectsByLevelId(levelId).subscribe(resBody => {
-          this.level.subjects = resBody;
-        })
-      })
-      // this.level = LEVELS.filter(lvl => lvl.id === params.get('id'))[0];
+      // this.levelService.getLevelById(levelId).subscribe(resBody => {
+      //   this.level = resBody;
+      //   this.schoolClassService.getClassByLevelId(levelId).subscribe(resBody => {
+      //     this.level.schoolClasses = resBody;
+      //   })
+      //   this.schoolSubjectService.getSubjectsByLevelId(levelId).subscribe(resBody => {
+      //     this.level.subjects = resBody;
+      //   })
+      // })
+      this.level = LEVELS.filter(lvl => lvl.id === params.get('id'))[0];
       //   this.levelManagementService.getLevelById(params.get('id')).subscribe(res => {
       //     this.level = res;
       //     this.levelManagementService.getSchoolClassesByLevelId(params.get('id')).subscribe(res =>

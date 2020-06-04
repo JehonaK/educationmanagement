@@ -4,10 +4,10 @@
     </div>
 
     <div class="btns_holder">
-        <button (click)="editLevel()" class="button is-info is-small btn_edit">
+        <button (click)="editLevel()" class="button is-success btn_edit">
             Edit
         </button>
-        <button (click)="deleteLevel()" class="button is-danger is-small">
+        <button (click)="deleteLevel()" class="button is-danger">
             Delete
         </button>
     </div>
@@ -19,7 +19,7 @@
             </div>
             <app-list *ngIf="level" [list]="level.schoolClasses" [path]="'./classes'"></app-list>
             <div class="create_button_holder">
-                <button (click)="openClassModal()" class="button is-small is-dark">New Class</button>
+                <button (click)="openClassModal()" class="button is-light">New Class</button>
             </div>
         </div>
         <div class="level_list_item_details">
@@ -28,7 +28,7 @@
             </div>
             <app-list *ngIf="level" [list]="level.subjects" [path]="'./subjects'"></app-list>
             <div class="create_button_holder">
-                <button (click)="openSubjectModal()" class="button is-small is-dark">New Subject</button>
+                <button (click)="openSubjectModal()" class="button is-light">New Subject</button>
             </div>
         </div>
     </div>

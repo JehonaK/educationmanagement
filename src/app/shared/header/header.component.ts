@@ -43,4 +43,7 @@ export class HeaderComponent implements OnInit {
   getRole(){
     return localStorage.getItem('role');
   }
+  getUserName(){
+    return localStorage.getItem('firstName');
+  }
 }

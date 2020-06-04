@@ -1,16 +1,38 @@
 <!-- <app-list [list]="listDetails()"></app-list> -->
-<div class="school_item_list__container school_item_list__container--small">
-    <div class="title title--centered levels_title">
-        Levels
-    </div>
-    <div class="school_item_list">
-        <div class="school_item_list__item" *ngFor="let level of levels" routerLinkActive="selected"
-            [routerLink]="level.id">
-            {{ level.name  }}
+<section class="section main-container calendar-main-container">
+  <app-header></app-header>
+
+  <div class="container">
+    <div class="columns">
+      <div class="column is-3-desktop">
+        <app-sidebar></app-sidebar>
+      </div>
+      <div class="column is-9-desktop st-pusher" id="content">
+        <div class="st-content" style="overflow: scroll">
+
+          <!-- extra div for emulating position:fixed of the menu -->
+          <div class="st-content-inner padding-none">
+
+            <div class="container-fluid">
+              <div class="school_item_list__container school_item_list__container--small">
+                <div class="title title--centered levels_title">
+                  Levels
+                </div>
+                <div class="school_item_list">
+                  <div class="school_item_list__item" *ngFor="let level of levels" routerLinkActive="selected"
+                       [routerLink]="level.id">
+                    {{ level.name  }}
+                  </div>
+                </div>
+                <div class="create_button_holder">
+                  <button (click)="openModal()" class="button is-light">New Level</button>
+                </div>
+              </div>
+              <router-outlet></router-outlet>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-    <div class="create_button_holder">
-        <button (click)="openModal()" class="button is-small is-dark">New Level</button>
-    </div>
-</div>
-<router-outlet></router-outlet>
+  </div>
+</section>

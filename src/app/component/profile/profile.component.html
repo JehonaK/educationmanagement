@@ -11,14 +11,14 @@
           <!-- extra div for emulating position:fixed of the menu -->
           <div class="st-content-inner padding-none">
             <div class="container-fluid">
-              <section class="hero is-primary">
+              <section class="hero">
                 <div class="hero-body">
                   <div class="container">
-                    <h1 class="title">
-                      Vedat Apuk
+                    <h1 class="title is-3">
+                      User Profile
                     </h1>
-                    <h2 class="subtitle">
-                      Parent
+                    <h2 class="subtitle is-6">
+                      {{getRole()}}
                     </h2>
                   </div>
                 </div>
@@ -26,23 +26,21 @@
 
               <div class="profile-information">
                 <div class="profile-information-left">
-                  <h3 class="subtitle">First Name:</h3>
-                  <h3 class="subtitle">Last Name:</h3>
-                  <h3 class="subtitle">Email:</h3>
-                  <h3 class="subtitle">Role:</h3>
-                  <h3 class="subtitle">Birth Date:</h3>
-                  <h3 class="subtitle">Gender:</h3>
+                  <h2 class="subtitle">First Name:</h2>
+                  <h2 class="subtitle">Last Name:</h2>
+                  <h2 class="subtitle">Email:</h2>
+                  <h2 class="subtitle">Role:</h2>
+                  <h2 class="subtitle">Gender:</h2>
                 </div>
                 <div class="profile-information-right">
-                  <h2 class="title is-4">Vedat</h2>
-                  <h2 class="title is-4">Apuk</h2>
-                  <h2 class="title is-4">vedatapuk1@gmail.com</h2>
-                  <h2 class="title is-4">Parent</h2>
-                  <h2 class="title is-4">8 June 1999.</h2>
-                  <h2 class="title is-4">Male</h2>
+                  <h2 class="title is-6">{{getUserName()}}</h2>
+                  <h2 class="title is-6">{{getLastName()}}</h2>
+                  <h2 class="title is-6">{{getEmail()}}</h2>
+                  <h2 class="title is-6">{{getRole()}}</h2>
+                  <h2 class="title is-6">{{getGender()}}</h2>
                 </div>
                 <div class="relation-verification">
-                  <table class="table">
+                  <table class="table" *ngIf="getRole() == 'PARENT'">
                     <thead>
                       <tr>
                         <th>Children</th>
