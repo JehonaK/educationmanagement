@@ -30,8 +30,8 @@ export class SchoolService {
     return this.http.delete(ENDPOINTS.school.deleteSchoolById + `/${id}`);
   }
 
-  getSchoolByAdmin(schoolAdminId: string): Observable<SchoolModel> {
-    return this.http.get<SchoolModel>(ENDPOINTS.school.getSchoolByAdmin, { params: { schoolAdminId: schoolAdminId } });
+  getSchoolByAdmin(): Observable<SchoolModel> {
+    return this.http.get<SchoolModel>(ENDPOINTS.school.getSchoolByAdmin);
   }
 
 }

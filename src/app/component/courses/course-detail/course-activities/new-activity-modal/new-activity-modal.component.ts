@@ -57,6 +57,7 @@ export class NewActivityModalComponent implements OnInit {
       console.log(payload);
       this.activityService.createActivity(payload).subscribe(response => {
           this.uploadFileToActivity(response.id);
+          this.closeDialog();
         },
         (err) => {
           console.error(err);
@@ -64,6 +65,5 @@ export class NewActivityModalComponent implements OnInit {
     } else {
       alert('form not valid');
     }
-    this.closeDialog();
   }
 }

@@ -21,10 +21,9 @@ export class LevelManagementListComponent implements OnInit {
         private matDialog: MatDialog) { }
 
     ngOnInit() {
-        // this.levelService.getLevelsBySchoolId(localStorage.getItem("schoolId")).subscribe(resBody => {
-        //     this.levels = resBody;
-        // })
-      this.levels = LEVELS;
+        this.levelService.getLevelsBySchoolId(localStorage.getItem("schoolId")).subscribe(resBody => {
+            this.levels = resBody;
+        });
     }
 
     openModal() {

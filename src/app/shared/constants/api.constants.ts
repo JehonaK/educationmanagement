@@ -1,5 +1,6 @@
 const ENVIRONMENT = 'http://192.168.0.138:8662'; // also change file-upload.service
-
+const SCHOOLENVIRONMENT = 'http://192.168.0.137:8081';
+const CALENDAR_ENVIRONMENT = 'http://192.168.0.137:8080';
 const AUTH = {
   login: ENVIRONMENT + '/auth/login', // post
 };
@@ -13,29 +14,29 @@ const USER = {
 };
 
 const SCHOOL = {
-  getSchoolByAdmin: ENVIRONMENT + '/school/school', // get
-  createSchool: ENVIRONMENT + '/school/school', // post and request body school
-  updateSchool: ENVIRONMENT + '/school/school', // put and add a pathVariable in service
-  getSchoolById: ENVIRONMENT + '/school/school', // get and add a pathVariable in service
-  deleteSchoolById: ENVIRONMENT + '/school/school',
-  createClass: ENVIRONMENT + '/school/schoolClass',
-  updateClass: ENVIRONMENT + '/school/schoolClass',
-  getClassById: ENVIRONMENT + '/school/schoolClass',
-  getClassByLevelId: ENVIRONMENT + '/school/schoolClass',
-  deleteClassById: ENVIRONMENT + '/school/schoolClass',
-  addStudentToClass: ENVIRONMENT + '/school/schoolClass/student',
-  createLevel: ENVIRONMENT + '/school/level',
-  updateLevel: ENVIRONMENT + '/school/level',
-  getLevelById: ENVIRONMENT + '/school/level',
-  deleteLevelById: ENVIRONMENT + '/school/level',
-  getLevelsBySchoolId: ENVIRONMENT + '/school/level/',
-  createSubject: ENVIRONMENT + '/school/subject',
-  updateSubject: ENVIRONMENT + '/school/subject',
-  getSubjectById: ENVIRONMENT + '/school/subject',
-  deleteSubjectById: ENVIRONMENT + '/school/subject',
-  getSubjectByLevelId: ENVIRONMENT + '/school/subject',
-  assignTeacherToSubject: ENVIRONMENT + '/school/subject/assignment',
-  getStudentsByClassId: ENVIRONMENT + '/school/user',
+  getSchoolByAdmin: SCHOOLENVIRONMENT + '/school', // get
+  createSchool: SCHOOLENVIRONMENT + '/school', // post and request body school
+  updateSchool: SCHOOLENVIRONMENT + '/school', // put and add a pathVariable in service
+  getSchoolById: SCHOOLENVIRONMENT + '/school', // get and add a pathVariable in service
+  deleteSchoolById: SCHOOLENVIRONMENT + '/school',
+  createClass: SCHOOLENVIRONMENT + '/schoolClass',
+  updateClass: SCHOOLENVIRONMENT + '/schoolClass',
+  getClassById: SCHOOLENVIRONMENT + '/schoolClass',
+  getClassByLevelId: SCHOOLENVIRONMENT + '/schoolClass',
+  deleteClassById: SCHOOLENVIRONMENT + '/schoolClass',
+  addStudentToClass: SCHOOLENVIRONMENT + '/schoolClass/student',
+  createLevel: SCHOOLENVIRONMENT + '/level',
+  updateLevel: SCHOOLENVIRONMENT + '/level',
+  getLevelById: SCHOOLENVIRONMENT + '/level',
+  deleteLevelById: SCHOOLENVIRONMENT + '/level',
+  getLevelsBySchoolId: SCHOOLENVIRONMENT + '/level/',
+  createSubject: SCHOOLENVIRONMENT + '/subject',
+  updateSubject: SCHOOLENVIRONMENT + '/subject',
+  getSubjectById: SCHOOLENVIRONMENT + '/subject',
+  deleteSubjectById: SCHOOLENVIRONMENT + '/subject',
+  getSubjectByLevelId: SCHOOLENVIRONMENT + '/subject',
+  assignTeacherToSubject: SCHOOLENVIRONMENT + '/subject/assignment',
+  getStudentsByClassId: SCHOOLENVIRONMENT + '/user',
 };
 
 const COURSE = {
@@ -97,13 +98,13 @@ const SCHEDULE = {
   deleteSchoolScheduleBySchoolId: ENVIRONMENT + '/schedule-presence/school-schedule',
 };
 const CALENDAR = {
-  createCalendarEvent: ENVIRONMENT + '/calendar/events',
-  getEventsByMonthAndYear: ENVIRONMENT + '/calendar/events',
-  downloadCalendar: ENVIRONMENT + '/calendar/download',
-  deleteCalendarEvent: ENVIRONMENT + '/calendar/events',
-  updateCalendarEvent: ENVIRONMENT + '/calendar/events',
-  uploadCalendarEvents: ENVIRONMENT + '/calendar/upload',
-  getEventCount: ENVIRONMENT + '/calendar/events/empty'
+  createCalendarEvent: CALENDAR_ENVIRONMENT + '/calendar/events',
+  getEventsByMonthAndYear: CALENDAR_ENVIRONMENT + '/calendar/events',
+  downloadCalendar: CALENDAR_ENVIRONMENT + '/calendar/download',
+  deleteCalendarEvent: CALENDAR_ENVIRONMENT + '/calendar/events',
+  updateCalendarEvent: CALENDAR_ENVIRONMENT + '/calendar/events',
+  uploadCalendarEvents: CALENDAR_ENVIRONMENT + '/calendar/upload',
+  getEventCount: CALENDAR_ENVIRONMENT + '/calendar/events/empty'
 };
 const CHAT = {
   getConversationsByUserId: ENVIRONMENT + 'chat/chat-users/conversations',

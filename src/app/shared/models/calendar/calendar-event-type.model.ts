@@ -1,7 +1,7 @@
 export enum EventType {
-    USER="User",
-    SYSTEM="System",
-    CUSTOM="Custom",
-    SCHEDULE="Schedule",
-    MEETING="Meeting"
+  USER = 'USER',
+  SYSTEM = 'SYSTEM',
+  CUSTOM = 'CUSTOM',
+  SCHEDULE = 'SCHEDULE',
+  MEETING = 'MEETING'
 }

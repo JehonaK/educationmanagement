@@ -20,6 +20,7 @@ export class CourseActivityListComponent implements OnInit {
               private activityService: ActivityService) {
     this.dialog._afterAllClosed.subscribe(result => {
       this.getActivitiesByCourseId();
+      console.log('constructor', this.activities);
     });
   }
 
@@ -47,5 +48,8 @@ export class CourseActivityListComponent implements OnInit {
         activity.deadline = new Date(activity.deadline);
       }
     });
+  }
+  getRole() {
+    return localStorage.getItem('role');
   }
 }

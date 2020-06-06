@@ -18,7 +18,7 @@ export class SchoolSettingsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.schoolService.getSchoolByAdmin(localStorage.getItem("adminId")).subscribe(resBody => {
+    this.schoolService.getSchoolByAdmin().subscribe(resBody => {
       this.school = resBody;
       this.school.schoolCreationDate = new Date(resBody.schoolCreationDate);
     });

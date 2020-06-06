@@ -22,7 +22,7 @@
               </div>
               <div class="row" data-toggle="isotope">
                 <div class="item col-xs-12 col-lg-5">
-                  <div class="panel panel-default paper-shadow" data-z="0.5">
+                  <div class="panel panel-default paper-shadow" data-z="0.5" *ngIf="getRole() !== 'SCHOOL_ADMIN'">
                     <div class="panel-heading">
                       <h4 class="text-headline margin-none">Courses</h4>
                       <h6 class="text-subhead text-light">Your recent courses</h6>

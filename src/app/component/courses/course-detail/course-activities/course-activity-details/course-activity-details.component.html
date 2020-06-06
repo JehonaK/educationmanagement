@@ -36,7 +36,7 @@
     </div>
   </div>
   <div class="teacher-table">
-    <table class="table is-bordered is-fullwidth">
+    <table class="table is-bordered is-fullwidth" *ngIf="getRole() == 'TEACHER'">
       <thead>
       <tr class="is-primary-light">
         <th>Student Name</th>
@@ -48,24 +48,24 @@
       </thead>
       <tfoot>
       <tr class="is-success-light">
-        <th colspan="3">Total:100 students</th>
-        <th colspan="2">Average grade: 3.5</th>
+        <th colspan="3">Total:2 students</th>
+        <th colspan="2">Average grade: 4</th>
       </tr>
       </tfoot>
       <tbody>
-      <tr>
-        <td>Leicester City</td>
-        <td>38</td>
-        <td>23</td>
-        <td>12</td>
-        <td>Qualification for theChampions League group stage</td>
-      </tr>
       <tr class="is-danger-light">
-        <td>Leicester City</td>
-        <td>38</td>
+        <td>Adam Smith</td>
+        <td>6 Jun 2020, 20:11:00</td>
         <td>23</td>
-        <td>12</td>
-        <td>Qualification for theChampions League group stage</td>
+        <td>C</td>
+        <td>The assignment had some mistakes.</td>
+      </tr>
+      <tr>
+        <td>John Doe</td>
+        <td>2 Jun 2020, 20:11:00</td>
+        <td>23</td>
+        <td>A</td>
+        <td>Good job!</td>
       </tr>
       </tbody>
     </table>

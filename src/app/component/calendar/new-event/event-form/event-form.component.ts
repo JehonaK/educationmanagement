@@ -21,7 +21,6 @@ export class EventFormComponent implements OnInit {
 
     date: Date;
 
-    eventTypes = EventType;
 
     constructor(private formBuilder: FormBuilder,
         private calendarService: CalendarService, private calendarMonthService: CalendarMonthService,
@@ -106,7 +105,7 @@ export class EventFormComponent implements OnInit {
     }
 
     getEventTypes() {
-        return Object.values(this.eventTypes);
+        return Object.values(EventType).filter(eventType => eventType != 'SCHEDULE' && eventType != 'MEETING');
     }
 
     setValue() {

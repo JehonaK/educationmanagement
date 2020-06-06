@@ -5,7 +5,7 @@
       <p class="text-subhead">Browse through course activities.</p>
     </div>
     <div class="media-right">
-      <button (click)="openModal()" class="button is-white" data-z="0.5" data-hover-z="1" data-animated><i class="fa fa-fw fa-plus"></i> New Activity</button>
+      <button *ngIf="getRole() == 'TEACHER'" (click)="openModal()" class="button is-white" data-z="0.5" data-hover-z="1" data-animated><i class="fa fa-fw fa-plus"></i> New Activity</button>
     </div>
   </div>
 </div>
