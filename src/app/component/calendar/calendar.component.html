@@ -17,7 +17,7 @@
               <div class="calendar__container">
                 <div class="calendar__current_month_year">
                   <i (click)="changeMonth()" class="arrow arrow--left fas fa-arrow-left"></i>
-                  {{ selectedDate ? months[selectedDate.getMonth()] : months[currentDate.getMonth()]  }},
+                  {{ selectedDate ? months[selectedDate.getMonth()] : months[currentDate.getMonth()]  }}
                   {{ selectedDate ? selectedDate.getFullYear() : currentDate.getFullYear() }}
                   <i (click)="changeMonth()" class="arrow arrow--right fas fa-arrow-right"></i>
                 </div>
@@ -35,14 +35,14 @@
                 <calendar-upload *ngIf="isEmpty"></calendar-upload>
                 <calendar-download *ngIf="!isEmpty"></calendar-download>
                 <div class="filter_catalog__title">
-                  Filter Catalog
+                  Filtro
                 </div>
                 <div class="filter_catalog">
-                  <button (click)="filter($event)" class="button is-primary-light filter_catalog__content filter_catalog__content--user">Hide User Events</button>
-                  <button (click)="filter($event)" class="button is-success-light filter_catalog__content filter_catalog__content--custom">Hide Custom Events</button>
-                  <button (click)="filter($event)" class="button is-primary-light filter_catalog__content filter_catalog__content-system">Hide System Events</button>
-                  <button (click)="filter($event)" class="button is-success-light filter_catalog__content filter_catalog__content--meeting">Hide Meeting Events</button>
-                  <button (click)="filter($event)" class="button is-primary-light filter_catalog__content filter_catalog__content--schedule">Hide Schedule Events</button>
+                  <button (click)="filter($event)" class="button is-primary-light filter_catalog__content filter_catalog__content--user">Fshih eventet e Përdoruesit</button>
+                  <button (click)="filter($event)" class="button is-success-light filter_catalog__content filter_catalog__content--custom">Fshih eventet e Shkollës</button>
+                  <button (click)="filter($event)" class="button is-primary-light filter_catalog__content filter_catalog__content-system">Fshih eventet e Sistemit</button>
+                  <button (click)="filter($event)" class="button is-success-light filter_catalog__content filter_catalog__content--meeting">Fshih eventet e Takimeve</button>
+                  <button (click)="filter($event)" class="button is-primary-light filter_catalog__content filter_catalog__content--schedule">Fshih eventet e Orarit</button>
                 </div>
               </div>
 

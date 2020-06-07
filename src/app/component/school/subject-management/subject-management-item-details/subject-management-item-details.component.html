@@ -15,28 +15,28 @@
             <div class="container-fluid">
               <div class="list_item_details__container">
                 <div class="back_navigation_holder" routerLink="../../">
-                  <i class="fas fa-arrow-alt-circle-left fa-lg"></i> Back to Levels
+                  <i class="fas fa-arrow-alt-circle-left fa-lg"></i> Kthehu prapa te Klasat
                 </div>
                 <div class="list_item_details__container--inner">
                   <div class="btns_holder">
-                    <button class="button is-light btn_edit" (click)="openModal()">Create course</button>
+                    <button class="button is-light btn_edit" (click)="openModal()">Krijo Kurs</button>
                     <button (click)="editSubject()" class="button is-success btn_edit">
                       Edit
                     </button>
                     <button (click)="deleteSubject()" class="button is-danger">
-                      Delete
+                      Fshij
                     </button>
                   </div>
 
                   <div class="data_holder__title">
-                    Subject name
+                    Emri Lëndës
                   </div>
                   <div *ngIf="schoolSubject" class="title">
                     {{schoolSubject.name}}
                   </div>
 
                   <div class="data_holder__title">
-                    Level
+                    Klasa
                   </div>
 
                   <div *ngIf="schoolSubject" class="data_holder__content">
@@ -44,20 +44,19 @@
                   </div>
 
                   <div class="data_holder__title">
-                    Description
+                    Përshkrimi
                   </div>
                   <div *ngIf="schoolSubject" class="data_holder__content">
                     {{schoolSubject.description}}
                   </div>
                   <div class="data_holder__title">
-                    Type
+                    Tipi
                   </div>
                   <div *ngIf="schoolSubject" class="data_holder__content">
                     {{  schoolSubject.subjectType  }}
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
         </div>

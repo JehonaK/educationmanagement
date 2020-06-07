@@ -1,17 +1,17 @@
 <aside class="menu sidebar">
   <ul class="menu-list">
-    <li><a routerLink="/dashboard">Dashboard</a></li>
+    <li><a routerLink="/dashboard">Ballina</a></li>
     <li *ngIf="canView('course')">
-      <a class="">Courses</a>
+      <a class="">Lëndët</a>
       <ul>
-        <li><a routerLink="/courses/grid">Course list</a></li>
-        <li><a routerLink="/courses/course-detail/activity/list">Course Activities</a></li>
-        <li><a routerLink="/courses/course-detail/grade-list">Course grades</a></li>
+        <li><a routerLink="/courses/grid">Lista e lëndëve</a></li>
+        <li><a routerLink="/courses/course-detail/activity/list">Aktivitetet e lëndëve</a></li>
+        <li><a routerLink="/courses/course-detail/grade-list">Notat e lëndëve</a></li>
       </ul>
     </li>
-    <li *ngIf="canView('gradebook')"><a routerLink="/grade-book">Grade Book</a></li>
-    <li><a routerLink="/notification">Notification</a></li>
-    <li *ngIf="canView('schedule')"><a>Schedule</a>
+    <li *ngIf="canView('gradebook')"><a routerLink="/grade-book">Notat</a></li>
+    <li><a routerLink="/notification">Lajmërimet</a></li>
+    <li *ngIf="canView('schedule')"><a>Orari</a>
       <ul>
         <li><a routerLink="/schedule/general-settings">General Settings</a></li>
         <li><a routerLink="/schedule/view">Schedule view</a></li>
@@ -19,15 +19,15 @@
         <li><a routerLink="/schedule/create/periodic">Create Schedule</a></li>
       </ul>
     </li>
-    <li *ngIf="canView('school')"><a>School</a>
+    <li *ngIf="canView('school')"><a>Shkolla</a>
       <ul>
-        <li><a routerLink="/school/details">School Details</a></li>
-        <li><a routerLink="/school/levels">Level Management</a></li>
+        <li><a routerLink="/school/details">Detajet e shkollës</a></li>
+        <li><a routerLink="/school/levels">Menaxhimi i klasave</a></li>
       </ul>
     </li>
-    <li><a routerLink="/calendar">Calendar</a></li>
-    <li *ngIf="canView('associateStudent')"><a routerLink="/students/associate">Associate Student</a></li>
+    <li><a routerLink="/calendar">Kalendari</a></li>
+    <li *ngIf="canView('associateStudent')"><a routerLink="/students/associate">Asocio student</a></li>
     <li *ngIf="canView('chat')"><a routerLink="/chat">Chat</a></li>
-    <li *ngIf="canView('meetings')"><a routerLink="/meetings">Meetings</a></li>
+    <li *ngIf="canView('meetings')"><a routerLink="/meetings">Takimet</a></li>
   </ul>
 </aside>

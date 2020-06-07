@@ -8,7 +8,7 @@ import { CalendarMonthService } from '../calendar-month/calendar-month.service';
     selector: 'calendar-upload',
     template: `
     <form [formGroup]="calendarUploadForm" enctype="multipart/form-data">
-    <label for='file'>Upload calendar file</label>
+    <label for='file'>Ngarko kalendarin</label>
     <input (change)="fileChange($event)"formControlName="file" name="file" type="file" accept='.csv, text/csv' name="file"/>
     <button class="button is-info-light" (click)="submitForm()" type="submit">Upload</button>
     </form>`

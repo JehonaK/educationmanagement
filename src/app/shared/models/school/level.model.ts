@@ -11,8 +11,8 @@ export class LevelModel {
     ) { }
 }
 
-export const LEVEL: LevelModel = new LevelModel("1,", "First", "1", SCHOOL_CLASSES, SUBJECTS);
+export const LEVEL: LevelModel = new LevelModel("1,", "E Dhjeta", "1", SCHOOL_CLASSES, SUBJECTS);
 
-export const LEVELS: LevelModel[] = [LEVEL, new LevelModel("1", "First", "1", SCHOOL_CLASSES, SUBJECTS),
-    new LevelModel("2", "Second", "1", SCHOOL_CLASSES, SUBJECTS),
-    new LevelModel("3", "Third", "1", SCHOOL_CLASSES, SUBJECTS)];
+export const LEVELS: LevelModel[] = [LEVEL, new LevelModel("1", "E Njëmbëdhjeta", "1", SCHOOL_CLASSES, SUBJECTS),
+    new LevelModel("2", "E Dymbëdhjeta", "1", SCHOOL_CLASSES, SUBJECTS)];
+    // new LevelModel("3", "E katërt", "1", SCHOOL_CLASSES, SUBJECTS)];

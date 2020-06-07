@@ -77,7 +77,8 @@ const routes: Routes = [
     path: '', canActivate: [AuthGuard], children: [
       {
         path: '',
-        component: BaseComponent,
+        redirectTo: 'dashboard',
+        pathMatch: 'full'
       },
       {
         path: 'dashboard',
@@ -263,6 +264,11 @@ const routes: Routes = [
         path: 'calendar',
         loadChildren: () => import('./component/calendar/calendar-routing.module')
         .then(m => m.CalendarRoutingModule)
+      },
+      {
+        path: '**',
+        redirectTo: 'dashboard',
+        pathMatch: 'full'
       }
     ]
   }

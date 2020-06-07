@@ -1,6 +1,6 @@
 <div class="list_item_details__container list_item_details__container--smaller">
     <div *ngIf="level" class="title">
-        {{level.name}} Level
+        {{level.name}} Klasë
     </div>
 
     <div class="btns_holder">
@@ -8,27 +8,27 @@
             Edit
         </button>
         <button (click)="deleteLevel()" class="button is-danger">
-            Delete
+            Fshij
         </button>
     </div>
 
     <div class="level_list_item">
         <div class="level_list_item_details">
             <div class="data_holder__title level_list_item_details__title">
-                Classes
+                Paralelet
             </div>
             <app-list *ngIf="level" [list]="level.schoolClasses" [path]="'./classes'"></app-list>
             <div class="create_button_holder">
-                <button (click)="openClassModal()" class="button is-light">New Class</button>
+                <button (click)="openClassModal()" class="button is-light">Shto Paralele</button>
             </div>
         </div>
         <div class="level_list_item_details">
             <div class="data_holder__title level_list_item_details__title">
-                Subjects
+                Lëndët
             </div>
             <app-list *ngIf="level" [list]="level.subjects" [path]="'./subjects'"></app-list>
             <div class="create_button_holder">
-                <button (click)="openSubjectModal()" class="button is-light">New Subject</button>
+                <button (click)="openSubjectModal()" class="button is-light">Shto Lëndë</button>
             </div>
         </div>
     </div>

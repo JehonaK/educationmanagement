@@ -25,11 +25,11 @@
         <div class="dropdown-menu" id="dropdown-menu-2" role="menu">
           <div class="dropdown-content">
             <div>
-              <a [routerLink]="'/wish-list'" class="dropdown-item">Notification from John Doe</a>
+              <a [routerLink]="'/wish-list'" class="dropdown-item">Lajmërim nga Naim Preniqi</a>
             </div>
             <hr class="dropdown-divider">
             <div class="dropdown-item proceed-checkout">
-              <a class="button is-dark is-fullwidth" routerLink="/notification">View all</a>
+              <a class="button is-dark is-fullwidth" routerLink="/notification">Shiko të gjitha</a>
             </div>
           </div>
         </div>
@@ -48,13 +48,13 @@
         <div class="dropdown-menu" id="dropdown-menu" role="menu">
           <div class="dropdown-content">
             <div *ngIf="!this.isLoggedIn()">
-              <a class="dropdown-item sign-up-button" routerLink="/auth/register">Sign Up</a>
-              <a class="dropdown-item sign-up-button" routerLink="/auth/login">Login</a>
+              <a class="dropdown-item sign-up-button" routerLink="/auth/register">Regjistrohu</a>
+              <a class="dropdown-item sign-up-button" routerLink="/auth/login">Kyçu</a>
             </div>
             <div *ngIf="this.isLoggedIn()">
-              <a class="dropdown-item sign-up-button" routerLink="/profile">Profile</a>
+              <a class="dropdown-item sign-up-button" routerLink="/profile">Profili</a>
               <a *ngIf="this.isLoggedIn() && this.getRole() === 'SCHOOL_ADMIN'" class="dropdown-item sign-up-button" routerLink="/school/details">School Details</a>
-              <a (click)="onLogOut()" class="dropdown-item sign-up-button">Log out</a>
+              <a (click)="onLogOut()" class="dropdown-item sign-up-button">Shky</a>
             </div>
           </div>
         </div>
@@ -62,10 +62,10 @@
     </div>
     <div *ngIf="!this.isLoggedIn()" class = "columns right-buttons uses-flex is-hidden-mobile">
       <div class="column logout-button">
-        <a class="button is-light is-fullwidth" routerLink="/auth/login">Sign in</a>
+        <a class="button is-light is-fullwidth" routerLink="/auth/login">Kyçu</a>
       </div>
       <div class="column">
-        <a class="button is-light is-fullwidth" routerLink="/auth/register">Sign up</a>
+        <a class="button is-light is-fullwidth" routerLink="/auth/register">Regjistrohu</a>
       </div>
     </div>
     <!-- End of header right buttons   -->
@@ -80,11 +80,11 @@
       <div class="is-hidden-desktop customer-options">
         <div *ngIf="this.isLoggedIn()">
           <a [routerLink]="'/account/edit-profile'"
-             class="dropdown-item is-dark is-active customer-name"><i class="far fa-user"></i>Profile</a>
+             class="dropdown-item is-dark is-active customer-name"><i class="far fa-user"></i>Profili</a>
         </div>
         <div *ngIf="this.isLoggedIn() && this.getRole() === 'SCHOOL_ADMIN'">
           <a [routerLink]="'/school/details'"
-             class="dropdown-item is-dark is-active customer-name"><i class="far fa-user"></i>School Settings</a>
+             class="dropdown-item is-dark is-active customer-name"><i class="far fa-user"></i>Detajet e shkolles</a>
         </div>
         <div *ngIf="this.isLoggedIn()">
           <a class="dropdown-item sign-up-button"><i

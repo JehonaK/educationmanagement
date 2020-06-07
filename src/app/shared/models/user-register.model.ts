@@ -1,11 +1,12 @@
 import { UserModel } from './user.model';
 
 export class UserRegisterModel {
-    firstName: string;
-    lastName: string;
-    role: string;
-    birthDate: Date;
-    gender: string;
-    email: string;
-    password: string;
+    constructor(
+        public firstName?: string,
+        public lastName?: string,
+        public role?: string,
+        public birthDate?: Date,
+        public gender?: string,
+        public email?: string,
+        public password?: string, ) { }
 }

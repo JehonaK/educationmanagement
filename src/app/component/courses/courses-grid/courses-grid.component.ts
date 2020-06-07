@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {CourseModel} from '../../../shared/models/course.model';
-import {CourseService} from '../../../shared/services/course.service';
-import {CommentService} from '../../../shared/services/comment.service';
-import {CommentModel} from '../../../shared/models/comment.model';
+import { CourseModel, COURSE } from '../../../shared/models/course.model';
+import { CourseService } from '../../../shared/services/course.service';
+import { CommentService } from '../../../shared/services/comment.service';
+import { CommentModel } from '../../../shared/models/comment.model';
 
 @Component({
   selector: 'app-courses-grid',
@@ -14,16 +14,17 @@ export class CoursesGridComponent implements OnInit {
   comment: CommentModel;
 
   constructor(private courseService: CourseService,
-              private commentService: CommentService) { }
+    private commentService: CommentService) { }
 
   ngOnInit(): void {
-    if (this.getRole() === 'STUDENT'){
+    if (this.getRole() === 'STUDENT') {
       this.getCoursesByStudentId();
-    }else {
+    } else {
       this.getCoursesByTeacherId();
     }
+    this.courses = [COURSE, COURSE];
   }
-  getRole(){
+  getRole() {
     return localStorage.getItem('role');
   }
   getCoursesByStudentId() {

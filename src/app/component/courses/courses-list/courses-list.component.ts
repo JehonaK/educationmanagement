@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {CourseModel} from '../../../shared/models/course.model';
+import {CourseModel, COURSE} from '../../../shared/models/course.model';
 import {CourseService} from '../../../shared/services/course.service';
 import {CommentService} from '../../../shared/services/comment.service';
 
@@ -19,6 +19,7 @@ export class CoursesListComponent implements OnInit {
     }else {
       this.getCoursesByTeacherId();
     }
+    this.courses = [COURSE, COURSE];
   }
   getRole(){
     return localStorage.getItem('role');

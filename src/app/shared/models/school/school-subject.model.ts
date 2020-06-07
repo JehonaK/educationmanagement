@@ -9,7 +9,7 @@ export class SchoolSubjectModel {
 }
 
 export const SUBJECTS: SchoolSubjectModel[] = [
-    new SchoolSubjectModel("1", "Mathematics", "Numbers and stuff", "1", SchoolSubjectType.MANDATORY),
-    new SchoolSubjectModel("2", "Biology", "Bigger numbers and stuff", "1", SchoolSubjectType.MANDATORY),
-    new SchoolSubjectModel("3", "Chemistry", "Even bigger numbers and stuff", "1", SchoolSubjectType.MANDATORY)
+    new SchoolSubjectModel("1", "Matematika", "Numbers and stuff", "1", SchoolSubjectType.MANDATORY),
+    new SchoolSubjectModel("2", "Biologjia", "Bigger numbers and stuff", "1", SchoolSubjectType.MANDATORY),
+    new SchoolSubjectModel("3", "Kimia", "Even bigger numbers and stuff", "1", SchoolSubjectType.MANDATORY)
 ]

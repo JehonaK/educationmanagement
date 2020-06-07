@@ -16,7 +16,7 @@
               <div class="page-section">
                 <div class="media v-middle">
                   <div class="media-body">
-                    <h1 class="text-headline margin-none">Dashboard</h1>
+                    <h1 class="text-headline margin-none">Ballina</h1>
                   </div>
                 </div>
               </div>
@@ -24,27 +24,27 @@
                 <div class="item col-xs-12 col-lg-5">
                   <div class="panel panel-default paper-shadow" data-z="0.5" *ngIf="getRole() !== 'SCHOOL_ADMIN'">
                     <div class="panel-heading">
-                      <h4 class="text-headline margin-none">Courses</h4>
-                      <h6 class="text-subhead text-light">Your recent courses</h6>
+                      <h4 class="text-headline margin-none">Lëndët</h4>
+                      <h6 class="text-subhead text-light">Lëndët e fundit</h6>
                     </div>
                     <ul class="list-group" *ngFor="let course of courses">
                       <li class="list-group-item v-middle">
                         <div class="media-body">
                           <a routerLink="../courses/course-detail/curriculum/{{course.id}}" class="text-subhead list-group-link">{{course.name}}</a>
-                          <p>Teacher: <span class="teacher-name">{{course.teacherId.firstName}} {{course.teacherId.lastName}}</span></p>
+                          <p>Profesori: <span class="teacher-name">{{course.teacherId.firstName}} {{course.teacherId.lastName}}</span></p>
                         </div>
                       </li>
                     </ul>
                     <div class="panel-footer text-right">
-                      <button routerLink="../courses/grid" class="btn" data-z="0" data-hover-z="1" data-animated> View all</button>
+                      <button routerLink="../courses/grid" class="btn" data-z="0" data-hover-z="1" data-animated>Shiko të gjitha</button>
                     </div>
                   </div>
                 </div>
                 <div class="item col-xs-10 col-lg-6">
                       <div class="panel panel-default paper-shadow" data-z="0.5">
                         <div class="panel-heading">
-                          <h4 class="text-headline margin-none">Calendar</h4>
-                          <h6 class="text-subhead text-light">Your personal calendar</h6>
+                          <h4 class="text-headline margin-none">Kalendari</h4>
+                          <h6 class="text-subhead text-light">Kalendari yt personal</h6>
                           <calendar-month [currentDate]="getCurrentDate()"></calendar-month>
                         </div>
                       </div>

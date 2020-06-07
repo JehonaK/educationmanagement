@@ -5,7 +5,7 @@ import { CalendarService } from '../../../shared/services/calendar/calendar.serv
 @Component({
     selector: 'calendar-download',
     template: `
-    <button class="button is-info-light download_button" (click)="downloadCalendar()">Download Calendar</button>
+    <button class="button is-info-light download_button" (click)="downloadCalendar()">Shkarko Kalendarin</button>
     `,
     styles: [`.download_button{
         margin-top:20px;

@@ -1,9 +1,9 @@
 import { CalendarEvent } from '../../shared/models/calendar/calendar-event.model';
 
-export const DAYS_OF_WEEK: string[] = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+export const DAYS_OF_WEEK: string[] = ["E Hënë", "E Martë", "E Mërkurë", "E Enjte", "E Premte", "E Shtunë", "E Diel"];
 
-export const MONTH_NAMES: string[] = ["January", "February", "March", "April", "May", "June",
-    "July", "August", "September", "October", "November", "December"];
+export const MONTH_NAMES: string[] = ["Janar", "Shkurt", "Mars", "Prill", "Maj", "Qershor",
+    "Korrik", "Gusht", "Shtator", "Tetor", "Nëntor", "Dhjetor"];
 
 export const CALENDAR_EVENTS: CalendarEvent[] = [
     {
